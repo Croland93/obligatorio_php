@@ -1,0 +1,185 @@
+[
+    {
+        "name": "simpletest/simpletest",
+        "version": "v1.1.7",
+        "version_normalized": "1.1.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/simpletest/simpletest.git",
+            "reference": "2f8c466c114bdb9c11028a0c3e6d1380ae6a18dc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/simpletest/simpletest/zipball/2f8c466c114bdb9c11028a0c3e6d1380ae6a18dc",
+            "reference": "2f8c466c114bdb9c11028a0c3e6d1380ae6a18dc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.5"
+        },
+        "replace": {
+            "lastcraft/simpletest": "self.version",
+            "vierbergenlars/simpletest": "self.version"
+        },
+        "time": "2015-09-21 18:19:52",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "."
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Lars Vierbergen",
+                "email": "vierbergenlars@gmail.com"
+            },
+            {
+                "name": "Lachlan Donald",
+                "email": "lachlan@ljd.cc"
+            },
+            {
+                "name": "Marcus Baker",
+                "email": "marcus@lastcraft.com",
+                "role": "Original project lead"
+            },
+            {
+                "name": "Jason Sweat",
+                "role": "Original developer"
+            },
+            {
+                "name": "Travis Swicegood",
+                "role": "Original developer"
+            },
+            {
+                "name": "Perrick Penet",
+                "role": "Original developer"
+            },
+            {
+                "name": "Edward Z. Yang",
+                "role": "Original developer"
+            }
+        ],
+        "description": "Unit testing, mock objects and web testing framework for PHP built around test cases.",
+        "homepage": "http://simpletest.org/",
+        "keywords": [
+            "SimpleTest",
+            "code-coverage",
+            "selenium",
+            "testing",
+            "unit-test"
+        ]
+    },
+    {
+        "name": "smarty/smarty",
+        "version": "v3.1.29",
+        "version_normalized": "3.1.29.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/smarty-php/smarty.git",
+            "reference": "35480f10e7ce9b0fdaf23d3799d7b79463919b1e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/smarty-php/smarty/zipball/35480f10e7ce9b0fdaf23d3799d7b79463919b1e",
+            "reference": "35480f10e7ce9b0fdaf23d3799d7b79463919b1e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "time": "2015-12-21 01:57:06",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "libs/Smarty.class.php",
+                "libs/SmartyBC.class.php",
+                "libs/sysplugins/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Monte Ohrt",
+                "email": "monte@ohrt.com"
+            },
+            {
+                "name": "Uwe Tews",
+                "email": "uwe.tews@googlemail.com"
+            },
+            {
+                "name": "Rodney Rehm",
+                "email": "rodney.rehm@medialize.de"
+            }
+        ],
+        "description": "Smarty - the compiling PHP template engine",
+        "homepage": "http://www.smarty.net",
+        "keywords": [
+            "templating"
+        ]
+    },
+    {
+        "name": "rmccue/requests",
+        "version": "v1.6.1",
+        "version_normalized": "1.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rmccue/Requests.git",
+            "reference": "6aac485666c2955077d77b796bbdd25f0013a4ea"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/rmccue/Requests/zipball/6aac485666c2955077d77b796bbdd25f0013a4ea",
+            "reference": "6aac485666c2955077d77b796bbdd25f0013a4ea",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "require-dev": {
+            "satooshi/php-coveralls": "dev-master"
+        },
+        "time": "2014-05-18 04:59:02",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Requests": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "ISC"
+        ],
+        "authors": [
+            {
+                "name": "Ryan McCue",
+                "homepage": "http://ryanmccue.info"
+            }
+        ],
+        "description": "A HTTP library written in PHP, for human beings.",
+        "homepage": "http://github.com/rmccue/Requests",
+        "keywords": [
+            "curl",
+            "fsockopen",
+            "http",
+            "idna",
+            "ipv6",
+            "iri",
+            "sockets"
+        ]
+    }
+]

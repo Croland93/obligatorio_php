@@ -5,6 +5,10 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
+  background: url('../public/media/845974.jpg') no-repeat center center fixed;  -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
 }
 
 
@@ -82,6 +86,56 @@ body {
 }
 .main .page-header {
   margin-top: 0;
+}
+
+#input-buscar{
+  margin-left: -200px;
+}
+
+.btn-play { 
+  color: #FFFFFF; 
+  background-color: #A1A1A1; 
+  border-color: #9C9C9C; 
+} 
+ 
+.btn-play:hover, 
+.btn-play:focus, 
+.btn-play:active, 
+.btn-play.active, 
+.open .dropdown-toggle.btn-play { 
+  color: #FFFFFF; 
+  background-color: #54CC5C; 
+  border-color: #9C9C9C; 
+} 
+ 
+.btn-play:active, 
+.btn-play.active, 
+.open .dropdown-toggle.btn-play { 
+  background-image: none; 
+} 
+ 
+.btn-play.disabled, 
+.btn-play[disabled], 
+fieldset[disabled] .btn-play, 
+.btn-play.disabled:hover, 
+.btn-play[disabled]:hover, 
+fieldset[disabled] .btn-play:hover, 
+.btn-play.disabled:focus, 
+.btn-play[disabled]:focus, 
+fieldset[disabled] .btn-play:focus, 
+.btn-play.disabled:active, 
+.btn-play[disabled]:active, 
+fieldset[disabled] .btn-play:active, 
+.btn-play.disabled.active, 
+.btn-play[disabled].active, 
+fieldset[disabled] .btn-play.active { 
+  background-color: #A1A1A1; 
+  border-color: #9C9C9C; 
+} 
+ 
+.btn-play .badge { 
+  color: #A1A1A1; 
+  background-color: #FFFFFF; 
 }
 
 

@@ -2,7 +2,7 @@
 RewriteEngine On
  
 # Installation directory
-RewriteBase /PHP/PPN/
+RewriteBase /obligatorio_php/
  
 # Protect hidden files from being viewed
 <Files .*>

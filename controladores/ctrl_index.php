@@ -6,8 +6,8 @@ class ControladorIndex{
         $controlador_clase="Controlador".ucfirst($controller);
         $strFileController='controladores/'.$controlador.'.php';
         if(!is_file($strFileController)){
-            $strFileController='controladores/ctrl_usuario.php';  
-            $controlador_clase="ControladorUsuario";
+            $strFileController='controladores/ctrl_index.php';  
+            $controlador_clase="ControladorIndex";
         }
         require_once $strFileController;
 
@@ -23,10 +23,10 @@ class ControladorIndex{
             $action)){
             $this->cargarAccion($controllerObj, $action,$params);
         }else{
-            $this->cargarAccion($controllerObj, "listado",$params);
+            $this->cargarAccion($controllerObj, "home",$params);
         }
     }
-    public function redirect($controlador="usuario",$accion="listado",$params=array()){
+    public function redirect($controlador="index",$accion="home",$params=array()){
         //header("Location:index.php?controller=".$controlador."&action=".$accion);
         $url= URL_BASE.$controlador."/".$accion."/";
         foreach ($params as $key => $value) {
@@ -35,13 +35,19 @@ class ControladorIndex{
         header("Location:".$url);
     }
 
-    public function getUrl($controlador="usuario",
-        $accion="listado",$params=array()){
+    public function getUrl($controlador="index",
+        $accion="home",$params=array()){
         $url= URL_BASE.$controlador."/".$accion."/";
         foreach ($params as $key => $value) {
             $url.=$value."/";
         }
         return $url;
+    }
+
+    function home(){
+        $tpl = Template::getInstance();
+        $tpl->asignar("proyecto","Jukebox");
+        $tpl->mostrar('index');
     }
 }
 ?>

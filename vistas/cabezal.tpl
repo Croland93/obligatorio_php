@@ -12,7 +12,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Iniciar sesión</a></li>
-            <li><a href="#">Registrarse</a></li>
+            <li><a href="usuario/nuevo/">Registrarse</a></li>
           </ul>
         </div>
       </div>

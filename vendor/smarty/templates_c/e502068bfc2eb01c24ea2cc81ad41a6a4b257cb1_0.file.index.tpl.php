@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-12 14:32:01
+/* Smarty version 3.1.29, created on 2016-05-15 23:08:40
   from "C:\wamp\www\obligatorio_php\vistas\index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_573493e1a3dce7_44924155',
+  'unifunc' => 'content_57390178dddd06_45400617',
   'file_dependency' => 
   array (
     'e502068bfc2eb01c24ea2cc81ad41a6a4b257cb1' => 
     array (
       0 => 'C:\\wamp\\www\\obligatorio_php\\vistas\\index.tpl',
-      1 => 1463063510,
+      1 => 1463353719,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_573493e1a3dce7_44924155 ($_smarty_tpl) {
+function content_57390178dddd06_45400617 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -54,35 +54,13 @@ function content_573493e1a3dce7_44924155 ($_smarty_tpl) {
 
   </head>
 
-  <body>
+  <body style="background: url('../obligatorio_php/public/media/845974.jpg') no-repeat center center fixed;  -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;">
     <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:cabezal.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    <!--
-    <div class="container-fluid">
-      <div class="main">
-        <div class="col-sm-3  col-md-3"></div>
-          <div class="music-search col-sm-6  col-md-6">
-          <form method="POST">
-            <div class="form-group">
-              <div class="col-md-4"></div>
-              <div class="col-md-8">
-                <input id="input-buscar" name="input-buscar" placeholder="Ej. Queen" class="form-control input-md" type="search">
-                
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="control-label" for="btn-buscar"></label>
-              <div class="col-md-4">
-                <button id="btn-buscar" name="btn-buscar" class="btn btn-primary">Let's Play!</button>
-              </div>
-            </div>
-          </form>
-          </div>
-      </div>
-    </div>
-    -->
     <div class="container-fluid">
       <div class="main">
           <div class="row">
@@ -107,7 +85,6 @@ function content_573493e1a3dce7_44924155 ($_smarty_tpl) {
                 </div>
               </form>
               <div class="col-md-3">
-              </div>
               </div>
             </div>
             <div class="col-md-3">

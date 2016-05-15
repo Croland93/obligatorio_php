@@ -20,33 +20,11 @@
 
   </head>
 
-  <body>
+  <body style="background: url('../obligatorio_php/public/media/845974.jpg') no-repeat center center fixed;  -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;">
     {include file="cabezal.tpl"}
-    <!--
-    <div class="container-fluid">
-      <div class="main">
-        <div class="col-sm-3  col-md-3"></div>
-          <div class="music-search col-sm-6  col-md-6">
-          <form method="POST">
-            <div class="form-group">
-              <div class="col-md-4"></div>
-              <div class="col-md-8">
-                <input id="input-buscar" name="input-buscar" placeholder="Ej. Queen" class="form-control input-md" type="search">
-                
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="control-label" for="btn-buscar"></label>
-              <div class="col-md-4">
-                <button id="btn-buscar" name="btn-buscar" class="btn btn-primary">Let's Play!</button>
-              </div>
-            </div>
-          </form>
-          </div>
-      </div>
-    </div>
-    -->
     <div class="container-fluid">
       <div class="main">
           <div class="row">
@@ -71,7 +49,6 @@
                 </div>
               </form>
               <div class="col-md-3">
-              </div>
               </div>
             </div>
             <div class="col-md-3">

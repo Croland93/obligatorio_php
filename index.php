@@ -27,6 +27,17 @@ if(isset($_GET['url'])){
 	for ($i=2; $i <count($request) ; $i++) { 
 		$params[]=$request[$i];
 	}
+
+
+}if (isset($_POST['buscar'])){
+
+	$buscar = $_POST['buscar'];
+	$controller="api";
+	$action="busqueda";
+	$params=$buscar;
+	
+
+
 }else{
 	$controller="index";
 	$action="home";

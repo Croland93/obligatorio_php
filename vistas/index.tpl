@@ -34,15 +34,12 @@
             <h1 class="text-center" style="color: white;">
               Jukebox
             </h1>
-              <form role="form">
-                <div class="form-group">
-                  <input class="form-control" id="search-music" type="text" placeholder="Ej. David Guetta">
-                </div>
               
-              <div class="row">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-6">
+                <form role="form" navbar-right" method="post" action="index.php">
+           
+                  <input type="text" id="buscar" name="buscar" class="form-control" placeholder="Buscar..." value=''>
+           
+                  <input type="submit" value="Buscar" class="form-control btn btn-primary">
                   <button type="button" class="btn-play btn btn-default btn-block">
                     Let's Play!
                   </button>

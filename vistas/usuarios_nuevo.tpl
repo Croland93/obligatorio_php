@@ -18,7 +18,7 @@
     {include file="cabezal.tpl"}
     <div class="container-fluid">
       <div class="main">
-        <h1 class="page-header">Crear usuario</h1>
+        <h1 class="page-header">Cuenta nueva</h1>
         {if $mensaje!=''}
         {$mensaje}
         {/if}

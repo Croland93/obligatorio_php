@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-15 23:03:42
+/* Smarty version 3.1.29, created on 2016-05-26 18:09:27
   from "C:\wamp\www\obligatorio_php\vistas\usuarios_nuevo.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5739004eaedeb7_60446921',
+  'unifunc' => 'content_57473bd79ab3d6_81317507',
   'file_dependency' => 
   array (
     'e532878ff992638570b6acfd8fb981f0506baad9' => 
     array (
       0 => 'C:\\wamp\\www\\obligatorio_php\\vistas\\usuarios_nuevo.tpl',
-      1 => 1463353380,
+      1 => 1464286166,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5739004eaedeb7_60446921 ($_smarty_tpl) {
+function content_57473bd79ab3d6_81317507 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +46,7 @@ function content_5739004eaedeb7_60446921 ($_smarty_tpl) {
 
     <div class="container-fluid">
       <div class="main">
-        <h1 class="page-header">Crear usuario</h1>
+        <h1 class="page-header">Cuenta nueva</h1>
         <?php if ($_smarty_tpl->tpl_vars['mensaje']->value != '') {?>
         <?php echo $_smarty_tpl->tpl_vars['mensaje']->value;?>
 

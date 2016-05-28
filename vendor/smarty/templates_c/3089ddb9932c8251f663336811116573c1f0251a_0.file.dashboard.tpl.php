@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-25 23:41:29
+/* Smarty version 3.1.29, created on 2016-05-26 18:36:21
   from "C:\wamp\www\obligatorio_php\vistas\dashboard.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57463829df6781_28601696',
+  'unifunc' => 'content_57474225d5cad2_31788312',
   'file_dependency' => 
   array (
     '3089ddb9932c8251f663336811116573c1f0251a' => 
     array (
       0 => 'C:\\wamp\\www\\obligatorio_php\\vistas\\dashboard.tpl',
-      1 => 1464204150,
+      1 => 1464287778,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57463829df6781_28601696 ($_smarty_tpl) {
+function content_57474225d5cad2_31788312 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -67,14 +67,15 @@ function content_57463829df6781_28601696 ($_smarty_tpl) {
 ?>
 
 
-    
-   <table align="center">
-   <tr>
-   
-    <td id="div-btn1">
-    <br>
+    <div class="row">
+        <div class="col-md-4 playlist">
+          <table align="center">
+            <tr>
+             
+              <td id="div-btn1">
+              <br>
 
-   <?php
+             <?php
 $_from = $_smarty_tpl->tpl_vars['datos']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -91,28 +92,38 @@ $__foreach_videos_0_saved_local_item = $_smarty_tpl->tpl_vars['videos'];
 
 
 
-    <ul>   
-    <a class="btn btn-default" href="javascript:cargarvideo('<?php echo $_smarty_tpl->tpl_vars['videos']->value['id']['videoId'];?>
+              <ul>   
+              <a class="btn btn-default" href="javascript:cargarvideo('<?php echo $_smarty_tpl->tpl_vars['videos']->value['id']['videoId'];?>
 ')" ><span class="glyphicon glyphicon-play"></span> <?php echo $_smarty_tpl->tpl_vars['videos']->value['snippet']['title'];?>
  </a>    
-    </ul>
+              </ul>
 
 
 
-  <?php
+            <?php
 $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_0_saved_local_item;
 }
 if ($__foreach_videos_0_saved_item) {
 $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_0_saved_item;
 }
 ?>
+            
+            </td>
+            </tr>
+            </table>
+        </div>
+        <div class="col-md-7">
+        <table>
+        <tr>
+        <td >
+          <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
+          </td>
+          </tr>
+            </table>
+        </div>
+    </div> 
+   
   
-  </td>
-  <td >
-  <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
-  </td>
-  </tr>
-    </table>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

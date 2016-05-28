@@ -134,6 +134,10 @@ fieldset[disabled] .btn-play.active {
   background-color: #FFFFFF; 
 }
 
+.playlist {
+  margin-left: 15px;
+  overflow-x: scroll;
+}
 
 /*
  * Placeholder dashboard ideas

@@ -30,10 +30,11 @@
           <div class="row">
             <div class="col-md-3">
             </div>
-            <div class="col-md-6" style="padding-top: 150px;">
-            <h1 class="text-center" style="color: white;">
+            <div class="col-md-6" style="padding-top: 90px;">
+            <!-- <h1 class="text-center" style="color: white;">
               Jukebox
-            </h1>
+            </h1> -->
+              <div align="center"><img src="../obligatorio_php/public/media/logo-jukebox-j.png"></div>
               <form role="form" method="post" action="index.php">
                 <div class="form-group">
                   <input class="form-control" name="buscar" type="text" placeholder="Ej. David Guetta">

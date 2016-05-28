@@ -29,33 +29,44 @@
   <body>
     {include file="cabezal.tpl"}
 
-    
-   <table align="center">
-   <tr>
+    <div class="row">
+        <div class="col-md-4 playlist">
+          <table align="center">
+            <tr>
+             
+              <td id="div-btn1">
+              <br>
+
+             {foreach from=$datos item=videos}
+
+
+
+
+
+              <ul>   
+              <a class="btn btn-default" href="javascript:cargarvideo('{$videos['id']['videoId']}')" ><span class="glyphicon glyphicon-play"></span> {$videos['snippet']['title']} </a>    
+              </ul>
+
+
+
+            {/foreach}
+            
+            </td>
+            </tr>
+            </table>
+        </div>
+        <div class="col-md-7">
+        <table>
+        <tr>
+        <td >
+          <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
+          </td>
+          </tr>
+            </table>
+        </div>
+    </div> 
    
-    <td id="div-btn1">
-    <br>
-
-   {foreach from=$datos item=videos}
-
-
-
-
-
-    <ul>   
-    <a class="btn btn-default" href="javascript:cargarvideo('{$videos['id']['videoId']}')" ><span class="glyphicon glyphicon-play"></span> {$videos['snippet']['title']} </a>    
-    </ul>
-
-
-
-  {/foreach}
   
-  </td>
-  <td >
-  <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
-  </td>
-  </tr>
-    </table>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -28,5 +28,29 @@ class ControladorUsuario extends ControladorIndex {
 	$tpl->asignar('mensaje',$mensaje);
 	$tpl->mostrar('usuarios_nuevo');
 }
+function getLogin(){
+	$mensaje="";
+	if(isset($_POST["email"])){
+		$usr= new Usuario();
+		
+		$email=$_POST["email"];
+		$pass=($_POST["password"]);
+
+		if($usr->autentificar($email,$pass)){
+			header('Location: index.php');
+			exit;
+		}else{
+			$mensaje="Error! No se pudo corroborar";
+		}
+
+		
+	}
+	$tpl = Template::getInstance();
+	$tpl->asignar('proyecto',"Jukebox");
+	$tpl->asignar('titulo',"login");
+	$tpl->asignar('mensaje',$mensaje);
+	$tpl->mostrar('usuarios_login');
+
+}
 }
 ?>

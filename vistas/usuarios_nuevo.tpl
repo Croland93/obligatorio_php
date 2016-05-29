@@ -65,7 +65,7 @@
             <input type="password" id="pass" name="pass" class="form-control validate[required,length[6,30]] text-input" placeholder="Contraseña" value=''>
           </fieldset><fieldset class="form-group">
             <label for="Password">Repetir contraseña</label>
-            <input type="password" id="repass" name="repass" class="form-control validate[required,confirm[password]] text-input" placeholder="Repetir contraseña" value=''>
+            <input type="password" id="repass" name="repass" class="form-control validate[required,confirm[pass]] text-input" placeholder="Repetir contraseña" value=''>
           </fieldset>
           <fieldset class="form-group">
             <label for="Email">Email</label>

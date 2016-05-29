@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-27 20:40:54
+/* Smarty version 3.1.29, created on 2016-05-29 17:56:14
   from "C:\wamp\www\obligatorio_php\vistas\usuarios_nuevo.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5748b0d6439833_39131871',
+  'unifunc' => 'content_574b2d3e2685c7_09364865',
   'file_dependency' => 
   array (
     'e532878ff992638570b6acfd8fb981f0506baad9' => 
     array (
       0 => 'C:\\wamp\\www\\obligatorio_php\\vistas\\usuarios_nuevo.tpl',
-      1 => 1464381651,
+      1 => 1464544570,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5748b0d6439833_39131871 ($_smarty_tpl) {
+function content_574b2d3e2685c7_09364865 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,7 +102,7 @@ function content_5748b0d6439833_39131871 ($_smarty_tpl) {
             <input type="password" id="pass" name="pass" class="form-control validate[required,length[6,30]] text-input" placeholder="Contraseña" value=''>
           </fieldset><fieldset class="form-group">
             <label for="Password">Repetir contraseña</label>
-            <input type="password" id="repass" name="repass" class="form-control validate[required,confirm[password]] text-input" placeholder="Repetir contraseña" value=''>
+            <input type="password" id="repass" name="repass" class="form-control validate[required,confirm[pass]] text-input" placeholder="Repetir contraseña" value=''>
           </fieldset>
           <fieldset class="form-group">
             <label for="Email">Email</label>

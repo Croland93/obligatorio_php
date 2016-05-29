@@ -46,10 +46,8 @@ class Usuario extends ClaseBase {
         $nic=$nick;
         $p=$pass;
         $mail=$email;
-        $stmt = $this->getDB()->prepare("INSERT INTO usuarios (nombre,apellido,nickname,clave,email) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("ss", $nom, $a, $nic, $p, $mail);
-        $stmt->execute();
-        return true;
+        $stmt = $this->getDB()->prepare("INSERT INTO usuarios (nombre,apellido,nickname,clave,email) VALUES ('$nom', '$a', '$nic', '$p', '$mail')");
+        return $stmt->execute();
     }
 
     public function autentificar($nick,$pass){

@@ -37,14 +37,16 @@
               <td id="div-btn1">
               <br>
 
+          
              {foreach from=$datos item=videos}
 
-
+                
 
 
 
               <ul>   
               <a class="btn btn-default" href="javascript:cargarvideo('{$videos['id']['videoId']}')" ><span class="glyphicon glyphicon-play"></span> {$videos['snippet']['title']} </a>    
+              
               </ul>
 
 
@@ -73,9 +75,21 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script type="text/javascript">
-         
-      function cargarvideo(id){
-        document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ id +"?autoplay=1&controls=0&modestbranding=1&rel=1&fs=0&frameborder=”0″&showinfo=0&disablekb=1&iv_load_policy=3&enablejsapi=1&rel=1&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
+
+        
+
+
+      function cargarvideo(primerID){
+
+        
+        var i = {$lista}.indexOf(primerID);
+        
+        var sig = {$lista}.splice(i+1,{$lista}.length);
+
+        var listaID = sig.toString();
+        
+        document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=1&modestbranding=1&rel=0&fs=0&frameborder=”0″&showinfo=1&disablekb=1&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
+        
       }
 
       </script>

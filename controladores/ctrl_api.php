@@ -53,20 +53,31 @@ $DEVELOPER_KEY = 'AIzaSyCvzMUlI20FF1QhePFmChy1AOnIhjYPlC0';
     // query term.
     $searchResponse = $youtube->search->listSearch('id,snippet', array(
       'q' => $search,
-      'maxResults' => "10",'type' => 'video','videoSyndicated' => "true",
+      'maxResults' => "15",'type' => 'video','videoSyndicated' => "true",
       'videoCategoryId' => '10'
     ));
 
-    $videos = '';
- 
+    foreach ($searchResponse['items'] as $searchResult) {
+        $videos[]=$searchResult['id']['videoId'];
+    }
+    
+for ($i=0;$i<count($videos)-1;$i++){
+
+
+      $listavideos .= $videos[$i].",";
+
+}
+
+      $listavideos .= $videos[count($videos)-1];
+
     // Add each result to the appropriate list, and then display the lists of
     // matching videos, channels, and playlists.
 
-
+  //  echo $videos;
 
       $tpl = Template::getInstance();
 
-      $datos = array('datos' => $searchResponse);
+      $datos = array('datos' => $searchResponse, 'lista' => json_encode($videos));
       $tpl->mostrar('dashboard',$datos);
 
   } catch (Google_Service_Exception $e) {

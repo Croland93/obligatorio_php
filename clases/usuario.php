@@ -40,14 +40,13 @@ class Usuario extends ClaseBase {
     	return $this->avatar_img;
     }
 
-    public function setUsuario($nombre,$apellido,$nick,$pass,$email){
-        $nom=$nombre;
-        $a=$apellido;
+    public function setUsuario($nick,$pass,$email){
         $nic=$nick;
         $p=$pass;
         $mail=$email;
-        $stmt = $this->getDB()->prepare("INSERT INTO usuarios (nombre,apellido,nickname,clave,email) VALUES ('$nom', '$a', '$nic', '$p', '$mail')");
-        return $stmt->execute();
+        $stmt = $this->getDB()->prepare("INSERT INTO usuarios (nickname,clave,email) VALUES ('$nic', '$p', '$mail')");
+        $resultado = $stmt->execute();
+        return $resultado;
     }
 
     public function autentificar($nick,$pass){
@@ -65,8 +64,30 @@ class Usuario extends ClaseBase {
         }
     }
 
-    public function check_available($nick){
-        
+    public function availability($nick){
+        $stmt = $this->getDB()->prepare("SELECT * FROM usuarios WHERE nickname =?");
+        $stmt->bind_param("s",$nick);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $disponible = mysqli_num_rows($resultado);
+        if ($disponible==0){
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function availability_email($email){
+        $stmt = $this->getDB()->prepare("SELECT * FROM usuarios WHERE email =?");
+        $stmt->bind_param("s",$email);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $disponible = mysqli_num_rows($resultado);
+        if ($disponible==0){
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }
 

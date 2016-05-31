@@ -33,13 +33,32 @@
     $('#nickname').keyup(function(){
       var nick = $('#nickname').val();
       if (nick!=''){
-        $.post('/obligatorio_php/check.php', {nickname:nick}, 
+        $.post('/obligatorio_php/usuario/check', {nickname:nick}, 
           function(result){
             console.log(result);
-            $('#disponible').html(result);
+            $('#nickname_available').html(result);
         }); 
       } else {
-        $('#disponible').html('');
+        $('#nickname_available').html('');
+      } 
+    });
+  });
+  {/literal}
+  </script>
+
+    <script type="text/javascript">
+  {literal}
+  $(document).ready(function(){
+    $('#email').keyup(function(){
+      var e = $('#email').val();
+      if (e!=''){
+        $.post('/obligatorio_php/usuario/check', {email:e}, 
+          function(result){
+            console.log(result);
+            $('#email_available').html(result);
+        }); 
+      } else {
+        $('#email_available').html('');
       } 
     });
   });
@@ -62,15 +81,7 @@
           <fieldset class="form-group">
             <label for="Nickname">Nickname</label>
             <input type="text" id="nickname" name="nickname" class="form-control validate[required,custom[noSpecialCaracters],length[0,30]]" placeholder="Nickname" value='' autocomplete="off">
-            <div id="disponible"></div>
-          </fieldset>
-          <fieldset class="form-group">
-            <label for="Nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" class="form-control validate[custom[onlyLetter],length[0,30]] text-input" placeholder="Nombre" value=''>
-          </fieldset>
-          <fieldset class="form-group">
-            <label for="Apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" class="form-control validate[custom[onlyLetter],length[0,30]] text-input" placeholder="Apellido" value=''>
+            <div id="nickname_available"></div>
           </fieldset>
           <fieldset class="form-group">
             <label for="Password">Contraseña</label>
@@ -82,6 +93,7 @@
           <fieldset class="form-group">
             <label for="Email">Email</label>
             <input type="text" id="email" name="email" class="form-control validate[required,custom[email]] text-input" placeholder="Email" value=''>
+            <div id="email_available"></div>
           </fieldset>
           <fieldset class="form-group">
             <label for="Remail">Confirmar email</label>

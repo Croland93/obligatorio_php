@@ -64,6 +64,10 @@ class Usuario extends ClaseBase {
             return false;
         }
     }
+
+    public function check_available($nick){
+        
+    }
 }
 
 ?>

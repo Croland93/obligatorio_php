@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-29 17:56:14
+/* Smarty version 3.1.29, created on 2016-05-30 23:46:13
   from "C:\wamp\www\obligatorio_php\vistas\usuarios_nuevo.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574b2d3e2685c7_09364865',
+  'unifunc' => 'content_574cd0c5b03cb4_71997991',
   'file_dependency' => 
   array (
     'e532878ff992638570b6acfd8fb981f0506baad9' => 
     array (
       0 => 'C:\\wamp\\www\\obligatorio_php\\vistas\\usuarios_nuevo.tpl',
-      1 => 1464544570,
+      1 => 1464651959,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_574b2d3e2685c7_09364865 ($_smarty_tpl) {
+function content_574cd0c5b03cb4_71997991 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +38,7 @@ function content_574b2d3e2685c7_09364865 ($_smarty_tpl) {
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/check-disponible.css" rel="stylesheet">
 
     <!-- Javascript personales -->
     <?php echo '<script'; ?>
@@ -57,15 +58,27 @@ function content_574b2d3e2685c7_09364865 ($_smarty_tpl) {
       
       $("#formID").validationEngine()
     });
-    
-    // JUST AN EXAMPLE OF VALIDATIN CUSTOM FUNCTIONS : funcCall[validate2fields]
-    function validate2fields(){
-      if($("#nombre").val() =="" || $("#apellido").val() == ""){
-        return true;
-      }else{
-        return false;
-      }
-    }
+  <?php echo '</script'; ?>
+>
+
+  <?php echo '<script'; ?>
+ type="text/javascript">
+  
+  $(document).ready(function(){
+    $('#nickname').keyup(function(){
+      var nick = $('#nickname').val();
+      if (nick!=''){
+        $.post('/obligatorio_php/check.php', {nickname:nick}, 
+          function(result){
+            console.log(result);
+            $('#disponible').html(result);
+        }); 
+      } else {
+        $('#disponible').html('');
+      } 
+    });
+  });
+  
   <?php echo '</script'; ?>
 >
     
@@ -87,15 +100,16 @@ function content_574b2d3e2685c7_09364865 ($_smarty_tpl) {
         <form id="formID" class="formular" method="POST" action="">
           <fieldset class="form-group">
             <label for="Nickname">Nickname</label>
-            <input type="text" id="nickname" name="nickname" class="form-control validate[required,custom[noSpecialCaracters],length[0,30]]" placeholder="Nickname" value=''>
+            <input type="text" id="nickname" name="nickname" class="form-control validate[required,custom[noSpecialCaracters],length[0,30]]" placeholder="Nickname" value='' autocomplete="off">
+            <div id="disponible"></div>
           </fieldset>
           <fieldset class="form-group">
             <label for="Nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" class="form-control validate[required,custom[onlyLetter],length[0,30]] text-input" placeholder="Nombre" value=''>
+            <input type="text" id="nombre" name="nombre" class="form-control validate[custom[onlyLetter],length[0,30]] text-input" placeholder="Nombre" value=''>
           </fieldset>
           <fieldset class="form-group">
             <label for="Apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" class="form-control validate[required,custom[onlyLetter],length[0,30]] text-input" placeholder="Apellido" value=''>
+            <input type="text" id="apellido" name="apellido" class="form-control validate[custom[onlyLetter],length[0,30]] text-input" placeholder="Apellido" value=''>
           </fieldset>
           <fieldset class="form-group">
             <label for="Password">Contraseña</label>
@@ -110,7 +124,7 @@ function content_574b2d3e2685c7_09364865 ($_smarty_tpl) {
           </fieldset>
           <fieldset class="form-group">
             <label for="Remail">Confirmar email</label>
-            <input type="text" id="reemail" name="reemail" class="form-control validate[required,confirm[email]] text-input" placeholder="Confirmar email" value=''>
+            <input type="text" id="reemail" name="reemail" class="form-control validate[required,confirm[email]] text-input" placeholder="Confirmar email" value='' autocomplete="off">
           </fieldset>
           <input type="submit" value="Comenzar ahora!" class="submit form-control btn btn-primary">
         </form>

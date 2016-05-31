@@ -12,6 +12,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/check-disponible.css" rel="stylesheet">
 
     <!-- Javascript personales -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
@@ -24,15 +25,25 @@
       
       $("#formID").validationEngine()
     });
-    
-    // JUST AN EXAMPLE OF VALIDATIN CUSTOM FUNCTIONS : funcCall[validate2fields]
-    function validate2fields(){
-      if($("#nombre").val() =="" || $("#apellido").val() == ""){
-        return true;
-      }else{
-        return false;
-      }
-    }
+  </script>
+
+  <script type="text/javascript">
+  {literal}
+  $(document).ready(function(){
+    $('#nickname').keyup(function(){
+      var nick = $('#nickname').val();
+      if (nick!=''){
+        $.post('/obligatorio_php/check.php', {nickname:nick}, 
+          function(result){
+            console.log(result);
+            $('#disponible').html(result);
+        }); 
+      } else {
+        $('#disponible').html('');
+      } 
+    });
+  });
+  {/literal}
   </script>
     
   </head>
@@ -50,15 +61,16 @@
         <form id="formID" class="formular" method="POST" action="">
           <fieldset class="form-group">
             <label for="Nickname">Nickname</label>
-            <input type="text" id="nickname" name="nickname" class="form-control validate[required,custom[noSpecialCaracters],length[0,30]]" placeholder="Nickname" value=''>
+            <input type="text" id="nickname" name="nickname" class="form-control validate[required,custom[noSpecialCaracters],length[0,30]]" placeholder="Nickname" value='' autocomplete="off">
+            <div id="disponible"></div>
           </fieldset>
           <fieldset class="form-group">
             <label for="Nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" class="form-control validate[required,custom[onlyLetter],length[0,30]] text-input" placeholder="Nombre" value=''>
+            <input type="text" id="nombre" name="nombre" class="form-control validate[custom[onlyLetter],length[0,30]] text-input" placeholder="Nombre" value=''>
           </fieldset>
           <fieldset class="form-group">
             <label for="Apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" class="form-control validate[required,custom[onlyLetter],length[0,30]] text-input" placeholder="Apellido" value=''>
+            <input type="text" id="apellido" name="apellido" class="form-control validate[custom[onlyLetter],length[0,30]] text-input" placeholder="Apellido" value=''>
           </fieldset>
           <fieldset class="form-group">
             <label for="Password">Contraseña</label>
@@ -73,7 +85,7 @@
           </fieldset>
           <fieldset class="form-group">
             <label for="Remail">Confirmar email</label>
-            <input type="text" id="reemail" name="reemail" class="form-control validate[required,confirm[email]] text-input" placeholder="Confirmar email" value=''>
+            <input type="text" id="reemail" name="reemail" class="form-control validate[required,confirm[email]] text-input" placeholder="Confirmar email" value='' autocomplete="off">
           </fieldset>
           <input type="submit" value="Comenzar ahora!" class="submit form-control btn btn-primary">
         </form>

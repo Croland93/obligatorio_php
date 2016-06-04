@@ -84,6 +84,16 @@ body {
   margin-top: 0;
 }
 
+.perfil-1{
+  background-color: rgba(0, 61, 86, 1);
+  height: 600px;
+}
+
+.perfil-2{
+  background-color: rgba(0, 93, 120, 1);
+  height: 600px;
+}
+
 #input-buscar{
   margin-left: -200px;
 }

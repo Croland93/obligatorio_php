@@ -56,5 +56,11 @@ class ControladorUsuario extends ControladorIndex {
 			}
 		}
 	}
+	function perfil(){
+		$tpl = Template::getInstance();
+		$tpl->asignar('proyecto',"Jukebox");
+		$tpl->asignar('mensaje',$mensaje);
+		$tpl->mostrar('ver_perfil');
+	}
 }
 ?>

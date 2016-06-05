@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-03 05:15:40
+/* Smarty version 3.1.29, created on 2016-06-05 07:01:54
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5750f65c29d6f6_34452268',
+  'unifunc' => 'content_5753b2426c4516_36669691',
   'file_dependency' => 
   array (
     '3a2598d76ea2823ebac518f0365201dcad40025b' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/index.tpl',
-      1 => 1464922156,
+      1 => 1465102909,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5750f65c29d6f6_34452268 ($_smarty_tpl) {
+function content_5753b2426c4516_36669691 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +38,8 @@ function content_5750f65c29d6f6_34452268 ($_smarty_tpl) {
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
 
     <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"><?php echo '</script'; ?>
@@ -62,7 +64,7 @@ function content_5750f65c29d6f6_34452268 ($_smarty_tpl) {
 ?>
 
     <div class="container-fluid">
-      <div class="main">
+      <div class="main" style="height: 614px;>
           <div class="row">
             <div class="col-md-3">
             </div>
@@ -91,6 +93,12 @@ function content_5750f65c29d6f6_34452268 ($_smarty_tpl) {
         </div>
       </div>
     </div>
+    <footer class="footer-distributed">
+      <div class="footer-left">  
+        <br>
+        <p>Copyrighterino</p>
+      </div>
+    </footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

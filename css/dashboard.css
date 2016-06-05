@@ -84,16 +84,6 @@ body {
   margin-top: 0;
 }
 
-.perfil-1{
-  background-color: rgba(0, 61, 86, 1);
-  height: 600px;
-}
-
-.perfil-2{
-  background-color: rgba(0, 93, 120, 1);
-  height: 600px;
-}
-
 #input-buscar{
   margin-left: -200px;
 }
@@ -149,6 +139,12 @@ fieldset[disabled] .btn-play.active {
   overflow-x: scroll;
 }
 
+#nickname_available, #email_available{
+  margin-top: 5px;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
 /*
  * Placeholder dashboard ideas
  */
@@ -166,4 +162,10 @@ fieldset[disabled] .btn-play.active {
 .placeholder img {
   display: inline-block;
   border-radius: 50%;
+}
+
+.footer{
+  background-color: #222;
+  height: 60px;
+  position: absolute;
 }

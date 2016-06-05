@@ -1,12 +1,13 @@
 <?php
 require "clases/session.php";
 class Usuario extends ClaseBase {
+    public $id = '';
+    public $nickname = '';
     public $nombre = '';
 	public $apellido = '';
-	public $nickname = '';
-    public $password = '';
     public $email = '';
-    public $avatar_img = '';
+    public $clave = '';
+    public $img = '';
 
     //Contructor que recibe un array
 	public function __construct($obj=NULL) {
@@ -29,7 +30,7 @@ class Usuario extends ClaseBase {
         return $this->nickname;
     }
     public function getPass(){
-        return $this->password;
+        return $this->clave;
     }
 
     public function getEmail(){
@@ -37,14 +38,15 @@ class Usuario extends ClaseBase {
     }
 
     public function getImg(){
-    	return $this->avatar_img;
+    	return $this->img;
     }
 
-    public function setUsuario($nick,$pass,$email){
+    public function setUsuario($nick,$pass,$email,$avatar){
         $nic=$nick;
         $p=$pass;
         $mail=$email;
-        $stmt = $this->getDB()->prepare("INSERT INTO usuarios (nickname,clave,email) VALUES ('$nic', '$p', '$mail')");
+        $image=$avatar;
+        $stmt = $this->getDB()->prepare("INSERT INTO usuarios (nickname,clave,email,img) VALUES ('$nic', '$p', '$mail', '$image')");
         $resultado = $stmt->execute();
         return $resultado;
     }
@@ -88,6 +90,17 @@ class Usuario extends ClaseBase {
         } else {
             return 0;
         }
+    }
+
+    public function datos_usuario($usuario_id){
+        $stmt = $this->getDB()->prepare("SELECT * FROM usuarios WHERE id = ?");
+        $stmt->bind_param("i",$usuario_id);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        if ($fila = $resultado->fetch_object()){
+            $res = new Usuario($fila);
+        }
+        return $res;
     }
 }
 

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-04 02:17:27
+/* Smarty version 3.1.29, created on 2016-06-05 07:19:45
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57521e17e3f453_83485745',
+  'unifunc' => 'content_5753b6711f8a01_01794442',
   'file_dependency' => 
   array (
     '886520fc8d86bbd40a99c68b6a695ea1516a06e5' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl',
-      1 => 1464991008,
+      1 => 1465103982,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57521e17e3f453_83485745 ($_smarty_tpl) {
+function content_5753b6711f8a01_01794442 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +37,8 @@ function content_57521e17e3f453_83485745 ($_smarty_tpl) {
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/perfil-user.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/footer-distributed-with-address-and-phones.css">
 
     <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"><?php echo '</script'; ?>
@@ -59,12 +61,35 @@ function content_57521e17e3f453_83485745 ($_smarty_tpl) {
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4 perfil-1">
+        <div class="col-md-1 lateral-perfil">
         </div>
-        <div class="col-md-8 perfil-2">
+        <div class="col-md-3 perfil-1">
+          <img class="avatar-user" src="<?php echo $_smarty_tpl->tpl_vars['nick']->value->getImg();?>
+" width="150" height="150">
+          <h2><?php echo $_smarty_tpl->tpl_vars['nick']->value->getNick();?>
+</h2>
+          <br>
+          <hr>
+          <span style="color: #C0C0C0;">Descripción general</span>
+          <hr>
+          <span style="color: #C0C0C0;">Editar perfil</span>
+          <hr>
+          <span style="color: #C0C0C0;">Playlists</span>
+          <hr>
+          <span style="color: #C0C0C0;">Cerrar sesión</span>
+        </div>
+        <div class="col-md-7 perfil-2">
+        </div>
+        <div class="col-md-1 lateral-perfil">
         </div>
       </div>
     </div>
+    <footer class="footer-distributed">
+      <div class="footer-left"> 
+        <br>
+        <p>Copyrighterino</p>
+      </div>
+    </footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

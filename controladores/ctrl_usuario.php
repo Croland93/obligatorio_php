@@ -10,8 +10,9 @@ class ControladorUsuario extends ControladorIndex {
 			$nick=($_POST["nickname"]);
 	 		$contra=($_POST["pass"]);
 	 		$email=($_POST["email"]);
+	 		$avatar="../public/media/default_avatar.jpg";
 	 		$usuario=new Usuario();
-			$respuesta=$usuario->setUsuario($nick,$contra,$email);
+			$respuesta=$usuario->setUsuario($nick,$contra,$email,$avatar);
 			if ($respuesta==true){
 				$this->redirect("index","home");
 				exit;
@@ -57,9 +58,15 @@ class ControladorUsuario extends ControladorIndex {
 		}
 	}
 	function perfil(){
+		//Auth::estaLogueado();
+		//Session::init();
+		$id = 2;
+		$usr=new Usuario();
+		$ser=$usr->datos_usuario($id);
+
 		$tpl = Template::getInstance();
 		$tpl->asignar('proyecto',"Jukebox");
-		$tpl->asignar('mensaje',$mensaje);
+		$tpl->asignar('nick',$ser);
 		$tpl->mostrar('ver_perfil');
 	}
 }

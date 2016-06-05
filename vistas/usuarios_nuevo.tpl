@@ -12,7 +12,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
-    <link href="css/check-disponible.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/footer-distributed-with-address-and-phones.css">
 
     <!-- Javascript personales -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
@@ -69,7 +69,7 @@
 
   <body>
     {include file="cabezal.tpl"}
-    <div class="container-fluid">
+    <div class="container-fluid" style="height: 650px">
       <div class="main">
         <h1 class="page-header">Cuenta nueva</h1>
         {if $mensaje!=''}
@@ -102,6 +102,12 @@
           <input type="submit" value="Comenzar ahora!" class="submit form-control btn btn-primary">
         </form>
         </div>
+      </div>
+    </div>
+    <footer class="footer-distributed">
+      <div class="footer-left"> 
+        <br>
+        <p>Copyrighterino</p>
       </div>
     </div>
   </body>

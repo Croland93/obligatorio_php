@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-03 05:15:44
+/* Smarty version 3.1.29, created on 2016-06-05 07:09:03
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/usuarios_nuevo.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5750f66056ebb1_66763176',
+  'unifunc' => 'content_5753b3efd10b31_26584252',
   'file_dependency' => 
   array (
     '67a752d3bd8bd528bc0c22f723e4f8b317046703' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/usuarios_nuevo.tpl',
-      1 => 1464922156,
+      1 => 1465103312,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5750f66056ebb1_66763176 ($_smarty_tpl) {
+function content_5753b3efd10b31_26584252 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,7 @@ function content_5750f66056ebb1_66763176 ($_smarty_tpl) {
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
-    <link href="css/check-disponible.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/footer-distributed-with-address-and-phones.css">
 
     <!-- Javascript personales -->
     <?php echo '<script'; ?>
@@ -109,7 +109,7 @@ function content_5750f66056ebb1_66763176 ($_smarty_tpl) {
     <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:cabezal.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="height: 650px">
       <div class="main">
         <h1 class="page-header">Cuenta nueva</h1>
         <?php if ($_smarty_tpl->tpl_vars['mensaje']->value != '') {?>
@@ -143,6 +143,12 @@ function content_5750f66056ebb1_66763176 ($_smarty_tpl) {
           <input type="submit" value="Comenzar ahora!" class="submit form-control btn btn-primary">
         </form>
         </div>
+      </div>
+    </div>
+    <footer class="footer-distributed">
+      <div class="footer-left"> 
+        <br>
+        <p>Copyrighterino</p>
       </div>
     </div>
   </body>

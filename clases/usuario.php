@@ -41,6 +41,10 @@ class Usuario extends ClaseBase {
     	return $this->img;
     }
 
+    public function getId(){
+        return $this->id;
+    }
+
     public function setUsuario($nick,$pass,$email,$avatar){
         $nic=$nick;
         $p=$pass;

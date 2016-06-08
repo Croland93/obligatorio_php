@@ -106,6 +106,16 @@ class Usuario extends ClaseBase {
         }
         return $res;
     }
+
+    public function borrar($id){
+        $stmt = $this->getDB()->prepare("DELETE FROM usuarios WHERE id=$id");
+        $stmt->execute();
+        $resultado=false;
+        if($this->getDB()->affected_rows>0){
+            $resultado=true;
+        }
+        return $resultado;
+    }
 }
 
 ?>

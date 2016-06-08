@@ -27,6 +27,7 @@ class ControladorUsuario extends ControladorIndex {
 		$tpl->asignar('mensaje',$mensaje);
 		$tpl->mostrar('usuarios_nuevo');
 	}
+
 	function check(){
 		if (isset($_POST['nickname'])){
 			$nickname = $_POST['nickname'];
@@ -57,12 +58,21 @@ class ControladorUsuario extends ControladorIndex {
 			}
 		}
 	}
-	function perfil(){
+	function perfil($params=array()){
 		//Auth::estaLogueado();
 		//Session::init();
 		$id = 2;
 		$usr=new Usuario();
 		$ser=$usr->datos_usuario($id);
+		if(!empty($params)){
+			if($params[0]=="borrar"){
+				$usuario=new Usuario();
+				$idDelete=$params[1];
+				if($usuario->borrar($idDelete)){
+					$this->redirect("index","home");
+				}
+			}
+		}
 
 		$tpl = Template::getInstance();
 		$tpl->asignar('proyecto',"Jukebox");

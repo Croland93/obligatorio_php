@@ -61,7 +61,7 @@
               <h5>Correo electrónico</h5>
               <p>{$nick->getEmail()}</p>
               <h5>ID Cuenta</h5>
-              <p>{$nick->getId()}</p>
+              <p id="ID-CUENTA">{$nick->getId()}</p>
               <br>
               <a href="#" class="btn btn-block btn-edit-perfil"><span class="glyphicon glyphicon-edit"></span> Editar perfil</a>
               <br>
@@ -79,7 +79,7 @@
               <h4 id="h4-danger">Zona de peligro</h4>
               <h5>Eliminar cuenta</h5>
               <p>Si desea eliminar su cuenta, proceda con el siguiente botón, pero recuerde que todas sus listas de reproducciones (playlists) y preferencias serán eliminadas juntos con ella. ¿Realmente desea eliminar su cuenta?</p>
-              <a href="#" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-warning-sign"></span> Eliminar cuenta</a>
+              <a href="usuario/perfil/borrar/{$nick->getId()}" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-warning-sign"></span> Eliminar cuenta</a>
               <br>
               <br>
             </div>

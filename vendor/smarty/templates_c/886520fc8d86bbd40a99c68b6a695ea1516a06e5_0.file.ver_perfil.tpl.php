@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-07 04:17:19
+/* Smarty version 3.1.29, created on 2016-06-08 20:01:35
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57562eaf105032_03500499',
+  'unifunc' => 'content_57585d7f580148_06077488',
   'file_dependency' => 
   array (
     '886520fc8d86bbd40a99c68b6a695ea1516a06e5' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl',
-      1 => 1465265837,
+      1 => 1465408892,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57562eaf105032_03500499 ($_smarty_tpl) {
+function content_57585d7f580148_06077488 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,7 +102,7 @@ function content_57562eaf105032_03500499 ($_smarty_tpl) {
               <p><?php echo $_smarty_tpl->tpl_vars['nick']->value->getEmail();?>
 </p>
               <h5>ID Cuenta</h5>
-              <p><?php echo $_smarty_tpl->tpl_vars['nick']->value->getId();?>
+              <p id="ID-CUENTA"><?php echo $_smarty_tpl->tpl_vars['nick']->value->getId();?>
 </p>
               <br>
               <a href="#" class="btn btn-block btn-edit-perfil"><span class="glyphicon glyphicon-edit"></span> Editar perfil</a>
@@ -122,7 +122,8 @@ function content_57562eaf105032_03500499 ($_smarty_tpl) {
               <h4 id="h4-danger">Zona de peligro</h4>
               <h5>Eliminar cuenta</h5>
               <p>Si desea eliminar su cuenta, proceda con el siguiente botón, pero recuerde que todas sus listas de reproducciones (playlists) y preferencias serán eliminadas juntos con ella. ¿Realmente desea eliminar su cuenta?</p>
-              <a href="#" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-warning-sign"></span> Eliminar cuenta</a>
+              <a href="usuario/perfil/borrar/<?php echo $_smarty_tpl->tpl_vars['nick']->value->getId();?>
+" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-warning-sign"></span> Eliminar cuenta</a>
               <br>
               <br>
             </div>

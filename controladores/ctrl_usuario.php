@@ -28,5 +28,38 @@ class ControladorUsuario extends ControladorIndex {
 	$tpl->asignar('mensaje',$mensaje);
 	$tpl->mostrar('usuarios_nuevo');
 }
+<<<<<<< HEAD
+=======
+function getLogin(){
+	$mensaje="";
+	if(isset($_POST["email"])){
+		$usr= new Usuario();
+		
+		$email=$_POST["email"];
+		$pass=($_POST["password"]);
+
+		if($usr->autentificar($email,$pass)){
+			$mensaje="usuario logeuado";
+			$this->redirect("index","home");
+			exit;
+
+			
+		}else{
+			
+			$mensaje="Error! No se pudo comprobar datos";
+		}
+
+		//echo Session::get('usuario_nombre');
+
+		
+	}
+	$tpl = Template::getInstance();
+	$tpl->asignar('proyecto','Jukebox');
+	$tpl->asignar('titulo',"Iniciar Session");
+	$tpl->asignar('mensaje',$mensaje);
+	$tpl->mostrar('usuarios_login');
+
+}
+>>>>>>> antonio
 }
 ?>

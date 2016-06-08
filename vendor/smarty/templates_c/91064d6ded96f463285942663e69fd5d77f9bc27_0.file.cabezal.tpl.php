@@ -1,29 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-05-25 23:53:28
-=======
-/* Smarty version 3.1.29, created on 2016-05-26 18:01:42
->>>>>>> antonio
-  from "C:\wamp\www\obligatorio_php\vistas\cabezal.tpl" */
+/* Smarty version 3.1.29, created on 2016-06-06 19:58:42
+  from "/var/www/html/pruebas/obligatorio_php/vistas/cabezal.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_57463af8102147_68801366',
-=======
-  'unifunc' => 'content_57473a06751af5_04828902',
->>>>>>> antonio
+  'unifunc' => 'content_57560022e18513_62634715',
   'file_dependency' => 
   array (
-    'fbbdfffb8a121dcd8fa7258a3d7845ae0aa26596' => 
+    '91064d6ded96f463285942663e69fd5d77f9bc27' => 
     array (
-      0 => 'C:\\wamp\\www\\obligatorio_php\\vistas\\cabezal.tpl',
-<<<<<<< HEAD
-      1 => 1464220401,
-=======
-      1 => 1464285700,
->>>>>>> antonio
+      0 => '/var/www/html/pruebas/obligatorio_php/vistas/cabezal.tpl',
+      1 => 1465253917,
       2 => 'file',
     ),
   ),
@@ -31,11 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_57463af8102147_68801366 ($_smarty_tpl) {
-=======
-function content_57473a06751af5_04828902 ($_smarty_tpl) {
->>>>>>> antonio
+function content_57560022e18513_62634715 ($_smarty_tpl) {
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -46,18 +30,18 @@ function content_57473a06751af5_04828902 ($_smarty_tpl) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-<<<<<<< HEAD
           <a class="navbar-brand" href="#"><?php echo $_smarty_tpl->tpl_vars['proyecto']->value;?>
 </a>
-=======
-          <!--<a class="navbar-brand" href="#"><?php echo $_smarty_tpl->tpl_vars['proyecto']->value;?>
-</a>-->
-          <a href="index/home/"><img src="../obligatorio_php/public/media/logo-jukebox-miniatura-2.png"></a>
->>>>>>> antonio
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Iniciar sesión</a></li>
+          <?php if ($_smarty_tpl->tpl_vars['usuario_logueado']->value) {?>
+              <li><a href="#">Hola <?php echo $_smarty_tpl->tpl_vars['usuario_nombre']->value;?>
+</a></li>
+            <?php } else { ?>
+              <li><a href="usuario/getLogin/">Iniciar sesión</a></li>
+            <?php }?>
+            
             <li><a href="usuario/nuevo/">Registrarse</a></li>
           </ul>
         </div>

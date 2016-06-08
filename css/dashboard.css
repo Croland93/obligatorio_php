@@ -43,7 +43,11 @@ body {
     display: block;
     padding: 20px;
     overflow-x: hidden;
+<<<<<<< HEAD
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+=======
+    overflow-y: hidden; /* Scrollable contents if viewport is shorter than content. */
+>>>>>>> antonio
     background-color: #f5f5f5;
     border-right: 1px solid #eee;
   }
@@ -134,6 +138,13 @@ fieldset[disabled] .btn-play.active {
   background-color: #FFFFFF; 
 }
 
+<<<<<<< HEAD
+=======
+.playlist {
+  margin-left: 15px;
+  overflow-x: scroll;
+}
+>>>>>>> antonio
 
 /*
  * Placeholder dashboard ideas

@@ -34,6 +34,7 @@
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
         
         <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+<<<<<<< HEAD
         <button class="btn btn-lg btn-primary btn-block" onclick="window.location='{$loginUrl}'">Ingresar FB</button>
       </form>
       <ul id="contenedor">
@@ -41,6 +42,11 @@
           <li id="2">DODO</li>
           <li id="3">COCO</li>
       </ul>
+=======
+
+      </form>
+     
+>>>>>>> antonio
     </div>
 
     <!-- Bootstrap core JavaScript

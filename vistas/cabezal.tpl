@@ -11,7 +11,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
             <li><a href="#">Iniciar sesión</a></li>
+=======
+          {if $usuario_logueado}
+              <li><a href="#">Hola {$usuario_nombre}</a></li>
+            {else}
+              <li><a href="usuario/getLogin/">Iniciar sesión</a></li>
+            {/if}
+            
+>>>>>>> antonio
             <li><a href="usuario/nuevo/">Registrarse</a></li>
           </ul>
         </div>

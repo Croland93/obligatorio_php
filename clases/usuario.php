@@ -46,11 +46,17 @@ class Usuario extends ClaseBase {
         $nic=$nick;
         $p=$pass;
         $mail=$email;
+<<<<<<< HEAD
         $stmt = $this->getDB()->prepare("INSERT INTO usuarios (nombre,apellido,nickname,clave,email) VALUES ('$nom', '$a', '$nic', $p, '$mail')");
+=======
+        $stmt = $this->getDB()->prepare("INSERT INTO usuarios (nombre,apellido,nickname,clave,email) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("ss", $nom, $a, $nic, $p, $mail);
+>>>>>>> antonio
         $stmt->execute();
         return true;
     }
 
+<<<<<<< HEAD
     public function autentificar($nick,$pass){
         $stmt = $this->getDB()->prepare("SELECT * from usuarios WHERE nickname=? AND clave=?");
         $stmt->bind_param( "ss",$nick,$pass);
@@ -60,6 +66,23 @@ class Usuario extends ClaseBase {
         if(isset($objeto)){
             Session::init();
             Session::set($nick,true);
+=======
+    public function autentificar($email,$pass){
+        
+        $stmt = $this->getDB()->prepare("SELECT * from usuarios WHERE email=? AND clave=?");
+        $stmt->bind_param( "ss",$email,$pass);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        $objeto=$result->fetch_object();
+
+        if(isset($objeto)){
+
+            Session::init();
+            Session::set('usuario_logueado', true);
+            Session::set('usuario_id', $objeto->id);
+            Session::set('usuario_nombre', $objeto->nick);
+
+>>>>>>> antonio
             return true;
         } else {
             return false;

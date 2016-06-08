@@ -1,29 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-05-25 23:41:29
-=======
-/* Smarty version 3.1.29, created on 2016-05-26 18:36:21
->>>>>>> antonio
-  from "C:\wamp\www\obligatorio_php\vistas\dashboard.tpl" */
+/* Smarty version 3.1.29, created on 2016-06-06 19:51:46
+  from "/var/www/html/pruebas/obligatorio_php/vistas/dashboard.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_57463829df6781_28601696',
-=======
-  'unifunc' => 'content_57474225d5cad2_31788312',
->>>>>>> antonio
+  'unifunc' => 'content_5755fe8228a480_48666100',
   'file_dependency' => 
   array (
-    '3089ddb9932c8251f663336811116573c1f0251a' => 
+    'fc9bb9a710456c68e98fac0f992fb2854962112a' => 
     array (
-      0 => 'C:\\wamp\\www\\obligatorio_php\\vistas\\dashboard.tpl',
-<<<<<<< HEAD
-      1 => 1464204150,
-=======
-      1 => 1464287778,
->>>>>>> antonio
+      0 => '/var/www/html/pruebas/obligatorio_php/vistas/dashboard.tpl',
+      1 => 1464643816,
       2 => 'file',
     ),
   ),
@@ -32,11 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_57463829df6781_28601696 ($_smarty_tpl) {
-=======
-function content_57474225d5cad2_31788312 ($_smarty_tpl) {
->>>>>>> antonio
+function content_5755fe8228a480_48666100 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -83,16 +67,6 @@ function content_57474225d5cad2_31788312 ($_smarty_tpl) {
 ?>
 
 
-<<<<<<< HEAD
-    
-   <table align="center">
-   <tr>
-   
-    <td id="div-btn1">
-    <br>
-
-   <?php
-=======
     <div class="row">
         <div class="col-md-4 playlist">
           <table align="center">
@@ -101,8 +75,8 @@ function content_57474225d5cad2_31788312 ($_smarty_tpl) {
               <td id="div-btn1">
               <br>
 
+          
              <?php
->>>>>>> antonio
 $_from = $_smarty_tpl->tpl_vars['datos']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -115,46 +89,26 @@ $_smarty_tpl->tpl_vars['videos']->_loop = true;
 $__foreach_videos_0_saved_local_item = $_smarty_tpl->tpl_vars['videos'];
 ?>
 
+                
 
 
 
-
-<<<<<<< HEAD
-    <ul>   
-    <a class="btn btn-default" href="javascript:cargarvideo('<?php echo $_smarty_tpl->tpl_vars['videos']->value['id']['videoId'];?>
-')" ><span class="glyphicon glyphicon-play"></span> <?php echo $_smarty_tpl->tpl_vars['videos']->value['snippet']['title'];?>
- </a>    
-    </ul>
-
-
-
-  <?php
-=======
               <ul>   
               <a class="btn btn-default" href="javascript:cargarvideo('<?php echo $_smarty_tpl->tpl_vars['videos']->value['id']['videoId'];?>
 ')" ><span class="glyphicon glyphicon-play"></span> <?php echo $_smarty_tpl->tpl_vars['videos']->value['snippet']['title'];?>
  </a>    
+              
               </ul>
 
 
 
             <?php
->>>>>>> antonio
 $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_0_saved_local_item;
 }
 if ($__foreach_videos_0_saved_item) {
 $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_0_saved_item;
 }
 ?>
-<<<<<<< HEAD
-  
-  </td>
-  <td >
-  <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
-  </td>
-  </tr>
-    </table>
-=======
             
             </td>
             </tr>
@@ -172,7 +126,6 @@ $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_0_saved_item;
     </div> 
    
   
->>>>>>> antonio
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -182,9 +135,24 @@ $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_0_saved_item;
 >
       <?php echo '<script'; ?>
  type="text/javascript">
-         
-      function cargarvideo(id){
-        document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ id +"?autoplay=1&controls=0&modestbranding=1&rel=1&fs=0&frameborder=”0″&showinfo=0&disablekb=1&iv_load_policy=3&enablejsapi=1&rel=1&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
+
+        
+
+
+      function cargarvideo(primerID){
+
+        
+        var i = <?php echo $_smarty_tpl->tpl_vars['lista']->value;?>
+.indexOf(primerID);
+        
+        var sig = <?php echo $_smarty_tpl->tpl_vars['lista']->value;?>
+.splice(i+1,<?php echo $_smarty_tpl->tpl_vars['lista']->value;?>
+.length);
+
+        var listaID = sig.toString();
+        
+        document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=1&modestbranding=1&rel=0&fs=0&frameborder=”0″&showinfo=1&disablekb=1&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
+        
       }
 
       <?php echo '</script'; ?>

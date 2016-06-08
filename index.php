@@ -11,6 +11,10 @@ require "controladores/ctrl_index.php";
 require_once('clases/Singleton.php');
 require_once('clases/template.php');
 require_once('vendor/autoload.php');
+<<<<<<< HEAD
+=======
+require_once "clases/session.php";
+>>>>>>> antonio
 $controlIndex=new ControladorIndex();
 
 $tpl = Template::getInstance();
@@ -18,6 +22,15 @@ $tpl->asignar('url_base',URL_BASE);
 $tpl->asignar('proyecto',"Jukebox");
 $tpl->asignar('url_logout',$controlIndex->getUrl("usuario","logout"));
 
+<<<<<<< HEAD
+=======
+Session::init();
+if(Session::get('usuario_logueado')){
+	$tpl->asignar('usuario_logueado',Session::get('usuario_logueado'));
+	$tpl->asignar('usuario_nombre',Session::get('usuario_nombre'));
+	$tpl->asignar('usuario_id',Session::get('usuario_id'));
+}
+>>>>>>> antonio
 //Cargamos controladores y acciones
 
 if(isset($_GET['url'])){

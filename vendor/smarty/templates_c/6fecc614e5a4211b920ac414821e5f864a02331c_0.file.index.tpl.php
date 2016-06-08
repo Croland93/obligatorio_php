@@ -1,29 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-05-25 23:39:22
-=======
-/* Smarty version 3.1.29, created on 2016-05-26 17:59:20
->>>>>>> antonio
-  from "C:\wamp\www\obligatorio_php\vistas\index.tpl" */
+/* Smarty version 3.1.29, created on 2016-05-28 21:55:59
+  from "E:\wamp64\www\obligatorio_php\vistas\index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_574637aa657b61_89296044',
-=======
-  'unifunc' => 'content_5747397844dcc5_79279419',
->>>>>>> antonio
+  'unifunc' => 'content_574a13ef49cf82_81218347',
   'file_dependency' => 
   array (
-    'e502068bfc2eb01c24ea2cc81ad41a6a4b257cb1' => 
+    '6fecc614e5a4211b920ac414821e5f864a02331c' => 
     array (
-      0 => 'C:\\wamp\\www\\obligatorio_php\\vistas\\index.tpl',
-<<<<<<< HEAD
-      1 => 1464219557,
-=======
-      1 => 1464285559,
->>>>>>> antonio
+      0 => 'E:\\wamp64\\www\\obligatorio_php\\vistas\\index.tpl',
+      1 => 1464467250,
       2 => 'file',
     ),
   ),
@@ -32,11 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_574637aa657b61_89296044 ($_smarty_tpl) {
-=======
-function content_5747397844dcc5_79279419 ($_smarty_tpl) {
->>>>>>> antonio
+function content_574a13ef49cf82_81218347 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -82,18 +66,11 @@ function content_5747397844dcc5_79279419 ($_smarty_tpl) {
           <div class="row">
             <div class="col-md-3">
             </div>
-<<<<<<< HEAD
-            <div class="col-md-6" style="padding-top: 150px;">
-            <h1 class="text-center" style="color: white;">
-              Jukebox
-            </h1>
-=======
             <div class="col-md-6" style="padding-top: 90px;">
             <!-- <h1 class="text-center" style="color: white;">
               Jukebox
             </h1> -->
               <div align="center"><img src="../obligatorio_php/public/media/logo-jukebox-j.png"></div>
->>>>>>> antonio
               <form role="form" method="post" action="index.php">
                 <div class="form-group">
                   <input class="form-control" name="buscar" type="text" placeholder="Ej. David Guetta">

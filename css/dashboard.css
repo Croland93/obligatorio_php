@@ -139,12 +139,24 @@ fieldset[disabled] .btn-play.active {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Matias
 .playlist {
   margin-left: 15px;
   overflow-x: scroll;
 }
+<<<<<<< HEAD
 >>>>>>> antonio
+=======
+
+#nickname_available, #email_available{
+  margin-top: 5px;
+  padding-left: 10px;
+  font-weight: 600;
+}
+>>>>>>> Matias
 
 /*
  * Placeholder dashboard ideas
@@ -163,4 +175,10 @@ fieldset[disabled] .btn-play.active {
 .placeholder img {
   display: inline-block;
   border-radius: 50%;
+}
+
+.footer{
+  background-color: #222;
+  height: 60px;
+  position: absolute;
 }

@@ -1,0 +1,129 @@
+.perfil-1{
+  background-color: rgba(0, 61, 86, 1);
+  height: 730px;
+}
+
+.perfil-2{
+  background-color: rgba(200, 200, 200, 1);
+  height: 730px;
+}
+
+.lateral-perfil{
+    background-color: #696969;
+    height: 730px;
+}
+
+.avatar-user{
+  display:block;
+  margin:80px auto 0 auto;
+  border-radius: 90px;
+}
+
+.show-perfil{
+  display:block;
+  margin:20px auto 0 auto;
+  border-radius: 10px;
+}
+
+.danger-zone{
+  margin-top: 20px;
+  background-color: white;
+}
+
+#menu-option{
+  color: #C0C0C0;
+  text-decoration: none;
+}
+
+#menu-option:hover{
+  color: white;
+}
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+h3, h4{
+  color: rgba(0, 93, 120, 1);
+}
+
+#h4-title{
+  margin-bottom: 20px;
+}
+
+#h4-danger{
+  color: red;
+}
+
+p{
+  color: rgba(150, 150, 150, 1);
+}
+
+.desc-gral{
+  margin-top: 60px;
+  margin-left: 30px;
+}
+
+.desc-gral-perfil{
+  background-color: white;
+}
+
+.extra-perfil{
+  background-color: white;
+}
+
+#side-menu{
+    width: 345px;
+}
+
+#copyright{
+    text-align: center;
+    color: white;
+}
+
+.btn-edit-perfil { 
+  color: #ffffff; 
+  background-color: #2867A6; 
+  border-color: #706D7D; 
+} 
+ 
+.btn-edit-perfil:hover, 
+.btn-edit-perfil:focus, 
+.btn-edit-perfil:active, 
+.btn-edit-perfil.active, 
+.open .dropdown-toggle.btn-edit-perfil { 
+  color: #ffffff; 
+  background-color: #596E91; 
+  border-color: #706D7D; 
+} 
+ 
+.btn-edit-perfil:active, 
+.btn-edit-perfil.active, 
+.open .dropdown-toggle.btn-edit-perfil { 
+  background-image: none; 
+} 
+ 
+.btn-edit-perfil.disabled, 
+.btn-edit-perfil[disabled], 
+fieldset[disabled] .btn-edit-perfil, 
+.btn-edit-perfil.disabled:hover, 
+.btn-edit-perfil[disabled]:hover, 
+fieldset[disabled] .btn-edit-perfil:hover, 
+.btn-edit-perfil.disabled:focus, 
+.btn-edit-perfil[disabled]:focus, 
+fieldset[disabled] .btn-edit-perfil:focus, 
+.btn-edit-perfil.disabled:active, 
+.btn-edit-perfil[disabled]:active, 
+fieldset[disabled] .btn-edit-perfil:active, 
+.btn-edit-perfil.disabled.active, 
+.btn-edit-perfil[disabled].active, 
+fieldset[disabled] .btn-edit-perfil.active { 
+  background-color: #2867A6; 
+  border-color: #706D7D; 
+} 
+ 
+.btn-edit-perfil .badge { 
+  color: #2867A6; 
+  background-color: #ffffff; 
+}

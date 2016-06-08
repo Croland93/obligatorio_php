@@ -6,7 +6,7 @@ class Auth extends ControladorIndex
     	Session::init();
         if (!isset($_SESSION['usuario_id'])) {
             Session::destroy();
-            self::redirect("usuario","login");
+            self::redirect("index","home");
             exit();
         }
     }

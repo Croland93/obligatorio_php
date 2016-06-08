@@ -13,6 +13,8 @@
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -26,10 +28,11 @@
  background-size: cover;">
     {include file="cabezal.tpl"}
     <div class="container-fluid">
-      <div class="main">
+      <div class="main" style="height: 614px;>
           <div class="row">
             <div class="col-md-3">
             </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
             <div class="col-md-6" style="padding-top: 150px;">
             <h1 class="text-center" style="color: white;">
@@ -42,6 +45,13 @@
             </h1> -->
               <div align="center"><img src="../obligatorio_php/public/media/logo-jukebox-j.png"></div>
 >>>>>>> antonio
+=======
+            <div class="col-md-6" style="padding-top: 90px;">
+            <!-- <h1 class="text-center" style="color: white;">
+              Jukebox
+            </h1> -->
+              <div align="center"><img src="../obligatorio_php/public/media/logo-jukebox-j.png"></div>
+>>>>>>> Matias
               <form role="form" method="post" action="index.php">
                 <div class="form-group">
                   <input class="form-control" name="buscar" type="text" placeholder="Ej. David Guetta">
@@ -62,6 +72,12 @@
         </div>
       </div>
     </div>
+    <footer class="footer-distributed">
+      <div class="footer-left">  
+        <br>
+        <p>Copyrighterino</p>
+      </div>
+    </footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

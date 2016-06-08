@@ -30,27 +30,54 @@
     {include file="cabezal.tpl"}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
    <table align="center">
    <tr>
    
     <td id="div-btn1">
     <br>
+=======
+    <div class="row">
+        <div class="col-md-4 playlist">
+          <table align="center">
+            <tr>
+             
+              <td id="div-btn1">
+              <br>
+>>>>>>> Matias
 
-   {foreach from=$datos item=videos}
+             {foreach from=$datos item=videos}
 
 
 
 
 
-    <ul>   
-    <a class="btn btn-default" href="javascript:cargarvideo('{$videos['id']['videoId']}')" ><span class="glyphicon glyphicon-play"></span> {$videos['snippet']['title']} </a>    
-    </ul>
+              <ul>   
+              <a class="btn btn-default" href="javascript:cargarvideo('{$videos['id']['videoId']}')" ><span class="glyphicon glyphicon-play"></span> {$videos['snippet']['title']} </a>    
+              </ul>
 
 
 
-  {/foreach}
+            {/foreach}
+            
+            </td>
+            </tr>
+            </table>
+        </div>
+        <div class="col-md-7">
+        <table>
+        <tr>
+        <td >
+          <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
+          </td>
+          </tr>
+            </table>
+        </div>
+    </div> 
+   
   
+<<<<<<< HEAD
   </td>
   <td >
   <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
@@ -99,6 +126,8 @@
    
   
 >>>>>>> antonio
+=======
+>>>>>>> Matias
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

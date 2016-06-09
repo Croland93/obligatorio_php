@@ -21,26 +21,35 @@
 
   <body>
     {include file="cabezal.tpl"}
-    <div class="container">
-
-      <form class="form-signin" method="POST" >
-        <h2 class="form-signin-heading">Login</h2>
-        {if $mensaje!=""}
+    <div class="container-fluid">
+      <div class="main">
+        <h1 class="page-header">Login</h1>
+        <div class="row">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-6">
+          <form class="form-signin" method="POST" >
+            {if $mensaje!=""}
             <div class="alert alert-danger" role="alert">{$mensaje}</div>
-          {/if}
-        <label for="inputEmail" class="sr-only">Email</label>
-        <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
-        
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-        <button class="btn btn-lg btn-primary btn-block" onclick="window.location='{$loginUrl}'">Ingresar FB</button>
-      </form>
-      <ul id="contenedor">
-          <li id="1">EOEO</li>
-          <li id="2">DODO</li>
-          <li id="3">COCO</li>
-      </ul>
+            {/if}
+            <fieldset class="form-group">
+              <label for="Email">Correo electrónico</label>
+              <input type="text" id="email" name="email" class="form-control" placeholder="Email">
+              <div id="email_available"></div>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="Password">Contraseña</label>
+              <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña">
+            </fieldset>
+            
+            <button class="ubmit form-control btn btn-primary" type="submit">Ingresar</button>
+
+          </form>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Bootstrap core JavaScript

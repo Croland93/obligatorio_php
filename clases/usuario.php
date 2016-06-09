@@ -1,5 +1,5 @@
 <?php
-require "clases/session.php";
+require_once "clases/session.php";
 class Usuario extends ClaseBase {
     public $id = '';
     public $nickname = '';
@@ -55,19 +55,21 @@ class Usuario extends ClaseBase {
         return $resultado;
     }
 
-    public function autentificar($nick,$pass){
-        $stmt = $this->getDB()->prepare("SELECT * from usuarios WHERE nickname=? AND clave=?");
-        $stmt->bind_param( "ss",$nick,$pass);
+    public function login($email,$pass){
+        $stmt = $this->getDB()->prepare("SELECT * FROM  usuarios WHERE email=? AND clave=?");
+        $stmt->bind_param("ss",$email,$pass);
         $stmt->execute();
-        $result=$stmt->get_result();
-        $objeto=$result->fetch_object();
-        if(isset($objeto)){
-            Session::init();
-            Session::set($nick,true);
-            return true;
-        } else {
+        $resultado = $stmt->get_result();
+        if($resultado->num_rows<1){
             return false;
-        }
+        }    
+        $res=$resultado->fetch_object();
+        return $res;
+    }
+
+    public function logout(){
+        Session::init();
+        Session::destroy();
     }
 
     public function availability($nick){

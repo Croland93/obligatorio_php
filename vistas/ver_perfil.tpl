@@ -38,7 +38,7 @@
           <hr id="side-menu">
           <a id="menu-option">Playlists</a>
           <hr id="side-menu">
-          <a id="menu-option">Cerrar sesión</a>
+          <a href="usuario/logout/" id="menu-option">Cerrar sesión</a>
         </div>
         <div class="col-md-7 perfil-2">
           <div class="col-md-11 desc-gral">
@@ -61,7 +61,7 @@
               <h5>Correo electrónico</h5>
               <p>{$nick->getEmail()}</p>
               <h5>ID Cuenta</h5>
-              <p id="ID-CUENTA">{$nick->getId()}</p>
+              <p>{$nick->getId()}</p>
               <br>
               <a href="#" class="btn btn-block btn-edit-perfil"><span class="glyphicon glyphicon-edit"></span> Editar perfil</a>
               <br>

@@ -10,7 +10,7 @@ class ControladorUsuario extends ControladorIndex {
 			$nick=($_POST["nickname"]);
 	 		$contra=($_POST["pass"]);
 	 		$email=($_POST["email"]);
-	 		$avatar="../public/media/default_avatar.jpg";
+	 		$avatar="../obligatorio_php/public/media/default_avatar.jpg";
 	 		$usuario=new Usuario();
 			$respuesta=$usuario->setUsuario($nick,$contra,$email,$avatar);
 			if ($respuesta==true){
@@ -58,16 +58,51 @@ class ControladorUsuario extends ControladorIndex {
 			}
 		}
 	}
+
+	function getLogin(){
+		$mensaje="";
+		session_start();
+		if(isset($_POST["email"])){
+			$usr= new Usuario();
+			$email=$_POST["email"];
+			$pass=$_POST["password"];
+			$res=$usr->login($email,$pass);
+			if(!$res){
+				$mensaje="Error! No se pudo comprobar datos";
+			}else{
+				Session::init();
+				Session::set('usuario_logueado', true);
+		        Session::set('usuario_id', $res->id);
+		        Session::set('usuario_nick', $res->nickname);
+		        Session::set('usuario_email', $res->email);
+				$mensaje="usuario logueado";
+				$this->redirect("index","home");
+			}
+		}
+		$tpl = Template::getInstance();
+		$tpl->asignar('proyecto','Jukebox');
+		$tpl->asignar('titulo',"Iniciar Session");
+		$tpl->asignar('mensaje',$mensaje);
+		$tpl->mostrar('usuarios_login',array());
+	}
+
+	function logout(){
+		Session::init();
+		Session::destroy();
+		$this->redirect("index","home");
+	}
+
 	function perfil($params=array()){
-		//Auth::estaLogueado();
-		//Session::init();
-		$id = 2;
+		Session::init();
+		$id = Session::get('usuario_id');
 		$usr=new Usuario();
 		$ser=$usr->datos_usuario($id);
 		if(!empty($params)){
 			if($params[0]=="borrar"){
 				$usuario=new Usuario();
 				$idDelete=$params[1];
+				Session::init();
+				Session::destroy();
 				if($usuario->borrar($idDelete)){
 					$this->redirect("index","home");
 				}

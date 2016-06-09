@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-08 20:01:35
+/* Smarty version 3.1.29, created on 2016-06-09 04:37:24
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57585d7f580148_06077488',
+  'unifunc' => 'content_5758d6643db6d0_13143338',
   'file_dependency' => 
   array (
     '886520fc8d86bbd40a99c68b6a695ea1516a06e5' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl',
-      1 => 1465408892,
+      1 => 1465439841,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57585d7f580148_06077488 ($_smarty_tpl) {
+function content_5758d6643db6d0_13143338 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +76,7 @@ function content_57585d7f580148_06077488 ($_smarty_tpl) {
           <hr id="side-menu">
           <a id="menu-option">Playlists</a>
           <hr id="side-menu">
-          <a id="menu-option">Cerrar sesión</a>
+          <a href="usuario/logout/" id="menu-option">Cerrar sesión</a>
         </div>
         <div class="col-md-7 perfil-2">
           <div class="col-md-11 desc-gral">
@@ -102,7 +102,7 @@ function content_57585d7f580148_06077488 ($_smarty_tpl) {
               <p><?php echo $_smarty_tpl->tpl_vars['nick']->value->getEmail();?>
 </p>
               <h5>ID Cuenta</h5>
-              <p id="ID-CUENTA"><?php echo $_smarty_tpl->tpl_vars['nick']->value->getId();?>
+              <p><?php echo $_smarty_tpl->tpl_vars['nick']->value->getId();?>
 </p>
               <br>
               <a href="#" class="btn btn-block btn-edit-perfil"><span class="glyphicon glyphicon-edit"></span> Editar perfil</a>

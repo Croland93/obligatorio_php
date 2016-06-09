@@ -26,10 +26,12 @@ $usuario_logueado=Session::get('usuario_logueado');
 $usuario_id=Session::get('usuario_id');
 $usuario_nick=Session::get('usuario_nick');
 $usuario_email=Session::get('usuario_email');
+$usuario_imagen=Session::get('usuario_imagen');
 $tpl->asignar('usuario_logueado',$usuario_logueado);
 $tpl->asignar('usuario_id',$usuario_id);
 $tpl->asignar('usuario_nick',$usuario_nick);
 $tpl->asignar('usuario_email',$usuario_email);
+$tpl->asignar('usuario_imagen',$usuario_imagen);
 //Cargamos controladores y acciones
 if(isset($_GET['url'])){
 	$query = $_GET['url'];

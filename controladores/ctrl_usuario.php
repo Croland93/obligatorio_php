@@ -2,6 +2,7 @@
 require "clases/clase_base.php";
 require "clases/usuario.php";
 require_once('clases/template.php');
+require_once('clases/auth.php');
 
 class ControladorUsuario extends ControladorIndex {
 	function nuevo(){
@@ -75,6 +76,7 @@ class ControladorUsuario extends ControladorIndex {
 		        Session::set('usuario_id', $res->id);
 		        Session::set('usuario_nick', $res->nickname);
 		        Session::set('usuario_email', $res->email);
+		        Session::set('usuario_imagen', $res->img);
 				$mensaje="usuario logueado";
 				$this->redirect("index","home");
 			}
@@ -93,6 +95,7 @@ class ControladorUsuario extends ControladorIndex {
 	}
 
 	function perfil($params=array()){
+		Auth::estaLogueado();
 		Session::init();
 		$id = Session::get('usuario_id');
 		$usr=new Usuario();
@@ -113,6 +116,22 @@ class ControladorUsuario extends ControladorIndex {
 		$tpl->asignar('proyecto',"Jukebox");
 		$tpl->asignar('nick',$ser);
 		$tpl->mostrar('ver_perfil');
+	}
+
+	function avatar_change(){
+		Auth::estaLogueado();
+		Session::init();
+		$tpl = Template::getInstance();
+		$tpl->asignar('proyecto',"Jukebox");
+		$tpl->mostrar('vp-cambiar_foto');
+	}
+
+	function edit_profile(){
+		Auth::estaLogueado();
+		Session::init();
+		$tpl = Template::getInstance();
+		$tpl->asignar('proyecto',"Jukebox");
+		$tpl->mostrar('vp-editar_perfil');
 	}
 }
 ?>

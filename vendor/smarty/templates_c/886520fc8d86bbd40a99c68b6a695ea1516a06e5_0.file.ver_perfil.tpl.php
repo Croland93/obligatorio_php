@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-09 21:53:42
+/* Smarty version 3.1.29, created on 2016-06-10 09:10:29
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5759c946e1f673_97756743',
+  'unifunc' => 'content_575a67e5402082_34449898',
   'file_dependency' => 
   array (
     '886520fc8d86bbd40a99c68b6a695ea1516a06e5' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl',
-      1 => 1465502021,
+      1 => 1465542627,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5759c946e1f673_97756743 ($_smarty_tpl) {
+function content_575a67e5402082_34449898 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,7 +105,7 @@ function content_5759c946e1f673_97756743 ($_smarty_tpl) {
               <p><?php echo $_smarty_tpl->tpl_vars['nick']->value->getId();?>
 </p>
               <br>
-              <a href="#" class="btn btn-block btn-edit-perfil"><span class="glyphicon glyphicon-edit"></span> Editar perfil</a>
+              <a href="usuario/edit_profile/" class="btn btn-block btn-edit-perfil"><span class="glyphicon glyphicon-edit"></span> Editar perfil</a>
               <br>
             </div>
             <div class="col-md-1"></div>

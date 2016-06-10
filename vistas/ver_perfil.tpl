@@ -63,7 +63,7 @@
               <h5>ID Cuenta</h5>
               <p>{$nick->getId()}</p>
               <br>
-              <a href="#" class="btn btn-block btn-edit-perfil"><span class="glyphicon glyphicon-edit"></span> Editar perfil</a>
+              <a href="usuario/edit_profile/" class="btn btn-block btn-edit-perfil"><span class="glyphicon glyphicon-edit"></span> Editar perfil</a>
               <br>
             </div>
             <div class="col-md-1"></div>

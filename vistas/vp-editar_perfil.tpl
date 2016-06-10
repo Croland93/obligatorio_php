@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     
     <title>{$proyecto}</title>
-    <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -17,27 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="js/jquery.validationEngine-en.js" type="text/javascript"></script>
-    <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/funciones.js"></script>
-    <script type="text/javascript">
-    {literal}
-    $(document).ready(function(){
-      $('#email').keyup(function(){
-        var e = $('#email').val();
-        if (e!=''){
-          $.post('/obligatorio_php/usuario/check', {email:e}, 
-            function(result){
-              console.log(result);
-              $('#email_available').html(result);
-          }); 
-        } else {
-          $('#email_available').html('');
-        } 
-      });
-    });
-    {/literal}
-    </script>
 
   </head>
 
@@ -62,6 +41,22 @@
         </div>
         <div class="col-md-7 perfil-2">
           <div class="col-md-11 desc-gral">
+            {if $msgerror!=''}
+            <div class="col-md-12 error-message"><br>{$msgerror}</div>
+            <br>
+            <br>
+            {/if}
+            {if $msgerror_two!=''}
+            <div class="col-md-12 error-message"><br>{$msgerror_two}</div>
+            {/if}
+            {if $msgok!=''}
+            <div class="col-md-12 ok-message"><br>{$msgok}</div>
+            <br>
+            <br>
+            {/if}
+            {if $msgok_two!=''}
+            <div class="col-md-12 ok-message"><br>{$msgok_two}</div>
+            {/if}
             <h3>Editar perfil</h3>
             <hr id="side-perfil">
             <div class="col-md-5 desc-gral-perfil">
@@ -69,10 +64,12 @@
               <p>Muestrale al mundo como te llamas y hazte de más amigos con tus mismos gustos musicales.</p>
               <form id="formID" class="formular" method="POST" action="">
                 <fieldset class="form-group">
-                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" value=''>
+                  <h5>Nombre actual: {$usuario_nombre}</h5>
+                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nuevo nombre" value=''>
                 </fieldset>
                 <fieldset class="form-group">
-                  <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" value=''>
+                  <h5>Apellido actual: {$usuario_apellido}</h5>
+                  <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Nuevo apellido" value=''>
                 </fieldset>
                 <button type="submit" class="submit form-control btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
                 <br>
@@ -87,15 +84,17 @@
               <p>Recuerda de ingresar un correo válido, de lo contrario no podrás validar tu cuenta.</p>
               <form id="formID2" class="formular" method="POST" action="">
               <fieldset class="form-group">
-                  <input type="text" id="old-email" name="old-email" class="form-control" placeholder="Email actual" value=''>
+                  <input type="text" id="oldemail" name="oldemail" class="form-control" placeholder="Email actual" value=''>
                 </fieldset>
                 <fieldset class="form-group">
-                  <input type="text" id="email" name="email" class="form-control validate[required,custom[email]] text-input" placeholder="Nuevo email" value=''>
-                  <div id="email_available"></div>
+                  <input type="text" id="email" name="email" class="form-control" placeholder="Nuevo email" value=''>
                 </fieldset>
                 <fieldset class="form-group">
-                  <input type="text" id="reemail" name="reemail" class="form-control validate[required,confirm[email]] text-input" placeholder="Confirmar email" value='' autocomplete="off">
+                  <input type="text" id="reemail" name="reemail" class="form-control" placeholder="Confirmar email" value='' autocomplete="off">
                 </fieldset>
+                <button type="submit" class="submit form-control btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+                <br>
+                <br>
                 <h5>Cambiar contraseña</h5>
                 <hr>
                 <p>Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>

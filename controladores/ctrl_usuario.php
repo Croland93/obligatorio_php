@@ -69,7 +69,7 @@ class ControladorUsuario extends ControladorIndex {
 			$pass=$_POST["password"];
 			$res=$usr->login($email,$pass);
 			if(!$res){
-				$mensaje="Error! No se pudo comprobar datos";
+				$mensaje="El usuario o la contraseña son incorrectos.";
 			}else{
 				Session::init();
 				Session::set('usuario_logueado', true);
@@ -77,7 +77,8 @@ class ControladorUsuario extends ControladorIndex {
 		        Session::set('usuario_nick', $res->nickname);
 		        Session::set('usuario_email', $res->email);
 		        Session::set('usuario_imagen', $res->img);
-				$mensaje="usuario logueado";
+		        Session::set('usuario_nombre', $res->nombre);
+		        Session::set('usuario_apellido', $res->apellido);
 				$this->redirect("index","home");
 			}
 		}
@@ -129,8 +130,82 @@ class ControladorUsuario extends ControladorIndex {
 	function edit_profile(){
 		Auth::estaLogueado();
 		Session::init();
+		$userid=Session::get('usuario_id');
+		$msgerror='';
+		$msgok='';
+		$msgerror_two='';
+		$msgok_two='';
+		if(isset($_POST['oldemail'])){
+			$oe=$_POST['oldemail'];
+			if(filter_var($oe,FILTER_VALIDATE_EMAIL)){
+				$old=new Usuario();
+				$res=$old->check_emailandid($oe,$userid);
+				if($res==0){
+					$ne=$_POST['email'];
+					$rne=$_POST['reemail'];
+					if(filter_var($ne,FILTER_VALIDATE_EMAIL)){
+						if(strcmp($ne,$rne)==0){
+							$usr=new Usuario();
+							$resUpEmail=$usr->updateEmail($ne,$oe);
+							if($resUpEmail){
+								Session::destroy();
+								$this->redirect("index","home");
+								exit;
+							} else {
+								$msgerror="Error interno al actualizar email.";
+							}
+						} else {
+							$msgerror="Los emails que ingresaste no coinciden.";
+						}
+					} else {
+						$msgerror="El nuevo correo no es válido.";
+					}
+				} else {
+					$msgerror="El correo actual no es correcto o no pertenece a este usuario.";
+				}
+			} else {
+				$msgerror="El correo actual no es válido.";
+			}
+		}
+
+		if(isset($_POST['nombre'])){
+			$newnom=$_POST['nombre'];
+			$oldnom=Session::get('usuario_nombre');
+			if(preg_match("/^[a-zA-Z]*$/",$newnom)){
+				$usr=new Usuario();
+				$resUpNombre=$usr->updateNombre($newnom,$oldnom,$userid);
+				if($resUpNombre){
+					$msgok="Nombre actualizado con exito.";
+				} else {
+					$msgerror="Error interno al actualizar nombre.";
+				}
+			} else {
+				$msgerror="El nombre que ingresaste tiene caracteres no válidos.";
+			}
+		}
+
+		if(isset($_POST['apellido'])){
+			$newape=$_POST['apellido'];
+			$oldape=Session::get('usuario_apellido');
+			if(preg_match("/^[a-zA-Z]*$/",$newape)){
+				$usr=new Usuario();
+				$resUpApellido=$usr->updateApellido($newape,$oldape,$userid);
+				if($resUpApellido){
+					$msgok_two="Apellido actualizado con exito.";
+				} else {
+					$msgerror_two="Error interno al actualizar apellido.";
+				}
+			} else {
+				$msgerror_two="El apellido que ingresaste tiene caracteres no válidos.";
+			}
+		}
+
 		$tpl = Template::getInstance();
 		$tpl->asignar('proyecto',"Jukebox");
+		$tpl->asignar('msgerror',$msgerror);
+		$tpl->asignar('msgok',$msgok);
+		$tpl->asignar('msgerror_two',$msgerror_two);
+		$tpl->asignar('msgok_two',$msgok_two);
 		$tpl->mostrar('vp-editar_perfil');
 	}
 }

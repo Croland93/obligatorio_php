@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-10 09:15:35
+/* Smarty version 3.1.29, created on 2016-06-11 00:37:31
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575a6917b696b3_84609302',
+  'unifunc' => 'content_575b412bc2deb0_20969871',
   'file_dependency' => 
   array (
     '5965e80dc70e6a40c9e7dcf5ed7748f26062d45d' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl',
-      1 => 1465542929,
+      1 => 1465598173,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_575a6917b696b3_84609302 ($_smarty_tpl) {
+function content_575b412bc2deb0_20969871 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,6 @@ function content_575a6917b696b3_84609302 ($_smarty_tpl) {
     
     <title><?php echo $_smarty_tpl->tpl_vars['proyecto']->value;?>
 </title>
-    <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -50,33 +49,7 @@ function content_575a6917b696b3_84609302 ($_smarty_tpl) {
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="js/jquery.validationEngine-en.js" type="text/javascript"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="js/jquery.validationEngine.js" type="text/javascript"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
  type="text/javascript" src="js/funciones.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- type="text/javascript">
-    
-    $(document).ready(function(){
-      $('#email').keyup(function(){
-        var e = $('#email').val();
-        if (e!=''){
-          $.post('/obligatorio_php/usuario/check', {email:e}, 
-            function(result){
-              console.log(result);
-              $('#email_available').html(result);
-          }); 
-        } else {
-          $('#email_available').html('');
-        } 
-      });
-    });
-    
-    <?php echo '</script'; ?>
 >
 
   </head>
@@ -106,6 +79,26 @@ function content_575a6917b696b3_84609302 ($_smarty_tpl) {
         </div>
         <div class="col-md-7 perfil-2">
           <div class="col-md-11 desc-gral">
+            <?php if ($_smarty_tpl->tpl_vars['msgerror']->value != '') {?>
+            <div class="col-md-12 error-message"><br><?php echo $_smarty_tpl->tpl_vars['msgerror']->value;?>
+</div>
+            <br>
+            <br>
+            <?php }?>
+            <?php if ($_smarty_tpl->tpl_vars['msgerror_two']->value != '') {?>
+            <div class="col-md-12 error-message"><br><?php echo $_smarty_tpl->tpl_vars['msgerror_two']->value;?>
+</div>
+            <?php }?>
+            <?php if ($_smarty_tpl->tpl_vars['msgok']->value != '') {?>
+            <div class="col-md-12 ok-message"><br><?php echo $_smarty_tpl->tpl_vars['msgok']->value;?>
+</div>
+            <br>
+            <br>
+            <?php }?>
+            <?php if ($_smarty_tpl->tpl_vars['msgok_two']->value != '') {?>
+            <div class="col-md-12 ok-message"><br><?php echo $_smarty_tpl->tpl_vars['msgok_two']->value;?>
+</div>
+            <?php }?>
             <h3>Editar perfil</h3>
             <hr id="side-perfil">
             <div class="col-md-5 desc-gral-perfil">
@@ -113,10 +106,14 @@ function content_575a6917b696b3_84609302 ($_smarty_tpl) {
               <p>Muestrale al mundo como te llamas y hazte de más amigos con tus mismos gustos musicales.</p>
               <form id="formID" class="formular" method="POST" action="">
                 <fieldset class="form-group">
-                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" value=''>
+                  <h5>Nombre actual: <?php echo $_smarty_tpl->tpl_vars['usuario_nombre']->value;?>
+</h5>
+                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nuevo nombre" value=''>
                 </fieldset>
                 <fieldset class="form-group">
-                  <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" value=''>
+                  <h5>Apellido actual: <?php echo $_smarty_tpl->tpl_vars['usuario_apellido']->value;?>
+</h5>
+                  <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Nuevo apellido" value=''>
                 </fieldset>
                 <button type="submit" class="submit form-control btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
                 <br>
@@ -131,15 +128,17 @@ function content_575a6917b696b3_84609302 ($_smarty_tpl) {
               <p>Recuerda de ingresar un correo válido, de lo contrario no podrás validar tu cuenta.</p>
               <form id="formID2" class="formular" method="POST" action="">
               <fieldset class="form-group">
-                  <input type="text" id="old-email" name="old-email" class="form-control" placeholder="Email actual" value=''>
+                  <input type="text" id="oldemail" name="oldemail" class="form-control" placeholder="Email actual" value=''>
                 </fieldset>
                 <fieldset class="form-group">
-                  <input type="text" id="email" name="email" class="form-control validate[required,custom[email]] text-input" placeholder="Nuevo email" value=''>
-                  <div id="email_available"></div>
+                  <input type="text" id="email" name="email" class="form-control" placeholder="Nuevo email" value=''>
                 </fieldset>
                 <fieldset class="form-group">
-                  <input type="text" id="reemail" name="reemail" class="form-control validate[required,confirm[email]] text-input" placeholder="Confirmar email" value='' autocomplete="off">
+                  <input type="text" id="reemail" name="reemail" class="form-control" placeholder="Confirmar email" value='' autocomplete="off">
                 </fieldset>
+                <button type="submit" class="submit form-control btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+                <br>
+                <br>
                 <h5>Cambiar contraseña</h5>
                 <hr>
                 <p>Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>

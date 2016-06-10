@@ -29,7 +29,7 @@
         </div>
         <div class="col-md-3 perfil-1">
           <img class="avatar-user" src="{$nick->getImg()}" width="150" height="150">
-          <h2>{$nick->getNick()}</h2>
+          <h2>{$usuario_nick}</h2>
           <br>
           <hr id="side-menu">
           <a href="usuario/perfil/" style="color: white; text-decoration: none;">Descripción general</a>
@@ -47,21 +47,21 @@
             <div class="col-md-6 desc-gral-perfil">
               <h4 id="h4-title">Perfil</h4>
               <h5>Nombre</h5>
-              {if $nick->getNombre()==''}
+              {if $usuario_nombre==''}
               <p>Nombre no declarado</p>
               {else}
-              <p>{$nick->getNombre()}</p>
+              <p>{$usuario_nombre}</p>
               {/if}
               <h5>Apellido</h5>
-              {if $nick->getNombre()==''}
+              {if $usuario_apellido==''}
               <p>Apellido no declarado</p>
               {else}
-              <p>{$nick->getApellido()}</p>
+              <p>{$usuario_apellido}</p>
               {/if}
               <h5>Correo electrónico</h5>
-              <p>{$nick->getEmail()}</p>
+              <p>{$usuario_email}</p>
               <h5>ID Cuenta</h5>
-              <p>{$nick->getId()}</p>
+              <p>{$usuario_id}</p>
               <br>
               <a href="usuario/edit_profile/" class="btn btn-block btn-edit-perfil"><span class="glyphicon glyphicon-edit"></span> Editar perfil</a>
               <br>

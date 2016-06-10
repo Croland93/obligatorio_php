@@ -55,6 +55,35 @@ class Usuario extends ClaseBase {
         return $resultado;
     }
 
+    public function updateEmail($newemail,$oldemail){
+        $new=$newemail;
+        $old=$oldemail;
+        $stmt = $this->getDB()->prepare("UPDATE usuarios SET email=? WHERE email=?");
+        $stmt->bind_param("ss",$new,$old);
+        $resultado = $stmt->execute();
+        return $resultado;
+    }
+
+    public function updateNombre($newnombre,$oldnombre,$userid){
+        $new=$newnombre;
+        $old=$oldnombre;
+        $id=$userid;
+        $stmt = $this->getDB()->prepare("UPDATE usuarios SET nombre=? WHERE nombre=? AND id=?");
+        $stmt->bind_param("ssi",$new,$old,$id);
+        $resultado = $stmt->execute();
+        return $resultado;
+    }
+
+    public function updateApellido($newapellido,$oldapellido,$userid){
+        $new=$newapellido;
+        $old=$oldapellido;
+        $id=$userid;
+        $stmt = $this->getDB()->prepare("UPDATE usuarios SET apellido=? WHERE apellido=? AND id=?");
+        $stmt->bind_param("ssi",$new,$old,$id);
+        $resultado = $stmt->execute();
+        return $resultado;
+    }
+
     public function login($email,$pass){
         $stmt = $this->getDB()->prepare("SELECT * FROM  usuarios WHERE email=? AND clave=?");
         $stmt->bind_param("ss",$email,$pass);
@@ -88,6 +117,19 @@ class Usuario extends ClaseBase {
     public function availability_email($email){
         $stmt = $this->getDB()->prepare("SELECT * FROM usuarios WHERE email =?");
         $stmt->bind_param("s",$email);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $disponible = mysqli_num_rows($resultado);
+        if ($disponible==0){
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function check_emailandid($email,$userid){
+        $stmt = $this->getDB()->prepare("SELECT * FROM usuarios WHERE email =? AND id=?");
+        $stmt->bind_param("si",$email,$userid);
         $stmt->execute();
         $resultado = $stmt->get_result();
         $disponible = mysqli_num_rows($resultado);

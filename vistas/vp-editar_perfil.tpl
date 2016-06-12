@@ -61,17 +61,31 @@
             <hr id="side-perfil">
             <div class="col-md-5 desc-gral-perfil">
               <h4 id="h4-title">Perfil</h4>
+              {if $usuario_apellido!='' || $usuario_nombre!=''}
+              <p>Si necesitas cambiar estos datos, solicita un cambio. Se te enviará un mensaje a tu correo asociado a esta cuenta para que puedas cambiar estos datos.</p>
+              {else}
               <p>Muestrale al mundo como te llamas y hazte de más amigos con tus mismos gustos musicales.</p>
+              {/if}
               <form id="formID" class="formular" method="POST" action="">
                 <fieldset class="form-group">
-                  <h5>Nombre actual: {$usuario_nombre}</h5>
-                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nuevo nombre" value=''>
+                  {if $usuario_nombre!=''}
+                  <h5>Nombre: {$usuario_nombre}</h5>
+                  {else}
+                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" value=''>
+                  {/if}
                 </fieldset>
                 <fieldset class="form-group">
-                  <h5>Apellido actual: {$usuario_apellido}</h5>
-                  <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Nuevo apellido" value=''>
+                  {if $usuario_apellido!=''}
+                  <h5>Apellido: {$usuario_apellido}</h5>
+                  {else}
+                  <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" value=''>
+                  {/if}
                 </fieldset>
+                {if $usuario_nombre!='' && $usuario_apellido!=''}
+                <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Solicitar cambio</a>
+                {else}
                 <button type="submit" class="submit form-control btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+                {/if}
                 <br>
                 <br>
               </form>

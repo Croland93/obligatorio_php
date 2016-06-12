@@ -101,6 +101,10 @@ class ControladorUsuario extends ControladorIndex {
 		$id = Session::get('usuario_id');
 		$usr=new Usuario();
 		$ser=$usr->datos_usuario($id);
+		$msgerror='';
+		$msgerror_two='';
+		$msgok='';
+		$msgok_two='';
 		if(!empty($params)){
 			if($params[0]=="borrar"){
 				$usuario=new Usuario();
@@ -115,6 +119,10 @@ class ControladorUsuario extends ControladorIndex {
 
 		$tpl = Template::getInstance();
 		$tpl->asignar('proyecto',"Jukebox");
+		$tpl->asignar('msgerror',$msgerror);
+		$tpl->asignar('msgok',$msgok);
+		$tpl->asignar('msgerror_two',$msgerror_two);
+		$tpl->asignar('msgok_two',$msgok_two);
 		$tpl->asignar('nick',$ser);
 		$tpl->mostrar('ver_perfil');
 	}
@@ -135,6 +143,8 @@ class ControladorUsuario extends ControladorIndex {
 		$msgok='';
 		$msgerror_two='';
 		$msgok_two='';
+		$confirm_nom=false;
+		$confirm_ape=false;
 		if(isset($_POST['oldemail'])){
 			$oe=$_POST['oldemail'];
 			if(filter_var($oe,FILTER_VALIDATE_EMAIL)){
@@ -171,33 +181,45 @@ class ControladorUsuario extends ControladorIndex {
 		if(isset($_POST['nombre'])){
 			$newnom=$_POST['nombre'];
 			$oldnom=Session::get('usuario_nombre');
-			if(preg_match("/^[a-zA-Z]*$/",$newnom)){
-				$usr=new Usuario();
-				$resUpNombre=$usr->updateNombre($newnom,$oldnom,$userid);
-				if($resUpNombre){
-					$msgok="Nombre actualizado con exito.";
+			if($newnom!=''){
+				if(preg_match("/^[a-zA-Z]*$/",$newnom)){
+					$usr=new Usuario();
+					$resUpNombre=$usr->updateNombre($newnom,$userid);
+					if($resUpNombre){
+						$msgok="Nombre actualizado con exito. La página se actualizará en unos segundos.";
+						Session::set('usuario_nombre',$newnom);
+						$confirm_nom=true;
+					} else {
+						$msgerror="Error interno al actualizar nombre.";
+					}
 				} else {
-					$msgerror="Error interno al actualizar nombre.";
+					$msgerror="El nombre que ingresaste tiene caracteres no válidos.";
 				}
-			} else {
-				$msgerror="El nombre que ingresaste tiene caracteres no válidos.";
 			}
 		}
 
 		if(isset($_POST['apellido'])){
 			$newape=$_POST['apellido'];
 			$oldape=Session::get('usuario_apellido');
-			if(preg_match("/^[a-zA-Z]*$/",$newape)){
-				$usr=new Usuario();
-				$resUpApellido=$usr->updateApellido($newape,$oldape,$userid);
-				if($resUpApellido){
-					$msgok_two="Apellido actualizado con exito.";
+			if($newape!=''){
+				if(preg_match("/^[a-zA-Z]*$/",$newape)){
+					$usr=new Usuario();
+					$resUpApellido=$usr->updateApellido($newape,$userid);
+					if($resUpApellido){
+						$msgok_two="Apellido actualizado con exito. La página se actualizará en unos segundos.";
+						Session::set('usuario_apellido',$newape);
+						$confirm_ape=true;
+					} else {
+						$msgerror_two="Error interno al actualizar apellido.";
+					}
 				} else {
-					$msgerror_two="Error interno al actualizar apellido.";
+					$msgerror_two="El apellido que ingresaste tiene caracteres no válidos.";
 				}
-			} else {
-				$msgerror_two="El apellido que ingresaste tiene caracteres no válidos.";
 			}
+		}
+
+		if ($confirm_ape!=false || $confirm_nom!=false){
+			header("Refresh:3");
 		}
 
 		$tpl = Template::getInstance();

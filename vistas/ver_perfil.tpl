@@ -45,6 +45,22 @@
             <h3>Descripción general</h3>
             <hr id="side-perfil">
             <div class="col-md-6 desc-gral-perfil">
+              {if $msgerror!=''}
+              <div class="col-md-12 error-message"><br>{$msgerror}</div>
+              <br>
+              <br>
+              {/if}
+              {if $msgerror_two!=''}
+              <div class="col-md-12 error-message"><br>{$msgerror_two}</div>
+              {/if}
+              {if $msgok!=''}
+              <div class="col-md-12 ok-message"><br>{$msgok}</div>
+              <br>
+              <br>
+              {/if}
+              {if $msgok_two!=''}
+              <div class="col-md-12 ok-message"><br>{$msgok_two}</div>
+              {/if}
               <h4 id="h4-title">Perfil</h4>
               <h5>Nombre</h5>
               {if $usuario_nombre==''}

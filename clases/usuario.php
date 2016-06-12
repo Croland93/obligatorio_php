@@ -64,22 +64,22 @@ class Usuario extends ClaseBase {
         return $resultado;
     }
 
-    public function updateNombre($newnombre,$oldnombre,$userid){
+    public function updateNombre($newnombre,$userid){
         $new=$newnombre;
         $old=$oldnombre;
         $id=$userid;
-        $stmt = $this->getDB()->prepare("UPDATE usuarios SET nombre=? WHERE nombre=? AND id=?");
-        $stmt->bind_param("ssi",$new,$old,$id);
+        $stmt = $this->getDB()->prepare("UPDATE usuarios SET nombre=? WHERE id=?");
+        $stmt->bind_param("ss",$new,$id);
         $resultado = $stmt->execute();
         return $resultado;
     }
 
-    public function updateApellido($newapellido,$oldapellido,$userid){
+    public function updateApellido($newapellido,$userid){
         $new=$newapellido;
         $old=$oldapellido;
         $id=$userid;
-        $stmt = $this->getDB()->prepare("UPDATE usuarios SET apellido=? WHERE apellido=? AND id=?");
-        $stmt->bind_param("ssi",$new,$old,$id);
+        $stmt = $this->getDB()->prepare("UPDATE usuarios SET apellido=? WHERE id=?");
+        $stmt->bind_param("ss",$new,$id);
         $resultado = $stmt->execute();
         return $resultado;
     }

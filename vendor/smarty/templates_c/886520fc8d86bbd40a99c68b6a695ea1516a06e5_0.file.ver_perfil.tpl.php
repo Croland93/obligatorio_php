@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-11 00:05:46
+/* Smarty version 3.1.29, created on 2016-06-12 02:25:12
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575b39ba1c2037_08264416',
+  'unifunc' => 'content_575cabe8953d42_18705799',
   'file_dependency' => 
   array (
     '886520fc8d86bbd40a99c68b6a695ea1516a06e5' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl',
-      1 => 1465596306,
+      1 => 1465691003,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_575b39ba1c2037_08264416 ($_smarty_tpl) {
+function content_575cabe8953d42_18705799 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,6 +83,26 @@ function content_575b39ba1c2037_08264416 ($_smarty_tpl) {
             <h3>Descripción general</h3>
             <hr id="side-perfil">
             <div class="col-md-6 desc-gral-perfil">
+              <?php if ($_smarty_tpl->tpl_vars['msgerror']->value != '') {?>
+              <div class="col-md-12 error-message"><br><?php echo $_smarty_tpl->tpl_vars['msgerror']->value;?>
+</div>
+              <br>
+              <br>
+              <?php }?>
+              <?php if ($_smarty_tpl->tpl_vars['msgerror_two']->value != '') {?>
+              <div class="col-md-12 error-message"><br><?php echo $_smarty_tpl->tpl_vars['msgerror_two']->value;?>
+</div>
+              <?php }?>
+              <?php if ($_smarty_tpl->tpl_vars['msgok']->value != '') {?>
+              <div class="col-md-12 ok-message"><br><?php echo $_smarty_tpl->tpl_vars['msgok']->value;?>
+</div>
+              <br>
+              <br>
+              <?php }?>
+              <?php if ($_smarty_tpl->tpl_vars['msgok_two']->value != '') {?>
+              <div class="col-md-12 ok-message"><br><?php echo $_smarty_tpl->tpl_vars['msgok_two']->value;?>
+</div>
+              <?php }?>
               <h4 id="h4-title">Perfil</h4>
               <h5>Nombre</h5>
               <?php if ($_smarty_tpl->tpl_vars['usuario_nombre']->value == '') {?>

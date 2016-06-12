@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-11 00:37:31
+/* Smarty version 3.1.29, created on 2016-06-12 02:45:27
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575b412bc2deb0_20969871',
+  'unifunc' => 'content_575cb0a7dc6ad3_20850069',
   'file_dependency' => 
   array (
     '5965e80dc70e6a40c9e7dcf5ed7748f26062d45d' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl',
-      1 => 1465598173,
+      1 => 1465692323,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_575b412bc2deb0_20969871 ($_smarty_tpl) {
+function content_575cb0a7dc6ad3_20850069 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,19 +103,33 @@ function content_575b412bc2deb0_20969871 ($_smarty_tpl) {
             <hr id="side-perfil">
             <div class="col-md-5 desc-gral-perfil">
               <h4 id="h4-title">Perfil</h4>
+              <?php if ($_smarty_tpl->tpl_vars['usuario_apellido']->value != '' || $_smarty_tpl->tpl_vars['usuario_nombre']->value != '') {?>
+              <p>Si necesitas cambiar estos datos, solicita un cambio. Se te enviará un mensaje a tu correo asociado a esta cuenta para que puedas cambiar estos datos.</p>
+              <?php } else { ?>
               <p>Muestrale al mundo como te llamas y hazte de más amigos con tus mismos gustos musicales.</p>
+              <?php }?>
               <form id="formID" class="formular" method="POST" action="">
                 <fieldset class="form-group">
-                  <h5>Nombre actual: <?php echo $_smarty_tpl->tpl_vars['usuario_nombre']->value;?>
+                  <?php if ($_smarty_tpl->tpl_vars['usuario_nombre']->value != '') {?>
+                  <h5>Nombre: <?php echo $_smarty_tpl->tpl_vars['usuario_nombre']->value;?>
 </h5>
-                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nuevo nombre" value=''>
+                  <?php } else { ?>
+                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" value=''>
+                  <?php }?>
                 </fieldset>
                 <fieldset class="form-group">
-                  <h5>Apellido actual: <?php echo $_smarty_tpl->tpl_vars['usuario_apellido']->value;?>
+                  <?php if ($_smarty_tpl->tpl_vars['usuario_apellido']->value != '') {?>
+                  <h5>Apellido: <?php echo $_smarty_tpl->tpl_vars['usuario_apellido']->value;?>
 </h5>
-                  <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Nuevo apellido" value=''>
+                  <?php } else { ?>
+                  <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" value=''>
+                  <?php }?>
                 </fieldset>
+                <?php if ($_smarty_tpl->tpl_vars['usuario_nombre']->value != '' && $_smarty_tpl->tpl_vars['usuario_apellido']->value != '') {?>
+                <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Solicitar cambio</a>
+                <?php } else { ?>
                 <button type="submit" class="submit form-control btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+                <?php }?>
                 <br>
                 <br>
               </form>

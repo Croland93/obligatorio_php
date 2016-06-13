@@ -1,0 +1,42 @@
+body {
+		margin: 0;
+	}
+
+		#barra {
+			margin: 0;
+			padding: 0;
+			position: fixed;
+
+			height: 60px;
+
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			background: red;
+		}
+
+		#progreso {
+			margin: 20px;
+			height: 20px;
+			width: 25%;
+		}
+
+		#controles {
+			box-sizing: border-box;
+			position: absolute;
+			left: 50%;
+			top: 0;
+			width: 200px;
+			margin-left: -100px;
+			text-align: center;
+			padding-top: 20px;
+		}
+
+		#controles a {
+			box-sizing: border-box;
+			margin-right: 10px;
+			padding: 10px;
+			background: gray;
+			border-radius: 50%;
+		}

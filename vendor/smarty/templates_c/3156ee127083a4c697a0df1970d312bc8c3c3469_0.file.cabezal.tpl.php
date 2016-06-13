@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-28 21:55:59
+/* Smarty version 3.1.29, created on 2016-05-30 23:38:13
   from "E:\wamp64\www\obligatorio_php\vistas\cabezal.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574a13ef675543_25565748',
+  'unifunc' => 'content_574ccee5198f79_58221175',
   'file_dependency' => 
   array (
     '3156ee127083a4c697a0df1970d312bc8c3c3469' => 
     array (
       0 => 'E:\\wamp64\\www\\obligatorio_php\\vistas\\cabezal.tpl',
-      1 => 1464467251,
+      1 => 1464651485,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574a13ef675543_25565748 ($_smarty_tpl) {
+function content_574ccee5198f79_58221175 ($_smarty_tpl) {
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -36,7 +36,7 @@ function content_574a13ef675543_25565748 ($_smarty_tpl) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="usuario/login/">Iniciar sesión</a></li>
+            <li><a href="usuario/getLogin/">Iniciar sesión</a></li>
             <li><a href="usuario/nuevo/">Registrarse</a></li>
           </ul>
         </div>

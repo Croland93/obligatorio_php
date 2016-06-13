@@ -42,6 +42,11 @@ if (isset($_POST['buscar'])){
 	$action="busqueda";
 	$params=$buscar;
 }
+if(isset($_POST['artista'])){
+	echo "hola";
+	exit;
+
+}
 
 
 $controllerObj=$controlIndex->cargarControlador($controller);

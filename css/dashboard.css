@@ -7,11 +7,22 @@ body {
   padding-top: 50px;
 }
 
+.BarraInferior{position:fixed;left:0;bottom:0;}
 
+.art {
+  min-height: 100px !important;
+  min-width: 100px !important;
+  max-height: 100px !important;
+  max-width: 100px !important;
+}
 /*
  * Global add-ons
  */
+.nombreart{
+font-size: 8px;
+text-align: center;
 
+}
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
@@ -25,6 +36,13 @@ body {
   border: 0;
 }
 
+
+.cover {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-size: cover;
+}
 /*
  * Sidebar
  */

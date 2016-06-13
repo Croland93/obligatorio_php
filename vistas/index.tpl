@@ -37,7 +37,7 @@
               <div align="center"><img src="../obligatorio_php/public/media/logo-jukebox-j.png"></div>
               <form role="form" method="post" action="index.php">
                 <div class="form-group">
-                  <input class="form-control" name="buscar" type="text" placeholder="Ej. David Guetta">
+                  <input class="form-control" name="buscar" type="text" placeholder="Artista o Canción">
                 </div>
               
               <div class="row">

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6d3126d4752d695c7631ea7ee58cc1a9",
-    "content-hash": "a6d2402cd65f17843d59fa753389761b",
+    "hash": "47994673b1bee776a34c6b12ad28cf5b",
+    "content-hash": "e421ef4126fcda578f9d84e402a11e23",
     "packages": [
         {
             "name": "google/apiclient",
@@ -51,6 +51,52 @@
                 "google"
             ],
             "time": "2014-09-30 19:33:59"
+        },
+        {
+            "name": "jwilsson/spotify-web-api-php",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jwilsson/spotify-web-api-php.git",
+                "reference": "da133d0886325828bd7c35d8df9c89445a5ffae3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jwilsson/spotify-web-api-php/zipball/da133d0886325828bd7c35d8df9c89445a5ffae3",
+                "reference": "da133d0886325828bd7c35d8df9c89445a5ffae3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": "^5.5 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0",
+                "satooshi/php-coveralls": "dev-master",
+                "squizlabs/php_codesniffer": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SpotifyWebAPI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wilsson",
+                    "email": "jonathan.wilsson@gmail.com"
+                }
+            ],
+            "description": "A PHP wrapper for Spotify's Web API.",
+            "homepage": "http://jwilsson.github.io/spotify-web-api-php/",
+            "keywords": [
+                "spotify"
+            ],
+            "time": "2016-05-30 15:25:35"
         },
         {
             "name": "phpmailer/phpmailer",

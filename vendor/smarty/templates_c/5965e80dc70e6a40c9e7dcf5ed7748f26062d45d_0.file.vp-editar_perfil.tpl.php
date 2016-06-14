@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-14 01:47:28
+/* Smarty version 3.1.29, created on 2016-06-14 02:32:45
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575f4610a8d063_96907085',
+  'unifunc' => 'content_575f50adba16f4_97358457',
   'file_dependency' => 
   array (
     '5965e80dc70e6a40c9e7dcf5ed7748f26062d45d' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl',
-      1 => 1465861646,
+      1 => 1465861725,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_575f4610a8d063_96907085 ($_smarty_tpl) {
+function content_575f50adba16f4_97358457 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -156,7 +156,7 @@ function content_575f4610a8d063_96907085 ($_smarty_tpl) {
                 <h5>Cambiar contraseña</h5>
                 <hr>
                 <p>Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>
-                <a href="usuario/solicitarCambio/" class="btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Solicitar cambio</a>
+                <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Solicitar cambio</a>
                 <br>
                 <br>
               </form>

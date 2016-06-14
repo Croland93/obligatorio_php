@@ -1,6 +1,7 @@
 <?php
 require "clases/clase_base.php";
 require "clases/usuario.php";
+require "clases/Utils.php";
 require_once('clases/template.php');
 require_once('clases/auth.php');
 
@@ -15,6 +16,8 @@ class ControladorUsuario extends ControladorIndex {
 	 		$usuario=new Usuario();
 			$respuesta=$usuario->setUsuario($nick,$contra,$email,$avatar);
 			if ($respuesta==true){
+				$send=new Utils();
+				$send->enviarEmail($email,$nick,$contra);
 				$this->redirect("index","home");
 				exit;
 			}else {

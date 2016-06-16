@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript" src="js/funciones.js"></script>
 
   </head>
@@ -24,9 +25,9 @@
     {include file="cabezal.tpl"}
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-1 lateral-perfil">
+        <div class="col-md-1 edit-lateral-perfil">
         </div>
-        <div class="col-md-3 perfil-1">
+        <div class="col-md-3 edit-perfil-1">
           <img class="avatar-user" src="{$usuario_imagen}" width="150" height="150">
           <h2>{$usuario_nick}</h2>
           <br>
@@ -39,7 +40,7 @@
           <hr id="side-menu">
           <a href="usuario/logout/" id="menu-option">Cerrar sesión</a>
         </div>
-        <div class="col-md-7 perfil-2">
+        <div class="col-md-7 edit-perfil-2">
           <div class="col-md-11 desc-gral">
             {if $msgerror!=''}
             <div class="col-md-12 error-message"><br>{$msgerror}</div>
@@ -62,7 +63,7 @@
             <div class="col-md-5 desc-gral-perfil">
               <h4 id="h4-title">Perfil</h4>
               {if $usuario_apellido!='' || $usuario_nombre!=''}
-              <p>Si necesitas cambiar estos datos, solicita un cambio. Se te enviará un mensaje a tu correo asociado a esta cuenta para que puedas cambiar estos datos.</p>
+              <p>¡Nos agrada que te presentes ante la comunidad!</p>
               {else}
               <p>Muestrale al mundo como te llamas y hazte de más amigos con tus mismos gustos musicales.</p>
               {/if}
@@ -82,11 +83,10 @@
                   {/if}
                 </fieldset>
                 {if $usuario_nombre!='' && $usuario_apellido!=''}
-                <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Solicitar cambio</a>
                 {else}
                 <button type="submit" class="submit form-control btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
-                {/if}
                 <br>
+                {/if}
                 <br>
               </form>
             </div>
@@ -107,19 +107,23 @@
                   <input type="text" id="reemail" name="reemail" class="form-control" placeholder="Confirmar email" value='' autocomplete="off">
                 </fieldset>
                 <button type="submit" class="submit form-control btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
-                <br>
-                <br>
-                <h5>Cambiar contraseña</h5>
-                <hr>
-                <p>Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>
-                <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Solicitar cambio</a>
-                <br>
-                <br>
               </form>
+              <br>
+              <h5>Cambiar contraseña</h5>
+              <hr>
+              <form id="captcha-form" class="formular" method="POST" action="">
+                <p>Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>
+                <br>
+                <div class="g-recaptcha" data-sitekey="6Le7sCITAAAAADSD-3kFrVwaAiG9MpyjxCe9saJP"></div>
+                <br>
+                <button type="submit" class="submit btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Solicitar cambio</button>
+              </form>
+              <br>
+              <br>
             </div>
           </div>
         </div>
-        <div class="col-md-1 lateral-perfil">
+        <div class="col-md-1 edit-lateral-perfil">
         </div>
       </div>
     </div>

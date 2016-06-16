@@ -1,0 +1,23 @@
+CREATE DATABASE jukebox;
+USE jukebox;
+CREATE TABLE usuarios(
+  id INT NOT NULL AUTO_INCREMENT,
+  nick CHAR(30) NOT NULL,
+  nombre CHAR(30),
+  apellido CHAR(30), 
+  email VARCHAR(40) NOT NULL,
+  clave VARCHAR(30) NOT NULL,
+  img VARCHAR(80),
+  PRIMARY KEY(id)
+);
+CREATE TABLE playlist(
+  id INT NOT NULL AUTO_INCREMENT,
+  id_user INT NOT NULL,
+  PRIMARY KEY(id)
+);
+CREATE TABLE temas_playlist(
+  id_playlist INT NOT NULL,
+  id_cancion INT NOT NULL,
+  nombre VARCHAR(40),
+  artista VARCHAR(40)
+);

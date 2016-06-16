@@ -5,6 +5,7 @@
         "rmccue/requests": ">=1.0",
         "phpmailer/phpmailer": "~5.2",
         "google/apiclient": "1.0.*@beta",
-        "jwilsson/spotify-web-api-php": "^1.0.0"
+        "jwilsson/spotify-web-api-php": "^1.0.0",
+        "google/recaptcha": "~1.1"
     }
 }

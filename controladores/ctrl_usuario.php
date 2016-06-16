@@ -4,6 +4,7 @@ require "clases/usuario.php";
 require "clases/Utils.php";
 require_once('clases/template.php');
 require_once('clases/auth.php');
+require_once('clases/recaptchalib.php');
 
 class ControladorUsuario extends ControladorIndex {
 	function nuevo(){
@@ -100,7 +101,6 @@ class ControladorUsuario extends ControladorIndex {
 
 	function perfil($params=array()){
 		Auth::estaLogueado();
-		Session::init();
 		$id = Session::get('usuario_id');
 		$usr=new Usuario();
 		$ser=$usr->datos_usuario($id);
@@ -132,7 +132,6 @@ class ControladorUsuario extends ControladorIndex {
 
 	function avatar_change(){
 		Auth::estaLogueado();
-		Session::init();
 		$tpl = Template::getInstance();
 		$tpl->asignar('proyecto',"Jukebox");
 		$tpl->mostrar('vp-cambiar_foto');
@@ -140,14 +139,19 @@ class ControladorUsuario extends ControladorIndex {
 
 	function edit_profile(){
 		Auth::estaLogueado();
-		Session::init();
 		$userid=Session::get('usuario_id');
+		$email=Session::get('usuario_email');
+		$nick=Session::get('usuario_nick');
 		$msgerror='';
 		$msgok='';
 		$msgerror_two='';
 		$msgok_two='';
 		$confirm_nom=false;
 		$confirm_ape=false;
+		$captcha_publickey = "6Le7sCITAAAAADSD-3kFrVwaAiG9MpyjxCe9saJP";
+	    $captcha_privatekey = "6Le7sCITAAAAAK2BCXC7kZPb_0Z97DfXlC06Jijh";
+	    $captcha_response=null;
+	    $reCaptcha=new \ReCaptcha\ReCaptcha($captcha_privatekey);
 		if(isset($_POST['oldemail'])){
 			$oe=$_POST['oldemail'];
 			if(filter_var($oe,FILTER_VALIDATE_EMAIL)){
@@ -221,6 +225,20 @@ class ControladorUsuario extends ControladorIndex {
 			}
 		}
 
+		if($_POST["g-recaptcha-response"]){
+	        $captcha_response=$reCaptcha->verify($_POST["g-recaptcha-response"],$_SERVER["REMOTE_ADDR"]);
+		    if ($captcha_response->isSuccess()) {
+		        //todo correcto
+	            $send=new Utils();
+	          	$send->cambioContra($email,$nick);
+	          	$msgok="La petición a sido enviada con éxito.";
+	        }else{
+	           	//El código de validación de la imagen está mal escrito.
+		      	$msgerror="El captcha no es correcto.";
+		       	$error_captcha = $captcha_response->getErrorCodes();
+	        }
+		}
+
 		if ($confirm_ape!=false || $confirm_nom!=false){
 			header("Refresh:3");
 		}
@@ -232,6 +250,39 @@ class ControladorUsuario extends ControladorIndex {
 		$tpl->asignar('msgerror_two',$msgerror_two);
 		$tpl->asignar('msgok_two',$msgok_two);
 		$tpl->mostrar('vp-editar_perfil');
+	}
+
+	function change_password(){
+		Auth::estaLogueado();
+		$msgok='';
+		$msgerror='';
+		$noform='';
+		$userid=Session::get('usuario_id');
+		if(isset($_POST['old-pass'])){
+			$op=$_POST['old-pass'];
+			$np=$_POST['new-pass'];
+			$usr=new Usuario();
+			if($usr->equalPass($userid,$op)){
+				$resultado=$usr->updatePassword($np,$userid);
+				if($resultado){
+					$msgok="Contraseña cambiada con éxito.";
+					$noform="noform";
+					Session::destroy();
+					header("Refresh:3; url=http://localhost:8888/obligatorio_php/home");
+				} else {
+					$msgerror="Error interno al cambiar contraseña.";
+				}
+			} else {
+				$msgerror="La contraseña actual no es correcta.";
+			}
+		}
+
+		$tpl = Template::getInstance();
+		$tpl->asignar('proyecto',"Jukebox");
+		$tpl->asignar('noform',$noform);
+		$tpl->asignar('msgok',$msgok);
+		$tpl->asignar('msgerror',$msgerror);
+		$tpl->mostrar('cambiar_contra');
 	}
 }
 ?>

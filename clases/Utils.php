@@ -108,12 +108,12 @@ class Utils{
         $mail->addAddress($email, $nickname);
 
         //Set the subject line
-        $mail->Subject = 'Prueba de contraseña para '.$nickname.'.';
+        $mail->Subject = 'Solicitud cambio de clave para '.$nickname.'.';
 
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-        $mail->Body    = 'Prueba: [url=localhost:8888/obligatorio_php/home]Pagina de inicio[/url]';
+        $mail->Body    = '<div style="width: 450px;"><div align="center"><img src="http://i.imgur.com/HNIZYP8.png" width="326" height="110"></div><br><br>Has solicitado cambiar tu contraseña. Si no has sido tú quien lo ha solicitado, notifícalo de inmediato a los administradores. <br><br> Para cambiar tu contraseña haz click <a href="http://localhost:8888/obligatorio_php/usuario/change_password/">aquí</a>.</div>';
 
         //Replace the plain text body with one created manually
         $mail->AltBody = 'This is a plain-text message body';

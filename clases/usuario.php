@@ -66,7 +66,6 @@ class Usuario extends ClaseBase {
 
     public function updateNombre($newnombre,$userid){
         $new=$newnombre;
-        $old=$oldnombre;
         $id=$userid;
         $stmt = $this->getDB()->prepare("UPDATE usuarios SET nombre=? WHERE id=?");
         $stmt->bind_param("ss",$new,$id);
@@ -76,9 +75,17 @@ class Usuario extends ClaseBase {
 
     public function updateApellido($newapellido,$userid){
         $new=$newapellido;
-        $old=$oldapellido;
         $id=$userid;
         $stmt = $this->getDB()->prepare("UPDATE usuarios SET apellido=? WHERE id=?");
+        $stmt->bind_param("ss",$new,$id);
+        $resultado = $stmt->execute();
+        return $resultado;
+    }
+
+    public function updatePassword($newpassword,$userid){
+        $new=$newpassword;
+        $id=$userid;
+        $stmt = $this->getDB()->prepare("UPDATE usuarios SET clave=? WHERE id=?");
         $stmt->bind_param("ss",$new,$id);
         $resultado = $stmt->execute();
         return $resultado;
@@ -159,6 +166,19 @@ class Usuario extends ClaseBase {
             $resultado=true;
         }
         return $resultado;
+    }
+
+    public function equalPass($id,$pass){
+        $stmt = $this->getDB()->prepare("SELECT * FROM usuarios WHERE clave = ? AND id = ?");
+        $stmt->bind_param("si",$pass,$id);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $existe = mysqli_num_rows($resultado);
+        $ret=false;
+        if($existe!=0){
+            $ret=true;
+        }
+        return $ret;
     }
 }
 

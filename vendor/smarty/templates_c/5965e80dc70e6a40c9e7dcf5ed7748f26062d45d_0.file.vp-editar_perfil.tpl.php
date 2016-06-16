@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-14 02:32:45
+/* Smarty version 3.1.29, created on 2016-06-16 03:43:12
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575f50adba16f4_97358457',
+  'unifunc' => 'content_576204303d6804_51225899',
   'file_dependency' => 
   array (
     '5965e80dc70e6a40c9e7dcf5ed7748f26062d45d' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl',
-      1 => 1465861725,
+      1 => 1466041391,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_575f50adba16f4_97358457 ($_smarty_tpl) {
+function content_576204303d6804_51225899 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,6 +49,9 @@ function content_575f50adba16f4_97358457 ($_smarty_tpl) {
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
+ src='https://www.google.com/recaptcha/api.js'><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
  type="text/javascript" src="js/funciones.js"><?php echo '</script'; ?>
 >
 
@@ -60,9 +63,9 @@ function content_575f50adba16f4_97358457 ($_smarty_tpl) {
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-1 lateral-perfil">
+        <div class="col-md-1 edit-lateral-perfil">
         </div>
-        <div class="col-md-3 perfil-1">
+        <div class="col-md-3 edit-perfil-1">
           <img class="avatar-user" src="<?php echo $_smarty_tpl->tpl_vars['usuario_imagen']->value;?>
 " width="150" height="150">
           <h2><?php echo $_smarty_tpl->tpl_vars['usuario_nick']->value;?>
@@ -77,7 +80,7 @@ function content_575f50adba16f4_97358457 ($_smarty_tpl) {
           <hr id="side-menu">
           <a href="usuario/logout/" id="menu-option">Cerrar sesión</a>
         </div>
-        <div class="col-md-7 perfil-2">
+        <div class="col-md-7 edit-perfil-2">
           <div class="col-md-11 desc-gral">
             <?php if ($_smarty_tpl->tpl_vars['msgerror']->value != '') {?>
             <div class="col-md-12 error-message"><br><?php echo $_smarty_tpl->tpl_vars['msgerror']->value;?>
@@ -104,7 +107,7 @@ function content_575f50adba16f4_97358457 ($_smarty_tpl) {
             <div class="col-md-5 desc-gral-perfil">
               <h4 id="h4-title">Perfil</h4>
               <?php if ($_smarty_tpl->tpl_vars['usuario_apellido']->value != '' || $_smarty_tpl->tpl_vars['usuario_nombre']->value != '') {?>
-              <p>Si necesitas cambiar estos datos, solicita un cambio. Se te enviará un mensaje a tu correo asociado a esta cuenta para que puedas cambiar estos datos.</p>
+              <p>¡Nos agrada que te presentes ante la comunidad!</p>
               <?php } else { ?>
               <p>Muestrale al mundo como te llamas y hazte de más amigos con tus mismos gustos musicales.</p>
               <?php }?>
@@ -126,11 +129,10 @@ function content_575f50adba16f4_97358457 ($_smarty_tpl) {
                   <?php }?>
                 </fieldset>
                 <?php if ($_smarty_tpl->tpl_vars['usuario_nombre']->value != '' && $_smarty_tpl->tpl_vars['usuario_apellido']->value != '') {?>
-                <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Solicitar cambio</a>
                 <?php } else { ?>
                 <button type="submit" class="submit form-control btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
-                <?php }?>
                 <br>
+                <?php }?>
                 <br>
               </form>
             </div>
@@ -151,19 +153,23 @@ function content_575f50adba16f4_97358457 ($_smarty_tpl) {
                   <input type="text" id="reemail" name="reemail" class="form-control" placeholder="Confirmar email" value='' autocomplete="off">
                 </fieldset>
                 <button type="submit" class="submit form-control btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
-                <br>
-                <br>
-                <h5>Cambiar contraseña</h5>
-                <hr>
-                <p>Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>
-                <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Solicitar cambio</a>
-                <br>
-                <br>
               </form>
+              <br>
+              <h5>Cambiar contraseña</h5>
+              <hr>
+              <form id="captcha-form" class="formular" method="POST" action="">
+                <p>Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>
+                <br>
+                <div class="g-recaptcha" data-sitekey="6Le7sCITAAAAADSD-3kFrVwaAiG9MpyjxCe9saJP"></div>
+                <br>
+                <button type="submit" class="submit btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Solicitar cambio</button>
+              </form>
+              <br>
+              <br>
             </div>
           </div>
         </div>
-        <div class="col-md-1 lateral-perfil">
+        <div class="col-md-1 edit-lateral-perfil">
         </div>
       </div>
     </div>

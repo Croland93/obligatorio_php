@@ -1,3 +1,26 @@
+<?php
+/* Smarty version 3.1.29, created on 2016-06-18 20:59:32
+  from "E:\wamp64\www\obligatorio_php\vistas\reproductor.tpl" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_5765b6340f5601_58940242',
+  'file_dependency' => 
+  array (
+    '98bd529a02bc185d3a23a8d991e467f6219db124' => 
+    array (
+      0 => 'E:\\wamp64\\www\\obligatorio_php\\vistas\\reproductor.tpl',
+      1 => 1466283546,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5765b6340f5601_58940242 ($_smarty_tpl) {
+?>
 
 <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
 <link href="css/nuevo.css" rel="stylesheet">
@@ -47,3 +70,5 @@
 
 
 </div>
+<?php }
+}

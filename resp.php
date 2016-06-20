@@ -38,7 +38,7 @@
 
   <!-- <label for="volumen">Volumen: </label><input type="range" min="0" max="100" value="80" step="0.1" id="volumen"> -->
 
-
+<div id="main">
   <div class="container-fluid">
 
     <div class="row">
@@ -67,12 +67,7 @@
 
   </div>
 
-  <div id="result">
-
-
-
-  </div>
-
+</div>
 
 
 
@@ -114,6 +109,12 @@
         </td>
       </tr>
     </table>
+  </div>  
+
+  <div id="result">
+
+
+
   </div>
 
   {include file="reproductor.tpl"}
@@ -165,8 +166,9 @@ $(document).ready(function() {
     data: $(this).serialize(),
             // Muesta lo q trae d php
             success: function(data) {
+            $('#main').css("display", "none");
               $('#result').html(data);
-              $('#main').slideUp('fast');
+             
             }
           })        
   return false;

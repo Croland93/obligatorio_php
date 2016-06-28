@@ -1,7 +1,7 @@
 <?php
 	define("DB_HOST", "localhost");
 	define("DB_USR", "root");
-	define("DB_PASS", "root");
+	define("DB_PASS", "");
 	define("DB_DB", "jukebox");
 	define("URL_BASE", "/obligatorio_php/");
 	//define(DB_TYPE, "mysql");

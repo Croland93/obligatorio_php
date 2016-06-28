@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,102 +12,99 @@
 
   <!-- Custom styles for this template -->
   <link href="css/dashboard.css" rel="stylesheet">
-  <link href="css/new_dashboard.css" rel="stylesheet">
 
-  <!--<link href="css/repro.css" rel="stylesheet">-->
-  <link rel="stylesheet" href="css/nuevo.css">
+  <link href="css/repro.css" rel="stylesheet">
 
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/footer-distributed-with-address-and-phones.css">
-  <script type="text/javascript" src="js/funciones.js"></script>
+
+  
+  <!-- <script type="text/javascript" src="js/funciones.js"></script> -->
+
   <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+
+
+
 
 </head>
 
 <body>
   {include file="cabezal.tpl"}
+
   <div class="container-fluid">
-  <div id="result">
-    
-  </div>
+
     <div class="row">
-      <div class="col-md-12 artist-encontreishon">
-      <h3 style="color: white;">Artistas</h3>
-      <br>
-        {foreach from=$listart item=artistas} 
+
+      {foreach from=$listart item=artistas} 
 
       <div class="col-md-1">
-        <div id='pag-artista'>
-          <a name="artista" class="artista">
+        <a id="{$artistas['id']}" name="artista" class="artista" value="{$artistas['imagen']}*{$artistas['nombre']}">
 
+          {if $artistas['imagen']==null}
+          <img class="art img-thumbnail" src="../obligatorio_php/public/media/logo-jukebox-j.png">
 
-            {if $artistas['imagen']==null}
-            <img class="art img-thumbnail" src="../obligatorio_php/public/media/non-artist-image.jpg">
+          {else}
 
-            {else}
+          <img class="art img-thumbnail" src="{$artistas['imagen']}" alt="...">
+          {/if}
+          <span>{$artistas['nombre']}</span>
+        </a>
 
-            <img class="art img-thumbnail" src="{$artistas['imagen']}" alt="...">
-            {/if}
-            <span style="color: white;">{$artistas['nombre']}</span>
-          </a>
-        </div>
       </div>
       {/foreach}
-      </div>
-      <div class="col-md-4 music-found">
-      <h3>Temas</h3>
-        <table align="center">
-          <tr>
-            <td id="div-btn1">
-              <br>
-              {foreach from=$datos item=videos}
-              <ul>   
-                <a class="btn btn-default"  href="javascript:cargarvideo('{$videos['id']['videoId']}','{$videos['snippet']['title']}')" ><span class="glyphicon glyphicon-play"></span> {$videos['snippet']['title']} </a>    
-              </ul>
-              {/foreach}
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="col-md-8 dash-of-the-board">
-        <img id="image-dashboard" src="../obligatorio_php/public/media/logo-jukebox-2.png">
-        <div class="col-md-12" id="videoHiden">
-          <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
-        </div>
-      </div>
     </div>
 
-<div class="navbar navbar-inverse navbar-fixed-bottom reproductorino" style="background-color: grey;">
-  <div class="col-md-6" style="display: inline-block; text-align: center; padding-left: 5%; padding-top: 5px;">
-    <div class="col-md-12" style="height: 10px; margin: 0;">
-      <span id="playingNow" style="float: left;">Jukebox Play</span>
-    </div>
-    <div class="col-md-12" style="margin: 0;">
-      <input type="range" value="" id="progreso" style="float: left;">
-      <span id="current-time" style="float: left; margin-top: 18px; margin-left: 10px;">0:00/</span>
-      <span id="duration" style="float: left; margin-top: 18px;">0:00</span>
-    </div>
+
   </div>
-<div class="col-md-2">
-  <div id="controles">
-    <i id="boton-anterior" class="fa fa-step-backward fa-4x" aria-hidden="true"></i>
-    <i id="boton-play" class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i>
-    <i id="boton-siguiente" class="fa fa-step-forward fa-4x" aria-hidden="true"></i>
-    <!-- <i class="fa fa-pause-circle-o fa-3x" style="color:white; padding-right: 15px;" aria-hidden="true"></i> -->
+<div id="result"></div>
+
+
+
+  <div class="col-md-8 playlist">
+    <table align="center">
+      <tr>
+
+
+
+
+        <td id="div-btn1">
+          <br>
+
+          
+          {foreach from=$datos item=videos}
+
+
+
+
+
+          <ul >   
+            <a class="btn btn-default" href="javascript:cargarvideo('{$videos['id']['videoId']}')" ><span class="glyphicon glyphicon-play"></span> {$videos['snippet']['title']} </a>
+            <button name="playlist" class="playlist" id="{$videos['id']['videoId']}">playlist</button>   
+            <button name="fav" class="fav" id="{$videos['id']['videoId']}">FAV</button> 
+
+          </ul>
+
+
+
+          {/foreach}
+
+        </td>
+      </tr>
+    </table>
   </div>
-</div>
-<div class="col-md-2">
-  <div id="ctrl_volumen">
-    <i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
-    <!-- <input id="volume-rango" type="range" value=""> -->
-  </div>  
-  <input id="volume-rango" type="range" value="">
-</div>
-<div class="col-md-2"></div>
-</div>
+  <div class="col-md-7">
+    <table>
+      <tr>
+        <td >
+          <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  {include file="reproductor.tpl"}
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -139,7 +137,6 @@
 $(document).ready(function() {
  
 
-
  
   $('.artista').click(function() {
   // Envia AJAX
@@ -149,6 +146,7 @@ $(document).ready(function() {
   var res = datos.split("*");
   var nombre = res[1];
   var imagen = res[0];
+  alert(id);
   if (imagen == ""){
     var imagen = "http://djlogic.es/wp-content/uploads/musica-internet.jpg";
   }
@@ -164,7 +162,6 @@ $(document).ready(function() {
             success: function(data) {
 
               $('#result').html(data);
-              // $('#main').slideUp('fast');
             }
           })        
   return false;
@@ -242,10 +239,12 @@ $('#boton-play').on('click', function () {
 
 //boton volume
 $('#ctrl_volumen').on('click', function() {
-  var mute_toggle = $('#ctrl_volumen > i.fa');
+  var mute_toggle = $(this);
   console.log(mute_toggle);
-  if(player.isMuted() && mute_toggle.hasClass('fa-volume-off')){
+  if(player.isMuted()){
     player.unMute();
+
+    mute_toggle.text('encendido');
     
     mute_toggle.addClass('fa-volume-up');
     mute_toggle.removeClass('fa-volume-off');
@@ -253,6 +252,7 @@ $('#ctrl_volumen').on('click', function() {
   }
   else{
     player.mute();
+    mute_toggle.text('apagado'); 
 
     mute_toggle.removeClass('fa-volume-up');
     mute_toggle.addClass('fa-volume-off');
@@ -316,7 +316,7 @@ function updateProgressBar(){
 
   }
 
-  function cargarvideo(primerID,tituloVid){
+  function cargarvideo(primerID){
 
     var miarray = {$lista};
     var i = miarray.indexOf(primerID);
@@ -325,11 +325,7 @@ function updateProgressBar(){
 
     var listaID = sig.toString();
     
-    document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=0&modestbranding=0&rel=0&fs=0&frameborder=”0″&showinfo=0&disablekb=1&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
-
-    $('#boton-play').removeClass('fa-play-circle-o');
-    $('#boton-play').addClass('fa-pause-circle-o');
-    $('#playingNow').text(tituloVid);
+    document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=1&modestbranding=1&rel=0&fs=0&frameborder=”0″&showinfo=1&disablekb=1&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
     
   }
 
@@ -339,3 +335,4 @@ function updateProgressBar(){
 
 </body>
 </html>
+

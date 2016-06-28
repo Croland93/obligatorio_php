@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/funciones.js"></script>
+    <!-- <script type="text/javascript" src="js/funciones.js"></script> -->
     <link href="css/art.css" rel="stylesheet">
 
 </head>
@@ -39,12 +39,17 @@
     </div>
     <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
         <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">
+            <button type="button" id="tab1" class="btn btn-primary" href="#tab1" data-toggle="tab">
                 <div class="hidden-xs"><h5>Top Tracks</h5></div>
             </button>
         </div>
+          <div class="btn-group" role="group">
+            <button type="button" id="tab2" class="btn btn-primary" href="#tab2" data-toggle="tab">
+                <div class="hidden-xs"><h5>Albumes</h5></div>
+            </button>
+        </div>
         <div class="btn-group" role="group">
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab">
+            <button type="button" id="tab3" class="btn btn-default" href="#tab3" data-toggle="tab">
                 <div class="hidden-xs"><h5>Artistas Relacionados</h5></div>
             </button>
         </div>
@@ -81,7 +86,37 @@
 
 
         </div>
-        <div class="tab-pane fade in" id="tab2">
+           <div class="tab-pane fade in active" id="tab2">
+           
+   <div class="container-fluid">
+
+            <div class="row">
+
+               {foreach from=$relacionados item=rel} 
+
+               <div class="col-md-1">
+                   
+                <a href="api/artista/{$rel['nombre']}/{$rel['id']}/{$rel['imagen']}" name="artista" id="artista">
+
+
+                  {if $rel['imagen']==null}
+                  <img class="art img-thumbnail" src="../obligatorio_php/public/media/logo-jukebox-j.png">
+
+                  {else}
+
+                  <img class="art img-thumbnail" src="{$rel['imagen']}" alt="...">
+                  {/if}
+                  <span>{$rel['nombre']}</span>
+              </a>
+
+          </div>
+          {/foreach}
+      </div>
+
+
+        </div>
+        </div>
+        <div class="tab-pane fade in" id="tab3">
 
           <div class="container-fluid">
 
@@ -114,6 +149,7 @@
 
 
 </div>
+   
 </div>
 </div>
 

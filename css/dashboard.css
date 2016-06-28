@@ -7,7 +7,26 @@ body {
   padding-top: 50px;
 }
 
+  .contenedor{
+    height: 100px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /*text-align: center;*/
+  }
+  .todo{
+    height: 100px;
+    /*width: 100px;*/
+    /*display: inline-block;*/
 
+  }
+
+  .cada-cuadrito{
+    width: 100px;
+    height: 100px;
+    display: inline-block !important;
+
+  }
 /*
  * Global add-ons
  */

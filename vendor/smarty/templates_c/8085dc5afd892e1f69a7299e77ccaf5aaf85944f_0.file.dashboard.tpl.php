@@ -1,29 +1,27 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-19 00:34:11
+/* Smarty version 3.1.29, created on 2016-06-28 02:05:59
   from "E:\wamp64\www\obligatorio_php\vistas\dashboard.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5765e8837a30d5_81395092',
+  'unifunc' => 'content_5771db87e3ac71_40299791',
   'file_dependency' => 
   array (
     '8085dc5afd892e1f69a7299e77ccaf5aaf85944f' => 
     array (
       0 => 'E:\\wamp64\\www\\obligatorio_php\\vistas\\dashboard.tpl',
-      1 => 1466296104,
+      1 => 1467079501,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:cabezal.tpl' => 1,
-    'file:reproductor.tpl' => 1,
   ),
 ),false)) {
-function content_5765e8837a30d5_81395092 ($_smarty_tpl) {
+function content_5771db87e3ac71_40299791 ($_smarty_tpl) {
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,10 +37,11 @@ function content_5765e8837a30d5_81395092 ($_smarty_tpl) {
 
   <!-- Custom styles for this template -->
   <link href="css/dashboard.css" rel="stylesheet">
+  <link href="css/new_dashboard.css" rel="stylesheet">
 
-  <link href="css/repro.css" rel="stylesheet">
+  <!--<link href="css/repro.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="css/nuevo.css">
 
-  
   <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"><?php echo '</script'; ?>
 >
@@ -52,18 +51,14 @@ function content_5765e8837a30d5_81395092 ($_smarty_tpl) {
   <?php echo '<script'; ?>
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
-
-  
+  <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/footer-distributed-with-address-and-phones.css">
   <?php echo '<script'; ?>
  type="text/javascript" src="js/funciones.js"><?php echo '</script'; ?>
 >
-
   <?php echo '<script'; ?>
  type="text/javascript" src="js/jquery-1.4.2.min.js"><?php echo '</script'; ?>
 >
-
-
-
 
 </head>
 
@@ -71,18 +66,15 @@ function content_5765e8837a30d5_81395092 ($_smarty_tpl) {
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:cabezal.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-
-
-  <!-- <div id="video-placeholder"></div> -->
-
-  <!-- <label for="volumen">Volumen: </label><input type="range" min="0" max="100" value="80" step="0.1" id="volumen"> -->
-
-
   <div class="container-fluid">
-
+  <div id="result">
+    
+  </div>
     <div class="row">
-
-      <?php
+      <div class="col-md-12 artist-encontreishon">
+      <h3 style="color: white;">Artistas</h3>
+      <br>
+        <?php
 $_from = $_smarty_tpl->tpl_vars['listart']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -96,19 +88,19 @@ $__foreach_artistas_0_saved_local_item = $_smarty_tpl->tpl_vars['artistas'];
 ?> 
 
       <div class="col-md-1">
-        <div id=pag-artistas>
-          <a name="artista" id="artista">
+        <div id='pag-artista'>
+          <a name="artista" class="artista">
 
 
             <?php if ($_smarty_tpl->tpl_vars['artistas']->value['imagen'] == null) {?>
-            <img class="art img-thumbnail" src="../obligatorio_php/public/media/logo-jukebox-j.png">
+            <img class="art img-thumbnail" src="../obligatorio_php/public/media/non-artist-image.jpg">
 
             <?php } else { ?>
 
             <img class="art img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
 " alt="...">
             <?php }?>
-            <span><?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
+            <span style="color: white;"><?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
 </span>
           </a>
         </div>
@@ -120,32 +112,14 @@ if ($__foreach_artistas_0_saved_item) {
 $_smarty_tpl->tpl_vars['artistas'] = $__foreach_artistas_0_saved_item;
 }
 ?>
-    </div>
-
-
-  </div>
-
-  <div id="result">
-
-
-
-  </div>
-
-
-
-
-  <div class="col-md-4 playlist">
-    <table align="center">
-      <tr>
-
-
-
-
-        <td id="div-btn1">
-          <br>
-
-          
-          <?php
+      </div>
+      <div class="col-md-4 music-found">
+      <h3>Temas</h3>
+        <table align="center">
+          <tr>
+            <td id="div-btn1">
+              <br>
+              <?php
 $_from = $_smarty_tpl->tpl_vars['datos']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -157,45 +131,59 @@ foreach ($_from as $_smarty_tpl->tpl_vars['videos']->value) {
 $_smarty_tpl->tpl_vars['videos']->_loop = true;
 $__foreach_videos_1_saved_local_item = $_smarty_tpl->tpl_vars['videos'];
 ?>
-
-
-
-
-
-          <ul>   
-            <a class="btn btn-default"  href="javascript:cargarvideo('<?php echo $_smarty_tpl->tpl_vars['videos']->value['id']['videoId'];?>
+              <ul>   
+                <a class="btn btn-default"  href="javascript:cargarvideo('<?php echo $_smarty_tpl->tpl_vars['videos']->value['id']['videoId'];?>
+','<?php echo $_smarty_tpl->tpl_vars['videos']->value['snippet']['title'];?>
 ')" ><span class="glyphicon glyphicon-play"></span> <?php echo $_smarty_tpl->tpl_vars['videos']->value['snippet']['title'];?>
  </a>    
-
-          </ul>
-
-
-
-          <?php
+              </ul>
+              <?php
 $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_local_item;
 }
 if ($__foreach_videos_1_saved_item) {
 $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_item;
 }
 ?>
-
-        </td>
-      </tr>
-    </table>
-  </div>
-  <div class="col-md-7">
-    <table>
-      <tr>
-        <td >
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-8 dash-of-the-board">
+        <img id="image-dashboard" src="../obligatorio_php/public/media/logo-jukebox-2.png">
+        <div class="col-md-12" id="videoHiden">
           <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
-        </td>
-      </tr>
-    </table>
+        </div>
+      </div>
+    </div>
+
+<div class="navbar navbar-inverse navbar-fixed-bottom reproductorino" style="background-color: grey;">
+  <div class="col-md-6" style="display: inline-block; text-align: center; padding-left: 5%; padding-top: 5px;">
+    <div class="col-md-12" style="height: 10px; margin: 0;">
+      <span id="playingNow" style="float: left;">Jukebox Play</span>
+    </div>
+    <div class="col-md-12" style="margin: 0;">
+      <input type="range" value="" id="progreso" style="float: left;">
+      <span id="current-time" style="float: left; margin-top: 18px; margin-left: 10px;">0:00/</span>
+      <span id="duration" style="float: left; margin-top: 18px;">0:00</span>
+    </div>
   </div>
-
-  <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:reproductor.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
+<div class="col-md-2">
+  <div id="controles">
+    <i id="boton-anterior" class="fa fa-step-backward fa-4x" aria-hidden="true"></i>
+    <i id="boton-play" class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i>
+    <i id="boton-siguiente" class="fa fa-step-forward fa-4x" aria-hidden="true"></i>
+    <!-- <i class="fa fa-pause-circle-o fa-3x" style="color:white; padding-right: 15px;" aria-hidden="true"></i> -->
+  </div>
+</div>
+<div class="col-md-2">
+  <div id="ctrl_volumen">
+    <i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
+    <!-- <input id="volume-rango" type="range" value=""> -->
+  </div>  
+  <input id="volume-rango" type="range" value="">
+</div>
+<div class="col-md-2"></div>
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -236,25 +224,33 @@ $(document).ready(function() {
 
 
  
-  $('#pag-artistas').click(function() {
-    console.log("entra aca");
+  $('.artista').click(function() {
   // Envia AJAX
-  var nombre = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
+  // var id = $(event.attr.id);
+  var id = $(this).attr('id');
+  var datos = $(this).attr('value');
+  var res = datos.split("*");
+  var nombre = res[1];
+  var imagen = res[0];
+  if (imagen == ""){
+    var imagen = "http://djlogic.es/wp-content/uploads/musica-internet.jpg";
+  }
+  // var nombre = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
 ";
-  var id = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['id'];?>
+  // var id = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['id'];?>
 ";
-  var imagen = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
+  // var imagen = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
 ";
-
-  
+    
   $.ajax({
     type: 'GET',
     url: 'api/artista/'+nombre+'/'+id+'/'+imagen,
     data: $(this).serialize(),
             // Muesta lo q trae d php
             success: function(data) {
+
               $('#result').html(data);
-              $('#main').slideUp('fast');
+              // $('#main').slideUp('fast');
             }
           })        
   return false;
@@ -332,12 +328,10 @@ $('#boton-play').on('click', function () {
 
 //boton volume
 $('#ctrl_volumen').on('click', function() {
-  var mute_toggle = $(this);
+  var mute_toggle = $('#ctrl_volumen > i.fa');
   console.log(mute_toggle);
-  if(player.isMuted()){
+  if(player.isMuted() && mute_toggle.hasClass('fa-volume-off')){
     player.unMute();
-
-    mute_toggle.text('encendido');
     
     mute_toggle.addClass('fa-volume-up');
     mute_toggle.removeClass('fa-volume-off');
@@ -345,7 +339,6 @@ $('#ctrl_volumen').on('click', function() {
   }
   else{
     player.mute();
-    mute_toggle.text('apagado'); 
 
     mute_toggle.removeClass('fa-volume-up');
     mute_toggle.addClass('fa-volume-off');
@@ -409,7 +402,7 @@ function updateProgressBar(){
 
   }
 
-  function cargarvideo(primerID){
+  function cargarvideo(primerID,tituloVid){
 
     var miarray = <?php echo $_smarty_tpl->tpl_vars['lista']->value;?>
 ;
@@ -419,7 +412,11 @@ function updateProgressBar(){
 
     var listaID = sig.toString();
     
-    document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=1&modestbranding=1&rel=0&fs=0&frameborder=”0″&showinfo=1&disablekb=1&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
+    document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=0&modestbranding=0&rel=0&fs=0&frameborder=”0″&showinfo=0&disablekb=1&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
+
+    $('#boton-play').removeClass('fa-play-circle-o');
+    $('#boton-play').addClass('fa-pause-circle-o');
+    $('#playingNow').text(tituloVid);
     
   }
 
@@ -431,7 +428,5 @@ function updateProgressBar(){
 >
 
 </body>
-</html>
-
-<?php }
+</html><?php }
 }

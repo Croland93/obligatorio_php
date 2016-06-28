@@ -21,7 +21,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   
-  <script type="text/javascript" src="js/funciones.js"></script>
+  <!-- <script type="text/javascript" src="js/funciones.js"></script> -->
 
   <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 

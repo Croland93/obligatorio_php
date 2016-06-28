@@ -7,9 +7,15 @@
   text-decoration: none;
   border-color: red;
 
-
-
 }
+.cosanueva{
+ min-height: 100px !important;
+  min-width: 100px !important;
+  max-height: 100px !important;
+  max-width: 100px !important;
+}
+
+
  .art {
   min-height: 100px !important;
   min-width: 100px !important;

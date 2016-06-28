@@ -8,7 +8,19 @@ class ControladorApi extends ControladorIndex{
   function artista($params){
     $api = new SpotifyWebAPI\SpotifyWebAPI();
     $albums = $api->getArtistAlbums($params[1]);
-    $img = $params[2]."//".$params[3]."/".$params[4]."/".$params[5];
+    var_dump("entra aca");
+    $i = 3;
+
+    $c = count($params);
+    var_dump($c);  
+    while ($i<$c-1){
+
+        $img1 .= $params[$i]."/";
+        echo $params[$i]."<br>";
+      $i++;
+    }
+    $img1 .= $params[$c-1];
+    $img = $params[2]."//".$img1;
     foreach($albums->items as $albums){
       $lista[] = array(
         'nombre' => $albums->name,

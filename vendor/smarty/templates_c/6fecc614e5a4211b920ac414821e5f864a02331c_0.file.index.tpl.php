@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-14 01:17:02
+/* Smarty version 3.1.29, created on 2016-06-22 23:25:36
   from "E:\wamp64\www\obligatorio_php\vistas\index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575f5b0e7ce013_75590893',
+  'unifunc' => 'content_576b1e70adabb3_90796460',
   'file_dependency' => 
   array (
     '6fecc614e5a4211b920ac414821e5f864a02331c' => 
     array (
       0 => 'E:\\wamp64\\www\\obligatorio_php\\vistas\\index.tpl',
-      1 => 1465866927,
+      1 => 1466637904,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_575f5b0e7ce013_75590893 ($_smarty_tpl) {
+function content_576b1e70adabb3_90796460 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -50,9 +50,9 @@ function content_575f5b0e7ce013_75590893 ($_smarty_tpl) {
     <?php echo '<script'; ?>
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
-    <?php echo '<script'; ?>
+    <!-- <?php echo '<script'; ?>
  type="text/javascript" src="js/funciones.js"><?php echo '</script'; ?>
->
+> -->
 
   </head>
 

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-14 01:20:33
+/* Smarty version 3.1.29, created on 2016-06-28 01:53:49
   from "E:\wamp64\www\obligatorio_php\vistas\arti.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575f5be1e0e7f4_51440301',
+  'unifunc' => 'content_5771d8ad3c65a5_99063607',
   'file_dependency' => 
   array (
     '6bff4363a45cc80ae5b9a27238abddfa3a340fa5' => 
     array (
       0 => 'E:\\wamp64\\www\\obligatorio_php\\vistas\\arti.tpl',
-      1 => 1465866927,
+      1 => 1467078816,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:reproductor.tpl' => 1,
   ),
 ),false)) {
-function content_575f5be1e0e7f4_51440301 ($_smarty_tpl) {
+function content_5771d8ad3c65a5_99063607 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,9 +47,9 @@ function content_575f5be1e0e7f4_51440301 ($_smarty_tpl) {
     <?php echo '<script'; ?>
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
-    <?php echo '<script'; ?>
+    <!-- <?php echo '<script'; ?>
  type="text/javascript" src="js/funciones.js"><?php echo '</script'; ?>
->
+> -->
     <link href="css/art.css" rel="stylesheet">
 
 </head>
@@ -79,12 +79,17 @@ function content_575f5be1e0e7f4_51440301 ($_smarty_tpl) {
     </div>
     <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
         <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">
+            <button type="button" id="tab1" class="btn btn-primary" href="#tab1" data-toggle="tab">
                 <div class="hidden-xs"><h5>Top Tracks</h5></div>
             </button>
         </div>
+          <div class="btn-group" role="group">
+            <button type="button" id="tab2" class="btn btn-primary" href="#tab2" data-toggle="tab">
+                <div class="hidden-xs"><h5>Albumes</h5></div>
+            </button>
+        </div>
         <div class="btn-group" role="group">
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab">
+            <button type="button" id="tab3" class="btn btn-default" href="#tab3" data-toggle="tab">
                 <div class="hidden-xs"><h5>Artistas Relacionados</h5></div>
             </button>
         </div>
@@ -141,9 +146,9 @@ $_smarty_tpl->tpl_vars['top'] = $__foreach_top_0_saved_item;
 
 
         </div>
-        <div class="tab-pane fade in" id="tab2">
-
-          <div class="container-fluid">
+           <div class="tab-pane fade in active" id="tab2">
+           
+   <div class="container-fluid">
 
             <div class="row">
 
@@ -191,11 +196,64 @@ $_smarty_tpl->tpl_vars['rel'] = $__foreach_rel_1_saved_item;
       </div>
 
 
+        </div>
+        </div>
+        <div class="tab-pane fade in" id="tab3">
+
+          <div class="container-fluid">
+
+            <div class="row">
+
+               <?php
+$_from = $_smarty_tpl->tpl_vars['relacionados']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_rel_2_saved_item = isset($_smarty_tpl->tpl_vars['rel']) ? $_smarty_tpl->tpl_vars['rel'] : false;
+$_smarty_tpl->tpl_vars['rel'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['rel']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['rel']->value) {
+$_smarty_tpl->tpl_vars['rel']->_loop = true;
+$__foreach_rel_2_saved_local_item = $_smarty_tpl->tpl_vars['rel'];
+?> 
+
+               <div class="col-md-1">
+                   
+                <a href="api/artista/<?php echo $_smarty_tpl->tpl_vars['rel']->value['nombre'];?>
+/<?php echo $_smarty_tpl->tpl_vars['rel']->value['id'];?>
+/<?php echo $_smarty_tpl->tpl_vars['rel']->value['imagen'];?>
+" name="artista" id="artista">
+
+
+                  <?php if ($_smarty_tpl->tpl_vars['rel']->value['imagen'] == null) {?>
+                  <img class="art img-thumbnail" src="../obligatorio_php/public/media/logo-jukebox-j.png">
+
+                  <?php } else { ?>
+
+                  <img class="art img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['rel']->value['imagen'];?>
+" alt="...">
+                  <?php }?>
+                  <span><?php echo $_smarty_tpl->tpl_vars['rel']->value['nombre'];?>
+</span>
+              </a>
+
+          </div>
+          <?php
+$_smarty_tpl->tpl_vars['rel'] = $__foreach_rel_2_saved_local_item;
+}
+if ($__foreach_rel_2_saved_item) {
+$_smarty_tpl->tpl_vars['rel'] = $__foreach_rel_2_saved_item;
+}
+?>
+      </div>
+
+
   </div>
 
 
 
 </div>
+   
 </div>
 </div>
 
@@ -337,7 +395,7 @@ function cargarvideo(primerID){
           $(document).ready(function() {
             $(".btn-pref .btn").click(function () {
                 $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
-    // $(".tab").addClass("active"); // instead of this do the below 
+    $(".tab").addClass("active"); // instead of this do the below 
     $(this).removeClass("btn-default").addClass("btn-primary");   
 });
         });

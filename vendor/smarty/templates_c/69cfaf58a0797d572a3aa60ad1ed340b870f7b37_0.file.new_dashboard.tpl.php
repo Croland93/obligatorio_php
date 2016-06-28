@@ -1,29 +1,27 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-22 19:10:19
-  from "/Applications/MAMP/htdocs/obligatorio_php/vistas/dashboard.tpl" */
+/* Smarty version 3.1.29, created on 2016-06-23 21:37:31
+  from "/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_576ac67b7c8ff5_07956753',
+  'unifunc' => 'content_576c3a7ba8dec0_93164521',
   'file_dependency' => 
   array (
-    '78afc9974126d6e5e82132fd1772a5f22c9a2013' => 
+    '69cfaf58a0797d572a3aa60ad1ed340b870f7b37' => 
     array (
-      0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/dashboard.tpl',
-      1 => 1466615391,
+      0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl',
+      1 => 1466710634,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:cabezal.tpl' => 1,
-    'file:reproductor.tpl' => 1,
   ),
 ),false)) {
-function content_576ac67b7c8ff5_07956753 ($_smarty_tpl) {
+function content_576c3a7ba8dec0_93164521 ($_smarty_tpl) {
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,15 +33,15 @@ function content_576ac67b7c8ff5_07956753 ($_smarty_tpl) {
 </title>
 
   <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/dashboard.css" rel="stylesheet">
+  <link href="css/new_dashboard.css" rel="stylesheet">
 
-  <link href="css/repro.css" rel="stylesheet">
+  <!--<link href="css/repro.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="css/nuevo.css">
 
-  <link href="css/art.css" rel="stylesheet">
-
-  
   <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"><?php echo '</script'; ?>
 >
@@ -53,18 +51,14 @@ function content_576ac67b7c8ff5_07956753 ($_smarty_tpl) {
   <?php echo '<script'; ?>
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
-
-  
+  <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/footer-distributed-with-address-and-phones.css">
   <?php echo '<script'; ?>
  type="text/javascript" src="js/funciones.js"><?php echo '</script'; ?>
 >
-
   <?php echo '<script'; ?>
  type="text/javascript" src="js/jquery-1.4.2.min.js"><?php echo '</script'; ?>
 >
-
-
-
 
 </head>
 
@@ -72,20 +66,15 @@ function content_576ac67b7c8ff5_07956753 ($_smarty_tpl) {
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:cabezal.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-
-
-  <!-- <div id="video-placeholder"></div> -->
-
-  <!-- <label for="volumen">Volumen: </label><input type="range" min="0" max="100" value="80" step="0.1" id="volumen"> -->
-
-
   <div class="container-fluid">
-
+  <div id="result">
+    
+  </div>
     <div class="row">
-
-<div id="lista-artista" class="contenedor">
-
-      <?php
+      <div class="col-md-12 artist-encontreishon">
+      <h3 style="color: white;">Artistas</h3>
+      <br>
+        <?php
 $_from = $_smarty_tpl->tpl_vars['listart']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -97,20 +86,25 @@ foreach ($_from as $_smarty_tpl->tpl_vars['artistas']->value) {
 $_smarty_tpl->tpl_vars['artistas']->_loop = true;
 $__foreach_artistas_0_saved_local_item = $_smarty_tpl->tpl_vars['artistas'];
 ?> 
- <div class="todo">
-      <!-- <div class="col-md-1"> -->
-     
-         
+
+      <div class="col-md-1">
+        <div id='pag-artista'>
+          <a name="artista" class="artista">
 
 
-            <!-- <img class="art img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
-" alt="..."> -->
-            <img class="cosanueva" src="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
+            <?php if ($_smarty_tpl->tpl_vars['artistas']->value['imagen'] == null) {?>
+            <img class="art img-thumbnail" src="../obligatorio_php/public/media/non-artist-image.jpg">
+
+            <?php } else { ?>
+
+            <img class="art img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
 " alt="...">
-         
-    
-       </div>
-
+            <?php }?>
+            <span style="color: white;"><?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
+</span>
+          </a>
+        </div>
+      </div>
       <?php
 $_smarty_tpl->tpl_vars['artistas'] = $__foreach_artistas_0_saved_local_item;
 }
@@ -118,34 +112,14 @@ if ($__foreach_artistas_0_saved_item) {
 $_smarty_tpl->tpl_vars['artistas'] = $__foreach_artistas_0_saved_item;
 }
 ?>
-      
-</div>
-    </div>
-
-
-  </div>
-
-  <div id="result">
-
-
-
-  </div>
-
-
-
-
-  <div class="col-md-4 playlist">
-    <table align="center">
-      <tr>
-
-
-
-
-        <td id="div-btn1">
-          <br>
-
-          
-          <?php
+      </div>
+      <div class="col-md-4 music-found">
+      <h3>Temas</h3>
+        <table align="center">
+          <tr>
+            <td id="div-btn1">
+              <br>
+              <?php
 $_from = $_smarty_tpl->tpl_vars['datos']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -157,45 +131,59 @@ foreach ($_from as $_smarty_tpl->tpl_vars['videos']->value) {
 $_smarty_tpl->tpl_vars['videos']->_loop = true;
 $__foreach_videos_1_saved_local_item = $_smarty_tpl->tpl_vars['videos'];
 ?>
-
-
-
-
-
-          <ul>   
-            <a class="btn btn-default"  href="javascript:cargarvideo('<?php echo $_smarty_tpl->tpl_vars['videos']->value['id']['videoId'];?>
+              <ul>   
+                <a class="btn btn-default"  href="javascript:cargarvideo('<?php echo $_smarty_tpl->tpl_vars['videos']->value['id']['videoId'];?>
+','<?php echo $_smarty_tpl->tpl_vars['videos']->value['snippet']['title'];?>
 ')" ><span class="glyphicon glyphicon-play"></span> <?php echo $_smarty_tpl->tpl_vars['videos']->value['snippet']['title'];?>
  </a>    
-
-          </ul>
-
-
-
-          <?php
+              </ul>
+              <?php
 $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_local_item;
 }
 if ($__foreach_videos_1_saved_item) {
 $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_item;
 }
 ?>
-
-        </td>
-      </tr>
-    </table>
-  </div>
-  <div class="col-md-7">
-    <table>
-      <tr>
-        <td >
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-8 dash-of-the-board">
+        <img id="image-dashboard" src="../obligatorio_php/public/media/logo-jukebox-2.png">
+        <div class="col-md-12" id="videoHiden">
           <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
-        </td>
-      </tr>
-    </table>
+        </div>
+      </div>
+    </div>
+
+<div class="navbar navbar-inverse navbar-fixed-bottom reproductorino" style="background-color: grey;">
+  <div class="col-md-6" style="display: inline-block; text-align: center; padding-left: 5%; padding-top: 5px;">
+    <div class="col-md-12" style="height: 10px; margin: 0;">
+      <span id="playingNow" style="float: left;">Jukebox Play</span>
+    </div>
+    <div class="col-md-12" style="margin: 0;">
+      <input type="range" value="" id="progreso" style="float: left;">
+      <span id="current-time" style="float: left; margin-top: 18px; margin-left: 10px;">0:00/</span>
+      <span id="duration" style="float: left; margin-top: 18px;">0:00</span>
+    </div>
   </div>
-
-  <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:reproductor.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
+<div class="col-md-2">
+  <div id="controles">
+    <i id="boton-anterior" class="fa fa-step-backward fa-4x" aria-hidden="true"></i>
+    <i id="boton-play" class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i>
+    <i id="boton-siguiente" class="fa fa-step-forward fa-4x" aria-hidden="true"></i>
+    <!-- <i class="fa fa-pause-circle-o fa-3x" style="color:white; padding-right: 15px;" aria-hidden="true"></i> -->
+  </div>
+</div>
+<div class="col-md-2">
+  <div id="ctrl_volumen">
+    <i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
+    <!-- <input id="volume-rango" type="range" value=""> -->
+  </div>  
+  <input id="volume-rango" type="range" value="">
+</div>
+<div class="col-md-2"></div>
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -340,12 +328,10 @@ $('#boton-play').on('click', function () {
 
 //boton volume
 $('#ctrl_volumen').on('click', function() {
-  var mute_toggle = $(this);
+  var mute_toggle = $('#ctrl_volumen > i.fa');
   console.log(mute_toggle);
-  if(player.isMuted()){
+  if(player.isMuted() && mute_toggle.hasClass('fa-volume-off')){
     player.unMute();
-
-    mute_toggle.text('encendido');
     
     mute_toggle.addClass('fa-volume-up');
     mute_toggle.removeClass('fa-volume-off');
@@ -353,7 +339,6 @@ $('#ctrl_volumen').on('click', function() {
   }
   else{
     player.mute();
-    mute_toggle.text('apagado'); 
 
     mute_toggle.removeClass('fa-volume-up');
     mute_toggle.addClass('fa-volume-off');
@@ -417,7 +402,7 @@ function updateProgressBar(){
 
   }
 
-  function cargarvideo(primerID){
+  function cargarvideo(primerID,tituloVid){
 
     var miarray = <?php echo $_smarty_tpl->tpl_vars['lista']->value;?>
 ;
@@ -427,7 +412,11 @@ function updateProgressBar(){
 
     var listaID = sig.toString();
     
-    document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=1&modestbranding=1&rel=0&fs=0&frameborder=”0″&showinfo=1&disablekb=1&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
+    document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=0&modestbranding=0&rel=0&fs=0&frameborder=”0″&showinfo=0&disablekb=1&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
+
+    $('#boton-play').removeClass('fa-play-circle-o');
+    $('#boton-play').addClass('fa-pause-circle-o');
+    $('#playingNow').text(tituloVid);
     
   }
 
@@ -439,7 +428,5 @@ function updateProgressBar(){
 >
 
 </body>
-</html>
-
-<?php }
+</html><?php }
 }

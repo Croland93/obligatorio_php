@@ -86,7 +86,7 @@ class ControladorApi extends ControladorIndex{
       $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',
       htmlspecialchars($e->getMessage()));
     } catch (Google_Exception $e) {
-      $htmlBody .= sprintf('<p>An client error occurred: <code>%s</code></p>',
+      $htmlBody .= sprintf('<p>A client error occurred: <code>%s</code></p>',
       htmlspecialchars($e->getMessage()));
     }
 //api spotify
@@ -102,11 +102,11 @@ class ControladorApi extends ControladorIndex{
       }
       $tpl = Template::getInstance();
       $datos = array('datos' => $searchResponse, 'lista' => json_encode($videos),'listart'=>$listart);
-      $tpl->mostrar('dashboard',$datos);
+      $tpl->mostrar('new_dashboard',$datos);
     }else{
       $tpl = Template::getInstance();
       $datos = array('datos' => $searchResponse);
-      $tpl->mostrar('dashboard',$datos);
+      $tpl->mostrar('new_dashboard',$datos);
     }
   }
 }

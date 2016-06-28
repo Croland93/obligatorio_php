@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-05 07:01:54
+/* Smarty version 3.1.29, created on 2016-06-21 02:23:52
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5753b2426c4516_36669691',
+  'unifunc' => 'content_57688918c10984_97060000',
   'file_dependency' => 
   array (
     '3a2598d76ea2823ebac518f0365201dcad40025b' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/index.tpl',
-      1 => 1465102909,
+      1 => 1466468630,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5753b2426c4516_36669691 ($_smarty_tpl) {
+function content_57688918c10984_97060000 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +73,7 @@ function content_5753b2426c4516_36669691 ($_smarty_tpl) {
               Jukebox
             </h1> -->
               <div align="center"><img src="../obligatorio_php/public/media/logo-jukebox-j.png"></div>
-              <form role="form" method="post" action="index.php">
+              <form role="form" method="post">
                 <div class="form-group">
                   <input class="form-control" name="buscar" type="text" placeholder="Ej. David Guetta">
                 </div>

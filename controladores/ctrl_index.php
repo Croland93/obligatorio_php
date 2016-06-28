@@ -45,6 +45,16 @@ class ControladorIndex{
     }
 
     function home(){
+        if (isset($_POST['buscar'])){
+            $buscar = $_POST['buscar'];
+            $controlerino="api";
+            $actionerino="busqueda";
+            $params=$buscar;
+            $controlerinoObj=$this->cargarControlador($controlerino);
+            $this->ejecutarAccion($controlerinoObj,$actionerino,$params);
+            exit;
+        }
+
         $tpl = Template::getInstance();
         $tpl->asignar("proyecto","Jukebox");
         $tpl->mostrar('index');

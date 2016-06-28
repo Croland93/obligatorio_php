@@ -52,14 +52,6 @@ if(isset($_GET['url'])){
 	$params=array();
 }
 
-if (isset($_POST['buscar'])){
-
-	$buscar = $_POST['buscar'];
-	$controller="api";
-	$action="busqueda";
-	$params=$buscar;
-}
-
 if(isset($_POST['artista'])){
 	echo "hola";
 }

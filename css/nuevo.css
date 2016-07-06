@@ -9,7 +9,7 @@ body {
    margin-top: 25px;
    height: 7px;
    width: 60%;
- background: rgba(53,82,99,1);
+ background: rgba(0,61,86,1);
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -27,7 +27,7 @@ input[type="range"]::-webkit-slider-thumb {
     top: 0;
     margin-left: -100px;
     padding-top: 1px;
-    color: rgba(53,82,99,1);
+    color: rgba(0,61,86,1);
 
 }
 

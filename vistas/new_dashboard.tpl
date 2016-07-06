@@ -41,17 +41,17 @@
     function mostrar() {
       document.getElementById('image-dashboard').style.display = 'none';
       document.getElementById('videoHiden').style.display = 'block';
-      var botonprueba = document.getElementById('ver-ocultar-video');
-      botonprueba.value = 'Ocultar video'; 
-      botonprueba.onclick=ocultar;   
+      var ver_ocultar = document.getElementById('ver-ocultar-video');
+      ver_ocultar.value = 'Ocultar video'; 
+      ver_ocultar.onclick=ocultar;   
     }
 
     function ocultar() {
       document.getElementById('image-dashboard').style.display = 'block';
       document.getElementById('videoHiden').style.display = 'none';
-      var botonprueba = document.getElementById('ver-ocultar-video');
-      botonprueba.value = 'Ver video'; 
-      botonprueba.onclick=mostrar;     
+      var ver_ocultar = document.getElementById('ver-ocultar-video');
+      ver_ocultar.value = 'Ver video'; 
+      ver_ocultar.onclick=mostrar;     
     }
 
   </script>
@@ -69,9 +69,9 @@
         <div id='demo'>
           {foreach from=$listart item=artistas}
           {if $artistas['imagen']==null}
-          <div><a name="artista" class="artista"><img class="art img-thumbnail" src="../obligatorio_php/public/media/non-artist-image.jpg" width="160" height="160"></a><br><span style="color: white;">{$artistas['nombre']}</span></div>
+          <div style="text-align: center;"><a name="artista" class="artista"><img class="art img-thumbnail" src="public/media/non-artist-image.jpg" width="160" height="160"></a><br><span style="color: white;">{$artistas['nombre']|truncate:25}</span></div>
           {else}
-          <div><a name="artista" class="artista"><img class="art img-thumbnail" src="{$artistas['imagen']}" alt="..." width="160" height="160"></a><br><span style="color: white;">{$artistas['nombre']}</span></div>
+          <div style="text-align: center;"><a name="artista" class="artista"><img class="art img-thumbnail" src="{$artistas['imagen']}" alt="..." width="160" height="160"></a><br><span style="color: white;">{$artistas['nombre']|truncate:25}</span></div>
           {/if}
           {/foreach}
         </div>
@@ -110,24 +110,25 @@
       <span id="duration" style="float: left; margin-top: 18px;">0:00</span>
     </div>
   </div>
-<div class="col-md-2">
-  <div id="controles">
-    <i id="boton-anterior" class="fa fa-step-backward fa-4x" aria-hidden="true"></i>
-    <i id="boton-play" class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i>
-    <i id="boton-siguiente" class="fa fa-step-forward fa-4x" aria-hidden="true"></i>
-    <!-- <i class="fa fa-pause-circle-o fa-3x" style="color:white; padding-right: 15px;" aria-hidden="true"></i> -->
+  <div class="col-md-2">
+    <div id="controles">
+      <i id="boton-anterior" class="fa fa-step-backward fa-4x" aria-hidden="true"></i>
+      <i id="boton-play" class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i>
+      <i id="boton-siguiente" class="fa fa-step-forward fa-4x" aria-hidden="true"></i>
+      <!-- <i class="fa fa-pause-circle-o fa-3x" style="color:white; padding-right: 15px;" aria-hidden="true"></i> -->
+    </div>
   </div>
-</div>
-<div class="col-md-2">
-  <div id="ctrl_volumen">
-    <i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
-    <!-- <input id="volume-rango" type="range" value=""> -->
-  </div>  
-  <input id="volume-rango" type="range" value="">
-</div>
-<div class="col-md-2">
-  <input id="ver-ocultar-video" type="button" value="Ver video" onclick="mostrar()">
-</div>
+  <div class="col-md-2">
+    <div id="ctrl_volumen">
+      <i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
+      <!-- <input id="volume-rango" type="range" value=""> -->
+    </div>  
+    <input id="volume-rango" type="range" value="">
+  </div>
+  <div class="col-md-1">
+    <br>
+    <input id="ver-ocultar-video" type="button" value="Ver video" onclick="mostrar()">
+  </div>
 </div>
 
     <!-- Bootstrap core JavaScript

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 06:43:57
+/* Smarty version 3.1.29, created on 2016-07-07 00:16:20
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577c8c8d1899c4_73255833',
+  'unifunc' => 'content_577d8334e6d5d9_26436138',
   'file_dependency' => 
   array (
     '69cfaf58a0797d572a3aa60ad1ed340b870f7b37' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl',
-      1 => 1467780231,
+      1 => 1467843370,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,8 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_577c8c8d1899c4_73255833 ($_smarty_tpl) {
+function content_577d8334e6d5d9_26436138 ($_smarty_tpl) {
+if (!is_callable('smarty_modifier_truncate')) require_once '/Applications/MAMP/htdocs/obligatorio_php/vendor/smarty/smarty/libs/plugins/modifier.truncate.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,17 +83,17 @@ function content_577c8c8d1899c4_73255833 ($_smarty_tpl) {
     function mostrar() {
       document.getElementById('image-dashboard').style.display = 'none';
       document.getElementById('videoHiden').style.display = 'block';
-      var botonprueba = document.getElementById('ver-ocultar-video');
-      botonprueba.value = 'Ocultar video'; 
-      botonprueba.onclick=ocultar;   
+      var ver_ocultar = document.getElementById('ver-ocultar-video');
+      ver_ocultar.value = 'Ocultar video'; 
+      ver_ocultar.onclick=ocultar;   
     }
 
     function ocultar() {
       document.getElementById('image-dashboard').style.display = 'block';
       document.getElementById('videoHiden').style.display = 'none';
-      var botonprueba = document.getElementById('ver-ocultar-video');
-      botonprueba.value = 'Ver video'; 
-      botonprueba.onclick=mostrar;     
+      var ver_ocultar = document.getElementById('ver-ocultar-video');
+      ver_ocultar.value = 'Ver video'; 
+      ver_ocultar.onclick=mostrar;     
     }
 
   <?php echo '</script'; ?>
@@ -124,11 +125,11 @@ $_smarty_tpl->tpl_vars['artistas']->_loop = true;
 $__foreach_artistas_0_saved_local_item = $_smarty_tpl->tpl_vars['artistas'];
 ?>
           <?php if ($_smarty_tpl->tpl_vars['artistas']->value['imagen'] == null) {?>
-          <div><a name="artista" class="artista"><img class="art img-thumbnail" src="../obligatorio_php/public/media/non-artist-image.jpg" width="160" height="160"></a><br><span style="color: white;"><?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
+          <div style="text-align: center;"><a name="artista" class="artista"><img class="art img-thumbnail" src="public/media/non-artist-image.jpg" width="160" height="160"></a><br><span style="color: white;"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['artistas']->value['nombre'],25);?>
 </span></div>
           <?php } else { ?>
-          <div><a name="artista" class="artista"><img class="art img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
-" alt="..." width="160" height="160"></a><br><span style="color: white;"><?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
+          <div style="text-align: center;"><a name="artista" class="artista"><img class="art img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
+" alt="..." width="160" height="160"></a><br><span style="color: white;"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['artistas']->value['nombre'],25);?>
 </span></div>
           <?php }?>
           <?php
@@ -194,24 +195,25 @@ $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_item;
       <span id="duration" style="float: left; margin-top: 18px;">0:00</span>
     </div>
   </div>
-<div class="col-md-2">
-  <div id="controles">
-    <i id="boton-anterior" class="fa fa-step-backward fa-4x" aria-hidden="true"></i>
-    <i id="boton-play" class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i>
-    <i id="boton-siguiente" class="fa fa-step-forward fa-4x" aria-hidden="true"></i>
-    <!-- <i class="fa fa-pause-circle-o fa-3x" style="color:white; padding-right: 15px;" aria-hidden="true"></i> -->
+  <div class="col-md-2">
+    <div id="controles">
+      <i id="boton-anterior" class="fa fa-step-backward fa-4x" aria-hidden="true"></i>
+      <i id="boton-play" class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i>
+      <i id="boton-siguiente" class="fa fa-step-forward fa-4x" aria-hidden="true"></i>
+      <!-- <i class="fa fa-pause-circle-o fa-3x" style="color:white; padding-right: 15px;" aria-hidden="true"></i> -->
+    </div>
   </div>
-</div>
-<div class="col-md-2">
-  <div id="ctrl_volumen">
-    <i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
-    <!-- <input id="volume-rango" type="range" value=""> -->
-  </div>  
-  <input id="volume-rango" type="range" value="">
-</div>
-<div class="col-md-2">
-  <input id="ver-ocultar-video" type="button" value="Ver video" onclick="mostrar()">
-</div>
+  <div class="col-md-2">
+    <div id="ctrl_volumen">
+      <i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
+      <!-- <input id="volume-rango" type="range" value=""> -->
+    </div>  
+    <input id="volume-rango" type="range" value="">
+  </div>
+  <div class="col-md-1">
+    <br>
+    <input id="ver-ocultar-video" type="button" value="Ver video" onclick="mostrar()">
+  </div>
 </div>
 
     <!-- Bootstrap core JavaScript
@@ -442,7 +444,7 @@ function updateProgressBar(){
 
     var listaID = sig.toString();
     
-    document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=0&modestbranding=0&rel=0&fs=0&frameborder=”0″&showinfo=0&disablekb=0&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=0&iv_load_policy=3";
+    document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=0&modestbranding=0&rel=0&fs=0&frameborder=”0″&showinfo=0&disablekb=1&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
 
     $('#boton-play').removeClass('fa-play-circle-o');
     $('#boton-play').addClass('fa-pause-circle-o');

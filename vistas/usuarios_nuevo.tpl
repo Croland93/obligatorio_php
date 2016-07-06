@@ -72,11 +72,11 @@
     <div class="container-fluid" style="height: 650px">
       <div class="main">
         <h1 class="page-header">Cuenta nueva</h1>
-        {if $mensaje!=''}
-        {$mensaje}
-        {/if}
         <div class="col-sm-3  col-md-3"></div>
         <div class="col-sm-6  col-md-6">
+        {if $mensaje!=''}
+        <div class="alert alert-danger" role="alert">{$mensaje}</div>
+        {/if}
         <form id="formID" class="formular" method="POST" action="">
           <fieldset class="form-group">
             <label for="Nickname">Nickname</label>
@@ -109,6 +109,6 @@
         <br>
         <p>Copyrighterino</p>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-05 07:09:03
+/* Smarty version 3.1.29, created on 2016-07-06 01:35:25
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/usuarios_nuevo.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5753b3efd10b31_26584252',
+  'unifunc' => 'content_577c443d565009_83461711',
   'file_dependency' => 
   array (
     '67a752d3bd8bd528bc0c22f723e4f8b317046703' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/usuarios_nuevo.tpl',
-      1 => 1465103312,
+      1 => 1467761618,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5753b3efd10b31_26584252 ($_smarty_tpl) {
+function content_577c443d565009_83461711 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -112,12 +112,12 @@ function content_5753b3efd10b31_26584252 ($_smarty_tpl) {
     <div class="container-fluid" style="height: 650px">
       <div class="main">
         <h1 class="page-header">Cuenta nueva</h1>
-        <?php if ($_smarty_tpl->tpl_vars['mensaje']->value != '') {?>
-        <?php echo $_smarty_tpl->tpl_vars['mensaje']->value;?>
-
-        <?php }?>
         <div class="col-sm-3  col-md-3"></div>
         <div class="col-sm-6  col-md-6">
+        <?php if ($_smarty_tpl->tpl_vars['mensaje']->value != '') {?>
+        <div class="alert alert-danger" role="alert"><?php echo $_smarty_tpl->tpl_vars['mensaje']->value;?>
+</div>
+        <?php }?>
         <form id="formID" class="formular" method="POST" action="">
           <fieldset class="form-group">
             <label for="Nickname">Nickname</label>
@@ -150,7 +150,7 @@ function content_5753b3efd10b31_26584252 ($_smarty_tpl) {
         <br>
         <p>Copyrighterino</p>
       </div>
-    </div>
+    </footer>
   </body>
 </html><?php }
 }

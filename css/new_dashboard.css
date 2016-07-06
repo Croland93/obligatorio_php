@@ -33,7 +33,7 @@
 
 .dash-of-the-board{
   height: 370px;
-  overflow: auto;
+  overflow: hidden;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

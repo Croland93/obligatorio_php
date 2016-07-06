@@ -11,7 +11,7 @@ class ControladorUsuario extends ControladorIndex {
 		$mensaje = '';
 		if(isset($_POST["nickname"])){
 			$nick=($_POST["nickname"]);
-	 		$contra=($_POST["pass"]);
+	 		$contra=sha1($_POST["pass"]);
 	 		$email=($_POST["email"]);
 	 		$avatar="../obligatorio_php/public/media/default_avatar.jpg";
 	 		$usuario=new Usuario();
@@ -22,7 +22,7 @@ class ControladorUsuario extends ControladorIndex {
 				$this->redirect("index","home");
 				exit;
 			}else {
-				$mensaje="Error al crear nuevo usuario.";
+				$mensaje="Error al crear cuenta.";
 			}
 	 	}
 
@@ -70,7 +70,7 @@ class ControladorUsuario extends ControladorIndex {
 		if(isset($_POST["email"])){
 			$usr= new Usuario();
 			$email=$_POST["email"];
-			$pass=$_POST["password"];
+			$pass=sha1($_POST["password"]);
 			$res=$usr->login($email,$pass);
 			if(!$res){
 				$mensaje="El usuario o la contraseña son incorrectos.";

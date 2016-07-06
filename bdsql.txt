@@ -2,7 +2,7 @@ CREATE DATABASE jukebox;
 USE jukebox;
 CREATE TABLE usuarios(
   id INT NOT NULL AUTO_INCREMENT,
-  nick CHAR(30) NOT NULL,
+  nickname CHAR(30) NOT NULL,
   nombre CHAR(30),
   apellido CHAR(30), 
   email VARCHAR(40) NOT NULL,

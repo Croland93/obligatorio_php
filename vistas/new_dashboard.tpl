@@ -23,6 +23,38 @@
   <link rel="stylesheet" type="text/css" href="css/footer-distributed-with-address-and-phones.css">
   <script type="text/javascript" src="js/funciones.js"></script>
   <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="js/jquery.film_roll.js"></script> 
+
+  <script type="text/javascript">
+    (function() {
+    jQuery(function() {
+    this.film_rolls || (this.film_rolls = []);
+    this.film_rolls['demo'] = new FilmRoll({
+    container: '#demo',
+    height: 200
+    });
+    return true;
+    });
+    }).call(this);
+
+    function mostrar() {
+      document.getElementById('image-dashboard').style.display = 'none';
+      document.getElementById('videoHiden').style.display = 'block';
+      var botonprueba = document.getElementById('ver-ocultar-video');
+      botonprueba.value = 'Ocultar video'; 
+      botonprueba.onclick=ocultar;   
+    }
+
+    function ocultar() {
+      document.getElementById('image-dashboard').style.display = 'block';
+      document.getElementById('videoHiden').style.display = 'none';
+      var botonprueba = document.getElementById('ver-ocultar-video');
+      botonprueba.value = 'Ver video'; 
+      botonprueba.onclick=mostrar;     
+    }
+
+  </script>
 
 </head>
 
@@ -34,27 +66,15 @@
   </div>
     <div class="row">
       <div class="col-md-12 artist-encontreishon">
-      <h3 style="color: white;">Artistas</h3>
-      <br>
-        {foreach from=$listart item=artistas} 
-
-      <div class="col-md-1">
-        <div id='pag-artista'>
-          <a name="artista" class="artista">
-
-
-            {if $artistas['imagen']==null}
-            <img class="art img-thumbnail" src="../obligatorio_php/public/media/non-artist-image.jpg">
-
-            {else}
-
-            <img class="art img-thumbnail" src="{$artistas['imagen']}" alt="...">
-            {/if}
-            <span style="color: white;">{$artistas['nombre']}</span>
-          </a>
+        <div id='demo'>
+          {foreach from=$listart item=artistas}
+          {if $artistas['imagen']==null}
+          <div><a name="artista" class="artista"><img class="art img-thumbnail" src="../obligatorio_php/public/media/non-artist-image.jpg" width="160" height="160"></a><br><span style="color: white;">{$artistas['nombre']}</span></div>
+          {else}
+          <div><a name="artista" class="artista"><img class="art img-thumbnail" src="{$artistas['imagen']}" alt="..." width="160" height="160"></a><br><span style="color: white;">{$artistas['nombre']}</span></div>
+          {/if}
+          {/foreach}
         </div>
-      </div>
-      {/foreach}
       </div>
       <div class="col-md-4 music-found">
       <h3>Temas</h3>
@@ -72,8 +92,8 @@
         </table>
       </div>
       <div class="col-md-8 dash-of-the-board">
-        <img id="image-dashboard" src="../obligatorio_php/public/media/logo-jukebox-2.png">
-        <div class="col-md-12" id="videoHiden">
+        <img class="visible" id="image-dashboard" src="../obligatorio_php/public/media/logo-jukebox-2.png" style="display: block;">
+        <div class="col-md-12 novisible" id="videoHiden" style="display: none;">
           <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
         </div>
       </div>
@@ -105,7 +125,9 @@
   </div>  
   <input id="volume-rango" type="range" value="">
 </div>
-<div class="col-md-2"></div>
+<div class="col-md-2">
+  <input id="ver-ocultar-video" type="button" value="Ver video" onclick="mostrar()">
+</div>
 </div>
 
     <!-- Bootstrap core JavaScript
@@ -220,6 +242,7 @@ function initialize(){
 
 // function onYouTubePlayerAPIReady() {
 //controles
+
 
 $('#boton-play').on('click', function () {
 

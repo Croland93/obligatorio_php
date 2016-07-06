@@ -12,16 +12,22 @@
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="css/footer-distributed-with-address-and-phones.css">
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="js/funciones.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     
   </head>
 
   <body>
     {include file="cabezal.tpl"}
-    <div class="container-fluid">
+    <div class="container-fluid" style="height: 600px;">
       <div class="main">
         <h1 class="page-header">Login</h1>
         <div class="row">
@@ -42,7 +48,9 @@
               <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña">
             </fieldset>
             
-            <button class="ubmit form-control btn btn-primary" type="submit">Ingresar</button>
+            <button class="submit form-control btn btn-primary" type="submit">Ingresar</button>
+            <br><br>
+            <p style="text-align: center;">¿Aún no tienes cuenta? <a href="usuario/nuevo/">Registrate aqui!</a></p>
 
           </form>
           </div>
@@ -51,16 +59,12 @@
         </div>
       </div>
     </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <footer class="footer-distributed">
+      <div class="footer-left"> 
+        <br>
+        <p>Copyrighterino</p>
+      </div>
+    </footer>
   </body>
 </html>
 

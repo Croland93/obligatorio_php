@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-23 21:37:31
+/* Smarty version 3.1.29, created on 2016-07-06 06:43:57
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_576c3a7ba8dec0_93164521',
+  'unifunc' => 'content_577c8c8d1899c4_73255833',
   'file_dependency' => 
   array (
     '69cfaf58a0797d572a3aa60ad1ed340b870f7b37' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl',
-      1 => 1466710634,
+      1 => 1467780231,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_576c3a7ba8dec0_93164521 ($_smarty_tpl) {
+function content_577c8c8d1899c4_73255833 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,6 +59,44 @@ function content_576c3a7ba8dec0_93164521 ($_smarty_tpl) {
   <?php echo '<script'; ?>
  type="text/javascript" src="js/jquery-1.4.2.min.js"><?php echo '</script'; ?>
 >
+  <?php echo '<script'; ?>
+ src="http://code.jquery.com/jquery-latest.min.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="js/jquery.film_roll.js"><?php echo '</script'; ?>
+> 
+
+  <?php echo '<script'; ?>
+ type="text/javascript">
+    (function() {
+    jQuery(function() {
+    this.film_rolls || (this.film_rolls = []);
+    this.film_rolls['demo'] = new FilmRoll({
+    container: '#demo',
+    height: 200
+    });
+    return true;
+    });
+    }).call(this);
+
+    function mostrar() {
+      document.getElementById('image-dashboard').style.display = 'none';
+      document.getElementById('videoHiden').style.display = 'block';
+      var botonprueba = document.getElementById('ver-ocultar-video');
+      botonprueba.value = 'Ocultar video'; 
+      botonprueba.onclick=ocultar;   
+    }
+
+    function ocultar() {
+      document.getElementById('image-dashboard').style.display = 'block';
+      document.getElementById('videoHiden').style.display = 'none';
+      var botonprueba = document.getElementById('ver-ocultar-video');
+      botonprueba.value = 'Ver video'; 
+      botonprueba.onclick=mostrar;     
+    }
+
+  <?php echo '</script'; ?>
+>
 
 </head>
 
@@ -72,9 +110,8 @@ function content_576c3a7ba8dec0_93164521 ($_smarty_tpl) {
   </div>
     <div class="row">
       <div class="col-md-12 artist-encontreishon">
-      <h3 style="color: white;">Artistas</h3>
-      <br>
-        <?php
+        <div id='demo'>
+          <?php
 $_from = $_smarty_tpl->tpl_vars['listart']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -85,33 +122,23 @@ $_smarty_tpl->tpl_vars['artistas']->_loop = false;
 foreach ($_from as $_smarty_tpl->tpl_vars['artistas']->value) {
 $_smarty_tpl->tpl_vars['artistas']->_loop = true;
 $__foreach_artistas_0_saved_local_item = $_smarty_tpl->tpl_vars['artistas'];
-?> 
-
-      <div class="col-md-1">
-        <div id='pag-artista'>
-          <a name="artista" class="artista">
-
-
-            <?php if ($_smarty_tpl->tpl_vars['artistas']->value['imagen'] == null) {?>
-            <img class="art img-thumbnail" src="../obligatorio_php/public/media/non-artist-image.jpg">
-
-            <?php } else { ?>
-
-            <img class="art img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
-" alt="...">
-            <?php }?>
-            <span style="color: white;"><?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
-</span>
-          </a>
-        </div>
-      </div>
-      <?php
+?>
+          <?php if ($_smarty_tpl->tpl_vars['artistas']->value['imagen'] == null) {?>
+          <div><a name="artista" class="artista"><img class="art img-thumbnail" src="../obligatorio_php/public/media/non-artist-image.jpg" width="160" height="160"></a><br><span style="color: white;"><?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
+</span></div>
+          <?php } else { ?>
+          <div><a name="artista" class="artista"><img class="art img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
+" alt="..." width="160" height="160"></a><br><span style="color: white;"><?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
+</span></div>
+          <?php }?>
+          <?php
 $_smarty_tpl->tpl_vars['artistas'] = $__foreach_artistas_0_saved_local_item;
 }
 if ($__foreach_artistas_0_saved_item) {
 $_smarty_tpl->tpl_vars['artistas'] = $__foreach_artistas_0_saved_item;
 }
 ?>
+        </div>
       </div>
       <div class="col-md-4 music-found">
       <h3>Temas</h3>
@@ -149,8 +176,8 @@ $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_item;
         </table>
       </div>
       <div class="col-md-8 dash-of-the-board">
-        <img id="image-dashboard" src="../obligatorio_php/public/media/logo-jukebox-2.png">
-        <div class="col-md-12" id="videoHiden">
+        <img class="visible" id="image-dashboard" src="../obligatorio_php/public/media/logo-jukebox-2.png" style="display: block;">
+        <div class="col-md-12 novisible" id="videoHiden" style="display: none;">
           <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
         </div>
       </div>
@@ -182,7 +209,9 @@ $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_item;
   </div>  
   <input id="volume-rango" type="range" value="">
 </div>
-<div class="col-md-2"></div>
+<div class="col-md-2">
+  <input id="ver-ocultar-video" type="button" value="Ver video" onclick="mostrar()">
+</div>
 </div>
 
     <!-- Bootstrap core JavaScript
@@ -307,6 +336,7 @@ function initialize(){
 // function onYouTubePlayerAPIReady() {
 //controles
 
+
 $('#boton-play').on('click', function () {
 
   var play_toggle = $(this);
@@ -412,7 +442,7 @@ function updateProgressBar(){
 
     var listaID = sig.toString();
     
-    document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=0&modestbranding=0&rel=0&fs=0&frameborder=”0″&showinfo=0&disablekb=1&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=1&iv_load_policy=3";
+    document.getElementById("videoplay").src="http://www.youtube.com/embed/"+ primerID +"?autoplay=1&playlist="+ listaID +"&controls=0&modestbranding=0&rel=0&fs=0&frameborder=”0″&showinfo=0&disablekb=0&iv_load_policy=3&enablejsapi=1&&fs=0&frameborder=”0″&disablekb=0&iv_load_policy=3";
 
     $('#boton-play').removeClass('fa-play-circle-o');
     $('#boton-play').addClass('fa-pause-circle-o');

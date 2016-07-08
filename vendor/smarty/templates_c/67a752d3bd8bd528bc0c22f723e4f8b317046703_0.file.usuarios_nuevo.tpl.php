@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-08 23:48:27
+/* Smarty version 3.1.29, created on 2016-07-08 23:53:51
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/usuarios_nuevo.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57801faba5fa41_76038881',
+  'unifunc' => 'content_578020ef726fe7_93176764',
   'file_dependency' => 
   array (
     '67a752d3bd8bd528bc0c22f723e4f8b317046703' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/usuarios_nuevo.tpl',
-      1 => 1468014504,
+      1 => 1468014735,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57801faba5fa41_76038881 ($_smarty_tpl) {
+function content_578020ef726fe7_93176764 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,57 +53,8 @@ function content_57801faba5fa41_76038881 ($_smarty_tpl) {
     <?php echo '<script'; ?>
  src='https://www.google.com/recaptcha/api.js'><?php echo '</script'; ?>
 >
-
     <?php echo '<script'; ?>
->  
-    $(document).ready(function() {
-      // SUCCESS AJAX CALL, replace "success: false," by:     success : function() { callSuccessFunction() }, 
-      
-      $("#formID").validationEngine()
-    });
-  <?php echo '</script'; ?>
->
-
-  <?php echo '<script'; ?>
- type="text/javascript">
-  
-  $(document).ready(function(){
-    $('#nickname').keyup(function(){
-      var nick = $('#nickname').val();
-      if (nick!=''){
-        $.post('/obligatorio_php/usuario/check', {nickname:nick}, 
-          function(result){
-            console.log(result);
-            $('#nickname_available').html(result);
-        }); 
-      } else {
-        $('#nickname_available').html('');
-      } 
-    });
-  });
-  
-  <?php echo '</script'; ?>
->
-
-    <?php echo '<script'; ?>
- type="text/javascript">
-  
-  $(document).ready(function(){
-    $('#email').keyup(function(){
-      var e = $('#email').val();
-      if (e!=''){
-        $.post('/obligatorio_php/usuario/check', {email:e}, 
-          function(result){
-            console.log(result);
-            $('#email_available').html(result);
-        }); 
-      } else {
-        $('#email_available').html('');
-      } 
-    });
-  });
-  
-  <?php echo '</script'; ?>
+ src="js/validaciones.js" type="text/javascript"><?php echo '</script'; ?>
 >
     
   </head>

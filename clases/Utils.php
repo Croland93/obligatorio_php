@@ -49,7 +49,7 @@ class Utils{
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-        $mail->Body    = '<b>Bienvenido a Jukebox!!</b> <br> Comienza a disfrutar de escuchar musica completamente gratis!! <br> Para poder conectarte usa tu correo y la contraseña que elegiste. Para que no te la olvides, esta es tu contraseña: <b> '.$password.' </b>. <a href="http://localhost:8888/obligatorio_php/home">Inicio</a>';
+        $mail->Body    = '<div style="width: 450px;"><div align="center"><img src="http://i.imgur.com/HNIZYP8.png" width="326" height="110"></div><br><br><b>Bienvenido a Jukebox!!</b> <br> Comienza a disfrutar de escuchar musica completamente gratis!! <br> Para poder conectarte usa tu correo y la contraseña que elegiste. Para que no te la olvides, esta es tu contraseña: <b> '.$password.' </b>. <a href="http://localhost:8888/obligatorio_php/home">Inicio</a>';
 
         //Replace the plain text body with one created manually
         $mail->AltBody = 'This is a plain-text message body';

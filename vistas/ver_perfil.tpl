@@ -18,6 +18,22 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+    <script type="text/javascript">
+      function deleteConfirmation(userID){
+        var respuesta = confirm("¿Realmente deseas eliminar tu cuenta? Si aceptas no hay vuelta atrás :(");
+        if (respuesta){
+          $.ajax({
+            type: 'POST',
+            url: 'usuario/perfil/borrar/'+userID
+            })
+          window.location.href="index/home/";
+        } else {
+          alert("Muchas gracias por quedarte con nosotros :)");
+        }
+      }
+
+    </script>
+
   </head>
 
   <body>
@@ -94,7 +110,7 @@
               <h4 id="h4-danger">Zona de peligro</h4>
               <h5>Eliminar cuenta</h5>
               <p>Si desea eliminar su cuenta, proceda con el siguiente botón, pero recuerde que todas sus listas de reproducciones (playlists) y preferencias serán eliminadas juntos con ella. ¿Realmente desea eliminar su cuenta?</p>
-              <a href="usuario/perfil/borrar/{$nick->getId()}" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-warning-sign"></span> Eliminar cuenta</a>
+              <a href="javascript:deleteConfirmation({$nick->getId()})" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-warning-sign"></span> Eliminar cuenta</a>
               <br>
               <br>
             </div>

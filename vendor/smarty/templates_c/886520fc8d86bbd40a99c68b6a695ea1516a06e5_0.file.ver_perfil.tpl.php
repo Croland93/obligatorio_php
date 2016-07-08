@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-08 23:31:52
+/* Smarty version 3.1.29, created on 2016-07-09 00:29:28
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57801bc883b674_46038227',
+  'unifunc' => 'content_578029489db966_94749216',
   'file_dependency' => 
   array (
     '886520fc8d86bbd40a99c68b6a695ea1516a06e5' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl',
-      1 => 1468013481,
+      1 => 1468016961,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57801bc883b674_46038227 ($_smarty_tpl) {
+function content_578029489db966_94749216 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,6 +48,24 @@ function content_57801bc883b674_46038227 ($_smarty_tpl) {
 >
     <?php echo '<script'; ?>
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+
+    <?php echo '<script'; ?>
+ type="text/javascript">
+      function deleteConfirmation(userID){
+        var respuesta = confirm("¿Realmente deseas eliminar tu cuenta? Si aceptas no hay vuelta atrás :(");
+        if (respuesta){
+          $.ajax({
+            type: 'POST',
+            url: 'usuario/perfil/borrar/'+userID
+            })
+          window.location.href="index/home/";
+        } else {
+          alert("Muchas gracias por quedarte con nosotros :)");
+        }
+      }
+
+    <?php echo '</script'; ?>
 >
 
   </head>
@@ -139,8 +157,8 @@ function content_57801bc883b674_46038227 ($_smarty_tpl) {
               <h4 id="h4-danger">Zona de peligro</h4>
               <h5>Eliminar cuenta</h5>
               <p>Si desea eliminar su cuenta, proceda con el siguiente botón, pero recuerde que todas sus listas de reproducciones (playlists) y preferencias serán eliminadas juntos con ella. ¿Realmente desea eliminar su cuenta?</p>
-              <a href="usuario/perfil/borrar/<?php echo $_smarty_tpl->tpl_vars['nick']->value->getId();?>
-" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-warning-sign"></span> Eliminar cuenta</a>
+              <a href="javascript:deleteConfirmation(<?php echo $_smarty_tpl->tpl_vars['nick']->value->getId();?>
+)" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-warning-sign"></span> Eliminar cuenta</a>
               <br>
               <br>
             </div>

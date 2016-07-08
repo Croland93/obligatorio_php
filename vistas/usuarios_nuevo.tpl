@@ -19,52 +19,7 @@
     <script src="js/jquery.validationEngine-en.js" type="text/javascript"></script>
     <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-
-    <script>  
-    $(document).ready(function() {
-      // SUCCESS AJAX CALL, replace "success: false," by:     success : function() { callSuccessFunction() }, 
-      
-      $("#formID").validationEngine()
-    });
-  </script>
-
-  <script type="text/javascript">
-  {literal}
-  $(document).ready(function(){
-    $('#nickname').keyup(function(){
-      var nick = $('#nickname').val();
-      if (nick!=''){
-        $.post('/obligatorio_php/usuario/check', {nickname:nick}, 
-          function(result){
-            console.log(result);
-            $('#nickname_available').html(result);
-        }); 
-      } else {
-        $('#nickname_available').html('');
-      } 
-    });
-  });
-  {/literal}
-  </script>
-
-    <script type="text/javascript">
-  {literal}
-  $(document).ready(function(){
-    $('#email').keyup(function(){
-      var e = $('#email').val();
-      if (e!=''){
-        $.post('/obligatorio_php/usuario/check', {email:e}, 
-          function(result){
-            console.log(result);
-            $('#email_available').html(result);
-        }); 
-      } else {
-        $('#email_available').html('');
-      } 
-    });
-  });
-  {/literal}
-  </script>
+    <script src="js/validaciones.js" type="text/javascript"></script>
     
   </head>
 

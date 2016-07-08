@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-08 23:11:42
+/* Smarty version 3.1.29, created on 2016-07-09 00:31:12
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5780170e757766_06722679',
+  'unifunc' => 'content_578029b077ff06_19150966',
   'file_dependency' => 
   array (
     '5965e80dc70e6a40c9e7dcf5ed7748f26062d45d' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl',
-      1 => 1468012139,
+      1 => 1468013778,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5780170e757766_06722679 ($_smarty_tpl) {
+function content_578029b077ff06_19150966 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,9 +50,6 @@ function content_5780170e757766_06722679 ($_smarty_tpl) {
 >
     <?php echo '<script'; ?>
  src='https://www.google.com/recaptcha/api.js'><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- type="text/javascript" src="js/funciones.js"><?php echo '</script'; ?>
 >
 
   </head>

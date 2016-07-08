@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 01:35:25
+/* Smarty version 3.1.29, created on 2016-07-08 23:48:27
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/usuarios_nuevo.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577c443d565009_83461711',
+  'unifunc' => 'content_57801faba5fa41_76038881',
   'file_dependency' => 
   array (
     '67a752d3bd8bd528bc0c22f723e4f8b317046703' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/usuarios_nuevo.tpl',
-      1 => 1467761618,
+      1 => 1468014504,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_577c443d565009_83461711 ($_smarty_tpl) {
+function content_57801faba5fa41_76038881 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,6 +49,9 @@ function content_577c443d565009_83461711 ($_smarty_tpl) {
 >
     <?php echo '<script'; ?>
  src="js/jquery.validationEngine.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src='https://www.google.com/recaptcha/api.js'><?php echo '</script'; ?>
 >
 
     <?php echo '<script'; ?>
@@ -109,7 +112,7 @@ function content_577c443d565009_83461711 ($_smarty_tpl) {
     <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:cabezal.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    <div class="container-fluid" style="height: 650px">
+    <div class="container-fluid" style="height: 700px">
       <div class="main">
         <h1 class="page-header">Cuenta nueva</h1>
         <div class="col-sm-3  col-md-3"></div>
@@ -118,7 +121,7 @@ function content_577c443d565009_83461711 ($_smarty_tpl) {
         <div class="alert alert-danger" role="alert"><?php echo $_smarty_tpl->tpl_vars['mensaje']->value;?>
 </div>
         <?php }?>
-        <form id="formID" class="formular" method="POST" action="">
+        <form id="captcha-form" class="formular" method="POST" action="">
           <fieldset class="form-group">
             <label for="Nickname">Nickname</label>
             <input type="text" id="nickname" name="nickname" class="form-control validate[required,custom[noSpecialCaracters],length[0,30]]" placeholder="Nickname" value='' autocomplete="off">
@@ -140,6 +143,9 @@ function content_577c443d565009_83461711 ($_smarty_tpl) {
             <label for="Remail">Confirmar email</label>
             <input type="text" id="reemail" name="reemail" class="form-control validate[required,confirm[email]] text-input" placeholder="Confirmar email" value='' autocomplete="off">
           </fieldset>
+          <br>
+          <div class="g-recaptcha" data-sitekey="6Le7sCITAAAAADSD-3kFrVwaAiG9MpyjxCe9saJP"></div>
+          <br>
           <input type="submit" value="Comenzar ahora!" class="submit form-control btn btn-primary">
         </form>
         </div>

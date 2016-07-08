@@ -1,7 +1,7 @@
 .artist-encontreishon{
   background-color: rgba(0, 61, 86, 1);
   overflow-x: auto;
-  height: 230px;
+  height: 250px;
   display: inline-block;
   float: left;
   box-sizing: border-box;
@@ -15,7 +15,7 @@
 }
 
 .music-found{
-  height: 370px;
+  height: 350px;
   background-color: rgba(200, 200, 200, 1);
   overflow: auto;
   box-sizing: border-box;
@@ -25,7 +25,7 @@
 }
 
 .dash-of-the-board{
-  height: 370px;
+  height: 350px;
   overflow: hidden;
   box-sizing: border-box;
   -moz-box-sizing: border-box;

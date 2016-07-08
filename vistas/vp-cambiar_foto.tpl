@@ -28,7 +28,7 @@
         <div class="col-md-1 lateral-perfil">
         </div>
         <div class="col-md-3 perfil-1">
-          <img class="avatar-user" src="{$usuario_imagen}" width="150" height="150">
+          <img class="avatar-user" src="{$nickvista->getImg()}" width="150" height="150">
           <h2>{$usuario_nick}</h2>
           <br>
           <hr id="side-menu">
@@ -42,14 +42,20 @@
         </div>
         <div class="col-md-7 perfil-2">
           <div class="col-md-11 desc-gral">
+            {if $msgerror!=''}
+            <div class="col-md-12 error-message"><br>{$msgerror}</div>
+            {/if}
+            {if $msgok!=''}
+            <div class="col-md-12 ok-message"><br>{$msgok}</div>
+            {/if}
             <h3>Cambiar avatar de perfil</h3>
             <hr id="side-perfil">
             <div class="col-md-12 extra-perfil">
               <h4 id="h4-title">Imagen</h4>
               <h5 style="text-align: center;">Avatar actual</h5>
-              <img class="show-perfil" src="{$usuario_imagen}" width="100" height="100">
+              <img class="show-perfil" src="{$nickvista->getImg()}" width="100" height="100">
               <br>
-              <form enctype="multipart/form-data" action="uploader.php" method="POST">
+              <form enctype="multipart/form-data" action="" method="POST">
                 <input name="uploadedfile" type="file">
                 <input type="submit" value="Subir archivo">
               </form> 

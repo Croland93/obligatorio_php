@@ -18,17 +18,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/funciones.js"></script>
 
   </head>
 
-  <body style="background: url('../obligatorio_php/public/media/845974.jpg') no-repeat center center fixed;  -webkit-background-size: cover;
+  <body style="background: url('public/media/845974.jpg') no-repeat center center fixed;  -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
  background-size: cover;">
     {include file="cabezal.tpl"}
     <div class="container-fluid">
-      <div class="main" style="height: 614px;>
+      <div class="main" style="height: 614px;">
           <div class="row">
             <div class="col-md-3">
             </div>

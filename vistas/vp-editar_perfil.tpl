@@ -17,7 +17,6 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script type="text/javascript" src="js/funciones.js"></script>
 
   </head>
 
@@ -28,7 +27,7 @@
         <div class="col-md-1 edit-lateral-perfil">
         </div>
         <div class="col-md-3 edit-perfil-1">
-          <img class="avatar-user" src="{$usuario_imagen}" width="150" height="150">
+          <img class="avatar-user" src="{$nickvista->getImg()}" width="150" height="150">
           <h2>{$usuario_nick}</h2>
           <br>
           <hr id="side-menu">

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-16 03:43:12
+/* Smarty version 3.1.29, created on 2016-07-08 23:11:42
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_576204303d6804_51225899',
+  'unifunc' => 'content_5780170e757766_06722679',
   'file_dependency' => 
   array (
     '5965e80dc70e6a40c9e7dcf5ed7748f26062d45d' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl',
-      1 => 1466041391,
+      1 => 1468012139,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_576204303d6804_51225899 ($_smarty_tpl) {
+function content_5780170e757766_06722679 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +66,7 @@ function content_576204303d6804_51225899 ($_smarty_tpl) {
         <div class="col-md-1 edit-lateral-perfil">
         </div>
         <div class="col-md-3 edit-perfil-1">
-          <img class="avatar-user" src="<?php echo $_smarty_tpl->tpl_vars['usuario_imagen']->value;?>
+          <img class="avatar-user" src="<?php echo $_smarty_tpl->tpl_vars['nickvista']->value->getImg();?>
 " width="150" height="150">
           <h2><?php echo $_smarty_tpl->tpl_vars['usuario_nick']->value;?>
 </h2>

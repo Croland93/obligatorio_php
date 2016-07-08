@@ -91,6 +91,15 @@ class Usuario extends ClaseBase {
         return $resultado;
     }
 
+    public function uploadAvatar($id,$route){
+        $userid=$id;
+        $imgroute=$route;
+        $stmt = $this->getDB()->prepare("UPDATE usuarios SET img=? WHERE id=?");
+        $stmt->bind_param("ss",$imgroute,$userid);
+        $resultado = $stmt->execute();
+        return $resultado;
+    }
+    
     public function login($email,$pass){
         $stmt = $this->getDB()->prepare("SELECT * FROM  usuarios WHERE email=? AND clave=?");
         $stmt->bind_param("ss",$email,$pass);
@@ -180,6 +189,7 @@ class Usuario extends ClaseBase {
         }
         return $ret;
     }
+
 }
 
 ?>

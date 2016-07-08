@@ -9,20 +9,35 @@ require_once('clases/recaptchalib.php');
 class ControladorUsuario extends ControladorIndex {
 	function nuevo(){
 		$mensaje = '';
+		$captcha_publickey = "6Le7sCITAAAAADSD-3kFrVwaAiG9MpyjxCe9saJP";
+	    $captcha_privatekey = "6Le7sCITAAAAAK2BCXC7kZPb_0Z97DfXlC06Jijh";
+	    $captcha_response=null;
+	    $reCaptcha=new \ReCaptcha\ReCaptcha($captcha_privatekey);
 		if(isset($_POST["nickname"])){
-			$nick=($_POST["nickname"]);
-	 		$contra=sha1($_POST["pass"]);
-	 		$email=($_POST["email"]);
-	 		$avatar="../obligatorio_php/public/media/default_avatar.jpg";
-	 		$usuario=new Usuario();
-			$respuesta=$usuario->setUsuario($nick,$contra,$email,$avatar);
-			if ($respuesta==true){
-				$send=new Utils();
-				$send->enviarEmail($email,$nick,$contra);
-				$this->redirect("index","home");
-				exit;
-			}else {
-				$mensaje="Error al crear cuenta.";
+			if($_POST["g-recaptcha-response"]){
+		        $captcha_response=$reCaptcha->verify($_POST["g-recaptcha-response"],$_SERVER["REMOTE_ADDR"]);
+			    if ($captcha_response->isSuccess()) {
+			        //todo correcto
+		            $nick=($_POST["nickname"]);
+					$contraSC=($_POST["pass"]);
+			 		$contra=sha1($_POST["pass"]);
+			 		$email=($_POST["email"]);
+			 		$avatar="public/media/default_avatar.jpg";
+			 		$usuario=new Usuario();
+					$respuesta=$usuario->setUsuario($nick,$contra,$email,$avatar);
+					if ($respuesta==true){
+						$send=new Utils();
+						$send->enviarEmail($email,$nick,$contraSC);
+						$this->redirect("index","home");
+						exit;
+					}else {
+						$mensaje="Error al crear cuenta";
+					}
+		        }else{
+		           	//El código de validación de la imagen está mal escrito.
+			      	$mensaje="El captcha no es correcto";
+			       	$error_captcha = $captcha_response->getErrorCodes();
+		        }
 			}
 	 	}
 
@@ -132,8 +147,67 @@ class ControladorUsuario extends ControladorIndex {
 
 	function avatar_change(){
 		Auth::estaLogueado();
+		$msgerror='';
+		$msgok='';
+		$userid=Session::get('usuario_id');
+		$usrvista=new Usuario();
+		$ser=$usrvista->datos_usuario($userid);
+		if(isset($_FILES['uploadedfile'])){
+			if ($_FILES["uploadedfile"]["error"] > 0){
+			    echo "ha ocurrido un error";
+			} else {
+			    //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
+			    //y que el tamano del archivo no exceda los 100kb
+			    $permitidos = array("image/jpg", "image/jpeg", "image/png");
+			    $limite_kb = 100;
+
+			    if (in_array($_FILES['uploadedfile']['type'], $permitidos)){
+			    	if ($_FILES['uploadedfile']['size'] <= $limite_kb * 1024){
+			    		//esta es la ruta donde copiaremos la uploadedfile
+				        //recuerden que deben crear un directorio con este mismo nombre
+				        //en el mismo lugar donde se encuentra el archivo subir.php
+				        $ruta = "public/user_uploads/" . $_FILES['uploadedfile']['name'];
+				        //comprovamos si este archivo existe para no volverlo a copiar.
+				        //pero si quieren pueden obviar esto si no es necesario.
+				        //o pueden darle otro nombre para que no sobreescriba el actual.
+				        if (!file_exists($ruta)){
+				            //aqui movemos el archivo desde la ruta temporal a nuestra ruta
+				            //usamos la variable $resultado para almacenar el resultado del proceso de mover el archivo
+				            //almacenara true o false
+				            $resultado = @move_uploaded_file($_FILES["uploadedfile"]["tmp_name"], $ruta);
+				            if ($resultado){
+				            	$usr = new Usuario();
+				            	$resNewAvatar=$usr->uploadAvatar($userid,$ruta);
+				            	if ($resNewAvatar){
+				            		$msgok="Imagen subida con éxito";
+				            	} else {
+				            		$msgerror="Error al subir imagen";
+				            	}
+				            } else {
+				                $msgerror="Error al subir imagen";
+				            }
+				        } else {
+				        	$usr = new Usuario();
+				            $resNewAvatar=$usr->uploadAvatar($userid,$ruta);
+				            if ($resNewAvatar){
+				            	$msgok="Imagen subida con éxito";
+				            } else {
+				            	$msgerror="Error al subir imagen";
+				            }
+				        }
+			    	} else {
+			    		$msgerror="El tamaño de la imagen tiene que ser menor a $limite_kb Kb";
+			    	}
+			    } else {
+			        $msgerror="El formato del archivo es incorrecto";
+			    }
+			}
+		}
 		$tpl = Template::getInstance();
 		$tpl->asignar('proyecto',"Jukebox");
+		$tpl->asignar('msgerror',$msgerror);
+		$tpl->asignar('msgok',$msgok);
+		$tpl->asignar('nickvista',$ser);
 		$tpl->mostrar('vp-cambiar_foto');
 	}
 
@@ -142,6 +216,8 @@ class ControladorUsuario extends ControladorIndex {
 		$userid=Session::get('usuario_id');
 		$email=Session::get('usuario_email');
 		$nick=Session::get('usuario_nick');
+		$usrvista=new Usuario();
+		$ser=$usrvista->datos_usuario($userid);
 		$msgerror='';
 		$msgok='';
 		$msgerror_two='';
@@ -249,6 +325,7 @@ class ControladorUsuario extends ControladorIndex {
 		$tpl->asignar('msgok',$msgok);
 		$tpl->asignar('msgerror_two',$msgerror_two);
 		$tpl->asignar('msgok_two',$msgok_two);
+		$tpl->asignar('nickvista',$ser);
 		$tpl->mostrar('vp-editar_perfil');
 	}
 

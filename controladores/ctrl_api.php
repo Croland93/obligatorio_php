@@ -101,7 +101,7 @@ class ControladorApi extends ControladorIndex{
         );
       }
       $tpl = Template::getInstance();
-      $datos = array('datos' => $searchResponse, 'lista' => json_encode($videos),'listart'=>$listart);
+      $datos = array('datos' => $searchResponse, 'lista' => $videos,'listart'=>$listart);
       $tpl->mostrar('new_dashboard',$datos);
     }else{
       $tpl = Template::getInstance();

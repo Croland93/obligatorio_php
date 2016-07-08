@@ -18,6 +18,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
     <script src="js/jquery.validationEngine-en.js" type="text/javascript"></script>
     <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script>  
     $(document).ready(function() {
@@ -69,7 +70,7 @@
 
   <body>
     {include file="cabezal.tpl"}
-    <div class="container-fluid" style="height: 650px">
+    <div class="container-fluid" style="height: 700px">
       <div class="main">
         <h1 class="page-header">Cuenta nueva</h1>
         <div class="col-sm-3  col-md-3"></div>
@@ -77,7 +78,7 @@
         {if $mensaje!=''}
         <div class="alert alert-danger" role="alert">{$mensaje}</div>
         {/if}
-        <form id="formID" class="formular" method="POST" action="">
+        <form id="captcha-form" class="formular" method="POST" action="">
           <fieldset class="form-group">
             <label for="Nickname">Nickname</label>
             <input type="text" id="nickname" name="nickname" class="form-control validate[required,custom[noSpecialCaracters],length[0,30]]" placeholder="Nickname" value='' autocomplete="off">
@@ -99,6 +100,9 @@
             <label for="Remail">Confirmar email</label>
             <input type="text" id="reemail" name="reemail" class="form-control validate[required,confirm[email]] text-input" placeholder="Confirmar email" value='' autocomplete="off">
           </fieldset>
+          <br>
+          <div class="g-recaptcha" data-sitekey="6Le7sCITAAAAADSD-3kFrVwaAiG9MpyjxCe9saJP"></div>
+          <br>
           <input type="submit" value="Comenzar ahora!" class="submit form-control btn btn-primary">
         </form>
         </div>

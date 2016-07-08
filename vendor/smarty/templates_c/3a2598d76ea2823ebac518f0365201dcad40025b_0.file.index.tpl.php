@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-21 02:23:52
+/* Smarty version 3.1.29, created on 2016-07-07 02:04:38
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57688918c10984_97060000',
+  'unifunc' => 'content_577d9c96a9b1c0_19971568',
   'file_dependency' => 
   array (
     '3a2598d76ea2823ebac518f0365201dcad40025b' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/index.tpl',
-      1 => 1466468630,
+      1 => 1467849877,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57688918c10984_97060000 ($_smarty_tpl) {
+function content_577d9c96a9b1c0_19971568 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -50,13 +50,10 @@ function content_57688918c10984_97060000 ($_smarty_tpl) {
     <?php echo '<script'; ?>
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
-    <?php echo '<script'; ?>
- type="text/javascript" src="js/funciones.js"><?php echo '</script'; ?>
->
 
   </head>
 
-  <body style="background: url('../obligatorio_php/public/media/845974.jpg') no-repeat center center fixed;  -webkit-background-size: cover;
+  <body style="background: url('public/media/845974.jpg') no-repeat center center fixed;  -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
  background-size: cover;">
@@ -64,7 +61,7 @@ function content_57688918c10984_97060000 ($_smarty_tpl) {
 ?>
 
     <div class="container-fluid">
-      <div class="main" style="height: 614px;>
+      <div class="main" style="height: 614px;">
           <div class="row">
             <div class="col-md-3">
             </div>

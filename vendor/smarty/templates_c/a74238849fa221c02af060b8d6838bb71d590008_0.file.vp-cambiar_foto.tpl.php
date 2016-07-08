@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-09 21:53:22
+/* Smarty version 3.1.29, created on 2016-07-08 23:11:46
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-cambiar_foto.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5759c932eea573_78751381',
+  'unifunc' => 'content_57801712893a18_43480619',
   'file_dependency' => 
   array (
     'a74238849fa221c02af060b8d6838bb71d590008' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-cambiar_foto.tpl',
-      1 => 1465501961,
+      1 => 1468012236,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5759c932eea573_78751381 ($_smarty_tpl) {
+function content_57801712893a18_43480619 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +64,7 @@ function content_5759c932eea573_78751381 ($_smarty_tpl) {
         <div class="col-md-1 lateral-perfil">
         </div>
         <div class="col-md-3 perfil-1">
-          <img class="avatar-user" src="<?php echo $_smarty_tpl->tpl_vars['usuario_imagen']->value;?>
+          <img class="avatar-user" src="<?php echo $_smarty_tpl->tpl_vars['nickvista']->value->getImg();?>
 " width="150" height="150">
           <h2><?php echo $_smarty_tpl->tpl_vars['usuario_nick']->value;?>
 </h2>
@@ -80,15 +80,23 @@ function content_5759c932eea573_78751381 ($_smarty_tpl) {
         </div>
         <div class="col-md-7 perfil-2">
           <div class="col-md-11 desc-gral">
+            <?php if ($_smarty_tpl->tpl_vars['msgerror']->value != '') {?>
+            <div class="col-md-12 error-message"><br><?php echo $_smarty_tpl->tpl_vars['msgerror']->value;?>
+</div>
+            <?php }?>
+            <?php if ($_smarty_tpl->tpl_vars['msgok']->value != '') {?>
+            <div class="col-md-12 ok-message"><br><?php echo $_smarty_tpl->tpl_vars['msgok']->value;?>
+</div>
+            <?php }?>
             <h3>Cambiar avatar de perfil</h3>
             <hr id="side-perfil">
             <div class="col-md-12 extra-perfil">
               <h4 id="h4-title">Imagen</h4>
               <h5 style="text-align: center;">Avatar actual</h5>
-              <img class="show-perfil" src="<?php echo $_smarty_tpl->tpl_vars['usuario_imagen']->value;?>
+              <img class="show-perfil" src="<?php echo $_smarty_tpl->tpl_vars['nickvista']->value->getImg();?>
 " width="100" height="100">
               <br>
-              <form enctype="multipart/form-data" action="uploader.php" method="POST">
+              <form enctype="multipart/form-data" action="" method="POST">
                 <input name="uploadedfile" type="file">
                 <input type="submit" value="Subir archivo">
               </form> 

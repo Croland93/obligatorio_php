@@ -24,7 +24,7 @@
         if (respuesta){
           $.ajax({
             type: 'POST',
-            url: 'usuario/perfil/borrar/'+userID
+            url: 'usuario/my_profile/borrar/'+userID
             })
           window.location.href="index/home/";
         } else {

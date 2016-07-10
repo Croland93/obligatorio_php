@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-10 06:26:45
+/* Smarty version 3.1.29, created on 2016-07-10 22:07:32
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/stalked_user.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5781ce850be2f8_95279143',
+  'unifunc' => 'content_5782ab048151c8_85746059',
   'file_dependency' => 
   array (
     '08c1c5588c6291c4ceff2fe154cd153da898009b' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/stalked_user.tpl',
-      1 => 1468124794,
+      1 => 1468181108,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5781ce850be2f8_95279143 ($_smarty_tpl) {
+function content_5782ab048151c8_85746059 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,6 +48,17 @@ function content_5781ce850be2f8_95279143 ($_smarty_tpl) {
 >
     <?php echo '<script'; ?>
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+
+    <?php echo '<script'; ?>
+ type="text/javascript">
+      function subscribeTo(idStalked){
+          $.ajax({
+            type: 'POST',
+            url: 'usuario/subscribe/'+idStalked
+            })
+      }
+    <?php echo '</script'; ?>
 >
 
   </head>
@@ -93,7 +104,9 @@ function content_5781ce850be2f8_95279143 ($_smarty_tpl) {
 </p>
             <br>
             <br>
-            <a href="#" class="btn btn-primary btn-warning" style="float: right; margin-right: 20px;"><span class="glyphicon glyphicon-user"></span> Suscribirse</a>
+            <a href="javascript:subscribeTo(<?php echo $_smarty_tpl->tpl_vars['stalked_user_data']->value->getId();?>
+)" class="btn btn-primary btn-warning" style="float: right; margin-right: 20px;" <?php echo $_smarty_tpl->tpl_vars['disponible']->value;?>
+><span class="glyphicon glyphicon-user"></span> Suscribirse</a>
           </div>
         </div>
         <div class="col-md-1 lateral-stalked_profile">
@@ -109,9 +122,6 @@ function content_5781ce850be2f8_95279143 ($_smarty_tpl) {
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><?php echo '</script'; ?>
->
 
   </body>
 </html><?php }

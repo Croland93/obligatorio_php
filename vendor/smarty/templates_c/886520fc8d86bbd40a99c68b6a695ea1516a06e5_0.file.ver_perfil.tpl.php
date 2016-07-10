@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-10 05:54:49
+/* Smarty version 3.1.29, created on 2016-07-10 20:49:38
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5781c709760b92_90665213',
+  'unifunc' => 'content_578298c23c6bb9_71337833',
   'file_dependency' => 
   array (
     '886520fc8d86bbd40a99c68b6a695ea1516a06e5' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl',
-      1 => 1468122815,
+      1 => 1468174632,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5781c709760b92_90665213 ($_smarty_tpl) {
+function content_578298c23c6bb9_71337833 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +57,7 @@ function content_5781c709760b92_90665213 ($_smarty_tpl) {
         if (respuesta){
           $.ajax({
             type: 'POST',
-            url: 'usuario/perfil/borrar/'+userID
+            url: 'usuario/my_profile/borrar/'+userID
             })
           window.location.href="index/home/";
         } else {

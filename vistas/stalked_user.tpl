@@ -18,6 +18,15 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+    <script type="text/javascript">
+      function subscribeTo(idStalked){
+          $.ajax({
+            type: 'POST',
+            url: 'usuario/subscribe/'+idStalked
+            })
+      }
+    </script>
+
   </head>
 
   <body style="background-color: #696969;">
@@ -54,7 +63,7 @@
             <p id="p-stalked">{$stalked_user_data->getEmail()}</p>
             <br>
             <br>
-            <a href="#" class="btn btn-primary btn-warning" style="float: right; margin-right: 20px;"><span class="glyphicon glyphicon-user"></span> Suscribirse</a>
+            <a href="javascript:subscribeTo({$stalked_user_data->getId()})" class="btn btn-primary btn-warning" style="float: right; margin-right: 20px;" {$disponible}><span class="glyphicon glyphicon-user"></span> Suscribirse</a>
           </div>
         </div>
         <div class="col-md-1 lateral-stalked_profile">
@@ -70,7 +79,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   </body>
 </html>

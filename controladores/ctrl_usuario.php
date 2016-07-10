@@ -115,23 +115,40 @@ class ControladorUsuario extends ControladorIndex {
 	}
 
 	function profile($params){
-		if(empty($params)){
-			$this->redirect("index","home");
-			exit;
+		$userid=Session::get('usuario_id');
+		if($userid!=''){
+			if(!empty($params)){
+				$usr=new Usuario();
+				$nick=$params[0];
+				$data=$usr->datos_usuario_bynick($nick);
+				$res=$usr->suscrito($userid);
+				if ($res==0){
+					$disp="disabled";
+				} else {
+					$disp="enabled";
+				}
+			}
 		} else {
-			if(sizeof($params)>1){
-				$this->redirect("index","home");
-				exit;
-			} else {
+			if(!empty($params)){
 				$nick=$params[0];
 				$usr=new Usuario();
 				$data=$usr->datos_usuario_bynick($nick);
+				$disp="disabled";
 			}
 		}
 		$tpl = Template::getInstance();
 		$tpl->asignar('proyecto','Jukebox');
 		$tpl->asignar('stalked_user_data',$data);
+		$tpl->asignar('disponible',$disp);
 		$tpl->mostrar('stalked_user');
+	}
+
+	function subscribe($params=array()){
+		$userid=Session::get('usuario_id');
+		$idstalked=$params[1];
+		$nickstalked=array($params[0]);
+		$sub=$usr->suscribirse($userid,$idstalked);
+		$this->profile($nickstalked);
 	}
 
 	function my_profile($params=array()){

@@ -201,6 +201,25 @@ class Usuario extends ClaseBase {
         return $ret;
     }
 
+    public function suscribirse($idyou, $idstalked){
+        $stmt = $this->getDB()->prepare("INSERT INTO siguiendo (idStalked,idUsuario) VALUES ('$idstalked', '$idyou')");
+        $resultado = $stmt->execute();
+        return $resultado;
+    }
+
+    public function suscrito($userid){
+        $stmt = $this->getDB()->prepare("SELECT * FROM siguiendo WHERE idUsuario = ?");
+        $stmt->bind_param("i",$userid);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $disponible = mysqli_num_rows($resultado);
+        if ($disponible==0){
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
 }
 
 ?>

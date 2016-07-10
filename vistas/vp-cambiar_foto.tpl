@@ -29,10 +29,10 @@
         </div>
         <div class="col-md-3 perfil-1">
           <img class="avatar-user" src="{$nickvista->getImg()}" width="150" height="150">
-          <h2>{$usuario_nick}</h2>
+          <h2 id="h2-title">{$usuario_nick}</h2>
           <br>
           <hr id="side-menu">
-          <a href="usuario/perfil/" id="menu-option">Descripción general</a>
+          <a href="usuario/my_profile/" id="menu-option">Descripción general</a>
           <hr id="side-menu">
           <a href="usuario/edit_profile/" style="color: white; text-decoration: none;">Editar perfil</a>
           <hr id="side-menu">
@@ -48,7 +48,7 @@
             {if $msgok!=''}
             <div class="col-md-12 ok-message"><br>{$msgok}</div>
             {/if}
-            <h3>Cambiar avatar de perfil</h3>
+            <h3 id="h3-title">Cambiar avatar de perfil</h3>
             <hr id="side-perfil">
             <div class="col-md-12 extra-perfil">
               <h4 id="h4-title">Imagen</h4>

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-09 00:31:12
+/* Smarty version 3.1.29, created on 2016-07-10 06:01:56
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_578029b077ff06_19150966',
+  'unifunc' => 'content_5781c8b402ae09_60379879',
   'file_dependency' => 
   array (
     '5965e80dc70e6a40c9e7dcf5ed7748f26062d45d' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-editar_perfil.tpl',
-      1 => 1468013778,
+      1 => 1468122835,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_578029b077ff06_19150966 ($_smarty_tpl) {
+function content_5781c8b402ae09_60379879 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,11 +65,11 @@ function content_578029b077ff06_19150966 ($_smarty_tpl) {
         <div class="col-md-3 edit-perfil-1">
           <img class="avatar-user" src="<?php echo $_smarty_tpl->tpl_vars['nickvista']->value->getImg();?>
 " width="150" height="150">
-          <h2><?php echo $_smarty_tpl->tpl_vars['usuario_nick']->value;?>
+          <h2 id="h2-title"><?php echo $_smarty_tpl->tpl_vars['usuario_nick']->value;?>
 </h2>
           <br>
           <hr id="side-menu">
-          <a href="usuario/perfil/" id="menu-option">Descripción general</a>
+          <a href="usuario/my_profile/" id="menu-option">Descripción general</a>
           <hr id="side-menu">
           <a href="usuario/edit_profile/" style="color: white; text-decoration: none;">Editar perfil</a>
           <hr id="side-menu">
@@ -99,14 +99,14 @@ function content_578029b077ff06_19150966 ($_smarty_tpl) {
             <div class="col-md-12 ok-message"><br><?php echo $_smarty_tpl->tpl_vars['msgok_two']->value;?>
 </div>
             <?php }?>
-            <h3>Editar perfil</h3>
+            <h3 id="h3-title">Editar perfil</h3>
             <hr id="side-perfil">
             <div class="col-md-5 desc-gral-perfil">
               <h4 id="h4-title">Perfil</h4>
               <?php if ($_smarty_tpl->tpl_vars['usuario_apellido']->value != '' || $_smarty_tpl->tpl_vars['usuario_nombre']->value != '') {?>
-              <p>¡Nos agrada que te presentes ante la comunidad!</p>
+              <p id="p-profile">¡Nos agrada que te presentes ante la comunidad!</p>
               <?php } else { ?>
-              <p>Muestrale al mundo como te llamas y hazte de más amigos con tus mismos gustos musicales.</p>
+              <p id="p-profile">Muestrale al mundo como te llamas y hazte de más amigos con tus mismos gustos musicales.</p>
               <?php }?>
               <form id="formID" class="formular" method="POST" action="">
                 <fieldset class="form-group">
@@ -138,7 +138,7 @@ function content_578029b077ff06_19150966 ($_smarty_tpl) {
               <h4 id="h4-title">Datos de cuenta</h4>
               <h5>Cambiar correo</h5>
               <hr>
-              <p>Recuerda de ingresar un correo válido, de lo contrario no podrás validar tu cuenta.</p>
+              <p id="p-profile">Recuerda de ingresar un correo válido, de lo contrario no podrás validar tu cuenta.</p>
               <form id="formID2" class="formular" method="POST" action="">
               <fieldset class="form-group">
                   <input type="text" id="oldemail" name="oldemail" class="form-control" placeholder="Email actual" value=''>
@@ -155,7 +155,7 @@ function content_578029b077ff06_19150966 ($_smarty_tpl) {
               <h5>Cambiar contraseña</h5>
               <hr>
               <form id="captcha-form" class="formular" method="POST" action="">
-                <p>Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>
+                <p id="p-profile">Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>
                 <br>
                 <div class="g-recaptcha" data-sitekey="6Le7sCITAAAAADSD-3kFrVwaAiG9MpyjxCe9saJP"></div>
                 <br>

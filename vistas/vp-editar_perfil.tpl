@@ -28,10 +28,10 @@
         </div>
         <div class="col-md-3 edit-perfil-1">
           <img class="avatar-user" src="{$nickvista->getImg()}" width="150" height="150">
-          <h2>{$usuario_nick}</h2>
+          <h2 id="h2-title">{$usuario_nick}</h2>
           <br>
           <hr id="side-menu">
-          <a href="usuario/perfil/" id="menu-option">Descripción general</a>
+          <a href="usuario/my_profile/" id="menu-option">Descripción general</a>
           <hr id="side-menu">
           <a href="usuario/edit_profile/" style="color: white; text-decoration: none;">Editar perfil</a>
           <hr id="side-menu">
@@ -57,14 +57,14 @@
             {if $msgok_two!=''}
             <div class="col-md-12 ok-message"><br>{$msgok_two}</div>
             {/if}
-            <h3>Editar perfil</h3>
+            <h3 id="h3-title">Editar perfil</h3>
             <hr id="side-perfil">
             <div class="col-md-5 desc-gral-perfil">
               <h4 id="h4-title">Perfil</h4>
               {if $usuario_apellido!='' || $usuario_nombre!=''}
-              <p>¡Nos agrada que te presentes ante la comunidad!</p>
+              <p id="p-profile">¡Nos agrada que te presentes ante la comunidad!</p>
               {else}
-              <p>Muestrale al mundo como te llamas y hazte de más amigos con tus mismos gustos musicales.</p>
+              <p id="p-profile">Muestrale al mundo como te llamas y hazte de más amigos con tus mismos gustos musicales.</p>
               {/if}
               <form id="formID" class="formular" method="POST" action="">
                 <fieldset class="form-group">
@@ -94,7 +94,7 @@
               <h4 id="h4-title">Datos de cuenta</h4>
               <h5>Cambiar correo</h5>
               <hr>
-              <p>Recuerda de ingresar un correo válido, de lo contrario no podrás validar tu cuenta.</p>
+              <p id="p-profile">Recuerda de ingresar un correo válido, de lo contrario no podrás validar tu cuenta.</p>
               <form id="formID2" class="formular" method="POST" action="">
               <fieldset class="form-group">
                   <input type="text" id="oldemail" name="oldemail" class="form-control" placeholder="Email actual" value=''>
@@ -111,7 +111,7 @@
               <h5>Cambiar contraseña</h5>
               <hr>
               <form id="captcha-form" class="formular" method="POST" action="">
-                <p>Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>
+                <p id="p-profile">Para cambiar tu contraseña se te enviará un correo de confirmación para que puedas completar esta acción.</p>
                 <br>
                 <div class="g-recaptcha" data-sitekey="6Le7sCITAAAAADSD-3kFrVwaAiG9MpyjxCe9saJP"></div>
                 <br>

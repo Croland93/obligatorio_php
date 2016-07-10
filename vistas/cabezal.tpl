@@ -13,7 +13,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
           {if $usuario_logueado}
-              <li><a href="usuario/perfil/">Hola, {$usuario_nick}!</a></li>
+              <li><a href="usuario/my_profile/">Hola, {$usuario_nick}!</a></li>
               <li><a href="usuario/logout/">Cerrar sesión</a></li>
             {else}
               <li><a href="usuario/getLogin/">Iniciar sesión</a></li>

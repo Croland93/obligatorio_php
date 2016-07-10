@@ -8,9 +8,29 @@
   height: 730px;
 }
 
+.logo-jukebox-stalked{
+  background-color: rgba(0, 61, 86, 1); 
+  height: 100px; 
+}
+
+.stalked-perfil-1{
+  background-color: rgba(0, 61, 86, 1);
+  height: 220px;
+}
+
+.stalked-perfil-2{
+  background-color: rgba(200, 200, 200, 1);
+  height: 510px;
+}
+
 .lateral-perfil{
     background-color: #696969;
     height: 730px;
+}
+
+.lateral-stalked_profile{
+    background-color: #696969;
+    height: 600px;
 }
 
 .edit-perfil-1{
@@ -52,6 +72,17 @@
   border-radius: 90px;
 }
 
+.avatar-stalked-user{
+  display:block;
+  margin:80px auto 0 auto;
+  border-radius: 180px;
+}
+
+.jukebox-stalked_logo{
+  display: block;
+  margin: 8px auto 0 auto;
+}
+
 .show-perfil{
   display:block;
   margin:20px auto 0 auto;
@@ -72,25 +103,37 @@
   color: white;
 }
 
-h2{
+#h2-title{
     text-align: center;
     color: white;
 }
 
-h3, h4{
-  color: rgba(0, 93, 120, 1);
+#h1-stalked{
+  color: white;
+  font-size: 50px;
 }
 
-#h4-title{
+#h4-stalked{
+  color: rgba(0, 93, 120, 1);
+  font-size: 30px;
+}
+
+#h4-title, #h3-title{
   margin-bottom: 20px;
+  color: rgba(0, 93, 120, 1);
 }
 
 #h4-danger{
   color: red;
 }
 
-p{
+#p-profile{
   color: rgba(150, 150, 150, 1);
+}
+
+#p-stalked{
+  color: black;
+  font-size: 20px;
 }
 
 .desc-gral{

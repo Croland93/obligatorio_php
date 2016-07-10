@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-09 02:58:06
+/* Smarty version 3.1.29, created on 2016-07-09 22:38:40
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/cabezal.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5758bf1e70afb1_66714494',
+  'unifunc' => 'content_578160d0cd1b70_14643480',
   'file_dependency' => 
   array (
     '4bb31907c4df895b7531c3ae1beafbaa891f764e' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/cabezal.tpl',
-      1 => 1465433883,
+      1 => 1468096715,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5758bf1e70afb1_66714494 ($_smarty_tpl) {
+function content_578160d0cd1b70_14643480 ($_smarty_tpl) {
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -37,7 +37,7 @@ function content_5758bf1e70afb1_66714494 ($_smarty_tpl) {
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
           <?php if ($_smarty_tpl->tpl_vars['usuario_logueado']->value) {?>
-              <li><a href="usuario/perfil/">Hola, <?php echo $_smarty_tpl->tpl_vars['usuario_nick']->value;?>
+              <li><a href="usuario/my_profile/">Hola, <?php echo $_smarty_tpl->tpl_vars['usuario_nick']->value;?>
 !</a></li>
               <li><a href="usuario/logout/">Cerrar sesión</a></li>
             <?php } else { ?>

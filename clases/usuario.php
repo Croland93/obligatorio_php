@@ -167,6 +167,17 @@ class Usuario extends ClaseBase {
         return $res;
     }
 
+    public function datos_usuario_bynick($usuario_nick){
+        $stmt = $this->getDB()->prepare("SELECT * FROM usuarios WHERE nickname = ?");
+        $stmt->bind_param("s",$usuario_nick);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        if ($fila = $resultado->fetch_object()){
+            $res = new Usuario($fila);
+        }
+        return $res;
+    }
+
     public function borrar($id){
         $stmt = $this->getDB()->prepare("DELETE FROM usuarios WHERE id=$id");
         $stmt->execute();

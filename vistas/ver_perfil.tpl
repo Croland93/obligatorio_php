@@ -44,10 +44,10 @@
         </div>
         <div class="col-md-3 perfil-1">
           <img class="avatar-user" src="{$nick->getImg()}" width="150" height="150">
-          <h2>{$usuario_nick}</h2>
+          <h2 id="h2-title">{$usuario_nick}</h2>
           <br>
           <hr id="side-menu">
-          <a href="usuario/perfil/" style="color: white; text-decoration: none;">Descripción general</a>
+          <a href="usuario/my_profile/" style="color: white; text-decoration: none;">Descripción general</a>
           <hr id="side-menu">
           <a href="usuario/edit_profile/" id="menu-option">Editar perfil</a>
           <hr id="side-menu">
@@ -57,7 +57,7 @@
         </div>
         <div class="col-md-7 perfil-2">
           <div class="col-md-11 desc-gral">
-            <h3>Descripción general</h3>
+            <h3 id="h3-title">Descripción general</h3>
             <hr id="side-perfil">
             <div class="col-md-6 desc-gral-perfil">
               {if $msgerror!=''}
@@ -79,20 +79,20 @@
               <h4 id="h4-title">Perfil</h4>
               <h5>Nombre</h5>
               {if $usuario_nombre==''}
-              <p>Nombre no declarado</p>
+              <p id="p-profile">Nombre no declarado</p>
               {else}
-              <p>{$usuario_nombre}</p>
+              <p id="p-profile">{$usuario_nombre}</p>
               {/if}
               <h5>Apellido</h5>
               {if $usuario_apellido==''}
-              <p>Apellido no declarado</p>
+              <p id="p-profile">Apellido no declarado</p>
               {else}
-              <p>{$usuario_apellido}</p>
+              <p id="p-profile">{$usuario_apellido}</p>
               {/if}
               <h5>Correo electrónico</h5>
-              <p>{$usuario_email}</p>
+              <p id="p-profile">{$usuario_email}</p>
               <h5>ID Cuenta</h5>
-              <p>{$usuario_id}</p>
+              <p id="p-profile">{$usuario_id}</p>
               <br>
               <a href="usuario/edit_profile/" class="btn btn-block btn-edit-perfil"><span class="glyphicon glyphicon-edit"></span> Editar perfil</a>
               <br>
@@ -109,7 +109,7 @@
             <div class="col-md-12 danger-zone">
               <h4 id="h4-danger">Zona de peligro</h4>
               <h5>Eliminar cuenta</h5>
-              <p>Si desea eliminar su cuenta, proceda con el siguiente botón, pero recuerde que todas sus listas de reproducciones (playlists) y preferencias serán eliminadas juntos con ella. ¿Realmente desea eliminar su cuenta?</p>
+              <p id="p-profile">Si desea eliminar su cuenta, proceda con el siguiente botón, pero recuerde que todas sus listas de reproducciones (playlists) y preferencias serán eliminadas juntos con ella. ¿Realmente desea eliminar su cuenta?</p>
               <a href="javascript:deleteConfirmation({$nick->getId()})" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-warning-sign"></span> Eliminar cuenta</a>
               <br>
               <br>

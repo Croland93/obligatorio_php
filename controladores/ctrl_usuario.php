@@ -114,7 +114,27 @@ class ControladorUsuario extends ControladorIndex {
 		$this->redirect("index","home");
 	}
 
-	function perfil($params=array()){
+	function profile($params){
+		if(empty($params)){
+			$this->redirect("index","home");
+			exit;
+		} else {
+			if(sizeof($params)>1){
+				$this->redirect("index","home");
+				exit;
+			} else {
+				$nick=$params[0];
+				$usr=new Usuario();
+				$data=$usr->datos_usuario_bynick($nick);
+			}
+		}
+		$tpl = Template::getInstance();
+		$tpl->asignar('proyecto','Jukebox');
+		$tpl->asignar('stalked_user_data',$data);
+		$tpl->mostrar('stalked_user');
+	}
+
+	function my_profile($params=array()){
 		Auth::estaLogueado();
 		$id = Session::get('usuario_id');
 		$usr=new Usuario();
@@ -131,6 +151,7 @@ class ControladorUsuario extends ControladorIndex {
 				Session::destroy();
 				if($usuario->borrar($idDelete)){
 					$this->redirect("index","home");
+					exit;
 				}
 			}
 		}
@@ -159,7 +180,7 @@ class ControladorUsuario extends ControladorIndex {
 			    //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
 			    //y que el tamano del archivo no exceda los 100kb
 			    $permitidos = array("image/jpg", "image/jpeg", "image/png");
-			    $limite_kb = 100;
+			    $limite_kb = 1000;
 
 			    if (in_array($_FILES['uploadedfile']['type'], $permitidos)){
 			    	if ($_FILES['uploadedfile']['size'] <= $limite_kb * 1024){

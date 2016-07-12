@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-10 20:49:38
+/* Smarty version 3.1.29, created on 2016-07-11 22:33:33
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_578298c23c6bb9_71337833',
+  'unifunc' => 'content_5784029d673696_21371741',
   'file_dependency' => 
   array (
     '886520fc8d86bbd40a99c68b6a695ea1516a06e5' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl',
-      1 => 1468174632,
+      1 => 1468269186,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_578298c23c6bb9_71337833 ($_smarty_tpl) {
+function content_5784029d673696_21371741 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,6 +90,8 @@ function content_578298c23c6bb9_71337833 ($_smarty_tpl) {
           <a href="usuario/edit_profile/" id="menu-option">Editar perfil</a>
           <hr id="side-menu">
           <a id="menu-option">Playlists</a>
+          <hr id="side-menu">
+          <a href="usuario/followers/" id="menu-option">Siguiendo/Seguidores</a>
           <hr id="side-menu">
           <a href="usuario/logout/" id="menu-option">Cerrar sesión</a>
         </div>

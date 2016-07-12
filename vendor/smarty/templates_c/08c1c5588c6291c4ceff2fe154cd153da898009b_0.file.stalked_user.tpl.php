@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-10 22:07:32
+/* Smarty version 3.1.29, created on 2016-07-11 22:57:33
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/stalked_user.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5782ab048151c8_85746059',
+  'unifunc' => 'content_5784083da6cac4_40561868',
   'file_dependency' => 
   array (
     '08c1c5588c6291c4ceff2fe154cd153da898009b' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/stalked_user.tpl',
-      1 => 1468181108,
+      1 => 1468270628,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5782ab048151c8_85746059 ($_smarty_tpl) {
+function content_5784083da6cac4_40561868 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,11 +52,17 @@ function content_5782ab048151c8_85746059 ($_smarty_tpl) {
 
     <?php echo '<script'; ?>
  type="text/javascript">
-      function subscribeTo(idStalked){
+      function subscribeTo(nickStalked,idStalked){
+        var respuesta = confirm("¿Desea suscribirse a este usuario?");
+        if (respuesta){
           $.ajax({
             type: 'POST',
-            url: 'usuario/subscribe/'+idStalked
+            url: 'usuario/profile/'+nickStalked+'/subscribe'
             })
+          window.location.href="index/home/";
+        } else {
+          alert("No se suscribio");
+        }
       }
     <?php echo '</script'; ?>
 >
@@ -104,9 +110,10 @@ function content_5782ab048151c8_85746059 ($_smarty_tpl) {
 </p>
             <br>
             <br>
-            <a href="javascript:subscribeTo(<?php echo $_smarty_tpl->tpl_vars['stalked_user_data']->value->getId();?>
-)" class="btn btn-primary btn-warning" style="float: right; margin-right: 20px;" <?php echo $_smarty_tpl->tpl_vars['disponible']->value;?>
-><span class="glyphicon glyphicon-user"></span> Suscribirse</a>
+            <a href="javascript:subscribeTo('<?php echo $_smarty_tpl->tpl_vars['stalked_user_data']->value->getNick();?>
+')" class="btn btn-primary btn-warning" style="float: right; margin-right: 20px;" <?php echo $_smarty_tpl->tpl_vars['disponible']->value;?>
+><span class="glyphicon glyphicon-user"></span> <?php echo $_smarty_tpl->tpl_vars['disponible_two']->value;?>
+</a>
           </div>
         </div>
         <div class="col-md-1 lateral-stalked_profile">

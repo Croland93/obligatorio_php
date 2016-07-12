@@ -121,11 +121,21 @@ class ControladorUsuario extends ControladorIndex {
 				$usr=new Usuario();
 				$nick=$params[0];
 				$data=$usr->datos_usuario_bynick($nick);
-				$res=$usr->suscrito($userid);
+				$res=$usr->suscrito($userid,$nick);
 				if ($res==0){
 					$disp="disabled";
+					$disp_two="Suscrito";
 				} else {
 					$disp="enabled";
+					$disp_two="Suscribirse";
+					if ($params[1]=="subscribe"){
+						$sub=$usr->suscribirse($userid,$nick);
+						if($sub==true){
+							$newparams = array($nick);
+							$this->redirect("usuario","profile",$newparams);
+							exit;
+						}
+					}
 				}
 			}
 		} else {
@@ -134,21 +144,15 @@ class ControladorUsuario extends ControladorIndex {
 				$usr=new Usuario();
 				$data=$usr->datos_usuario_bynick($nick);
 				$disp="disabled";
+				$disp_two="Inicia sesión para seguir a este usuario";
 			}
 		}
 		$tpl = Template::getInstance();
 		$tpl->asignar('proyecto','Jukebox');
 		$tpl->asignar('stalked_user_data',$data);
 		$tpl->asignar('disponible',$disp);
+		$tpl->asignar('disponible_two',$disp_two);
 		$tpl->mostrar('stalked_user');
-	}
-
-	function subscribe($params=array()){
-		$userid=Session::get('usuario_id');
-		$idstalked=$params[1];
-		$nickstalked=array($params[0]);
-		$sub=$usr->suscribirse($userid,$idstalked);
-		$this->profile($nickstalked);
 	}
 
 	function my_profile($params=array()){
@@ -181,6 +185,18 @@ class ControladorUsuario extends ControladorIndex {
 		$tpl->asignar('msgok_two',$msgok_two);
 		$tpl->asignar('nick',$ser);
 		$tpl->mostrar('ver_perfil');
+	}
+
+	function followers(){
+		Auth::estaLogueado();
+		$id = Session::get('usuario_id');
+		$usr=new Usuario();
+		$ser=$usr->datos_usuario($id);
+
+		$tpl = Template::getInstance();
+		$tpl->asignar('proyecto',"Jukebox");
+		$tpl->asignar('nick',$ser);
+		$tpl->mostrar('vp-seguidores');
 	}
 
 	function avatar_change(){

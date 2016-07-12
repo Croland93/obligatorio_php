@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-12 00:18:38
-  from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-cambiar_foto.tpl" */
+/* Smarty version 3.1.29, created on 2016-07-11 22:35:24
+  from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-seguidores.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57841b3e345324_03265246',
+  'unifunc' => 'content_5784030ca7eff1_37113603',
   'file_dependency' => 
   array (
-    'a74238849fa221c02af060b8d6838bb71d590008' => 
+    '368acbc5308b71c64f3fd001f25d0ac632bb6eb1' => 
     array (
-      0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-cambiar_foto.tpl',
-      1 => 1468269210,
+      0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-seguidores.tpl',
+      1 => 1468269322,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57841b3e345324_03265246 ($_smarty_tpl) {
+function content_5784030ca7eff1_37113603 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,9 +49,6 @@ function content_57841b3e345324_03265246 ($_smarty_tpl) {
     <?php echo '<script'; ?>
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
-    <?php echo '<script'; ?>
- type="text/javascript" src="js/funciones.js"><?php echo '</script'; ?>
->
 
   </head>
 
@@ -64,7 +61,7 @@ function content_57841b3e345324_03265246 ($_smarty_tpl) {
         <div class="col-md-1 lateral-perfil">
         </div>
         <div class="col-md-3 perfil-1">
-          <img class="avatar-user" src="<?php echo $_smarty_tpl->tpl_vars['nickvista']->value->getImg();?>
+          <img class="avatar-user" src="<?php echo $_smarty_tpl->tpl_vars['nick']->value->getImg();?>
 " width="150" height="150">
           <h2 id="h2-title"><?php echo $_smarty_tpl->tpl_vars['usuario_nick']->value;?>
 </h2>
@@ -72,37 +69,23 @@ function content_57841b3e345324_03265246 ($_smarty_tpl) {
           <hr id="side-menu">
           <a href="usuario/my_profile/" id="menu-option">Descripción general</a>
           <hr id="side-menu">
-          <a href="usuario/edit_profile/" style="color: white; text-decoration: none;">Editar perfil</a>
+          <a href="usuario/edit_profile/" id="menu-option">Editar perfil</a>
           <hr id="side-menu">
           <a id="menu-option">Playlists</a>
           <hr id="side-menu">
-          <a href="usuario/followers/" id="menu-option">Siguiendo/Seguidores</a>
+          <a href="usuario/followers/" style="color: white; text-decoration: none;">Siguiendo/Seguidores</a>
           <hr id="side-menu">
           <a href="usuario/logout/" id="menu-option">Cerrar sesión</a>
         </div>
         <div class="col-md-7 perfil-2">
           <div class="col-md-11 desc-gral">
-            <?php if ($_smarty_tpl->tpl_vars['msgerror']->value != '') {?>
-            <div class="col-md-12 error-message"><br><?php echo $_smarty_tpl->tpl_vars['msgerror']->value;?>
-</div>
-            <?php }?>
-            <?php if ($_smarty_tpl->tpl_vars['msgok']->value != '') {?>
-            <div class="col-md-12 ok-message"><br><?php echo $_smarty_tpl->tpl_vars['msgok']->value;?>
-</div>
-            <?php }?>
-            <h3 id="h3-title">Cambiar avatar de perfil</h3>
-            <hr id="side-perfil">
-            <div class="col-md-12 extra-perfil">
-              <h4 id="h4-title">Imagen</h4>
-              <h5 style="text-align: center;">Avatar actual</h5>
-              <img class="show-perfil" src="<?php echo $_smarty_tpl->tpl_vars['nickvista']->value->getImg();?>
-" width="100" height="100">
-              <br>
-              <form enctype="multipart/form-data" action="" method="POST">
-                <input name="uploadedfile" type="file">
-                <input type="submit" value="Subir archivo">
-              </form> 
-              <br>
+            <div class="col-md-5 desc-gral-perfil">
+              <h4 id="h4-title">Seguidores</h4>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5 extra-perfil">
+              <h4 id="h4-title">Siguiendo</h4>
             </div>
           </div>
         </div>

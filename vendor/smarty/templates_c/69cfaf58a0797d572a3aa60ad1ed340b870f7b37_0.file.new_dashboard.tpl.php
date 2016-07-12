@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 02:02:22
+/* Smarty version 3.1.29, created on 2016-07-12 00:31:55
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d9c0eb32383_84186239',
+  'unifunc' => 'content_57841e5bcc0bc1_59254676',
   'file_dependency' => 
   array (
     '69cfaf58a0797d572a3aa60ad1ed340b870f7b37' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl',
-      1 => 1467849737,
+      1 => 1468276308,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_577d9c0eb32383_84186239 ($_smarty_tpl) {
+function content_57841e5bcc0bc1_59254676 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_truncate')) require_once '/Applications/MAMP/htdocs/obligatorio_php/vendor/smarty/smarty/libs/plugins/modifier.truncate.php';
 ?>
 <!DOCTYPE html>
@@ -185,7 +185,7 @@ $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_item;
 <div class="navbar navbar-inverse navbar-fixed-bottom reproductorino" style="background-color: grey;">
   <div class="col-md-6" style="display: inline-block; text-align: center; padding-left: 5%; padding-top: 5px;">
     <div class="col-md-12" style="height: 10px; margin: 0;">
-      <span id="playingNow" style="float: left;">Jukebox Play</span>
+      <span id="playingNow" style="float: left;"></span>
     </div>
     <div class="col-md-12" style="margin: 0;">
       <input type="range" value="" id="progreso" style="float: left;">

@@ -101,7 +101,7 @@
 <div class="navbar navbar-inverse navbar-fixed-bottom reproductorino" style="background-color: grey;">
   <div class="col-md-6" style="display: inline-block; text-align: center; padding-left: 5%; padding-top: 5px;">
     <div class="col-md-12" style="height: 10px; margin: 0;">
-      <span id="playingNow" style="float: left;">Jukebox Play</span>
+      <span id="playingNow" style="float: left;"></span>
     </div>
     <div class="col-md-12" style="margin: 0;">
       <input type="range" value="" id="progreso" style="float: left;">

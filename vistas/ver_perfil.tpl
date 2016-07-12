@@ -53,6 +53,8 @@
           <hr id="side-menu">
           <a id="menu-option">Playlists</a>
           <hr id="side-menu">
+          <a href="usuario/followers/" id="menu-option">Siguiendo/Seguidores</a>
+          <hr id="side-menu">
           <a href="usuario/logout/" id="menu-option">Cerrar sesión</a>
         </div>
         <div class="col-md-7 perfil-2">

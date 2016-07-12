@@ -19,11 +19,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-      function subscribeTo(idStalked){
+      function subscribeTo(nickStalked,idStalked){
+        var respuesta = confirm("¿Desea suscribirse a este usuario?");
+        if (respuesta){
           $.ajax({
             type: 'POST',
-            url: 'usuario/subscribe/'+idStalked
+            url: 'usuario/profile/'+nickStalked+'/subscribe'
             })
+          window.location.href="index/home/";
+        } else {
+          alert("No se suscribio");
+        }
       }
     </script>
 
@@ -63,7 +69,7 @@
             <p id="p-stalked">{$stalked_user_data->getEmail()}</p>
             <br>
             <br>
-            <a href="javascript:subscribeTo({$stalked_user_data->getId()})" class="btn btn-primary btn-warning" style="float: right; margin-right: 20px;" {$disponible}><span class="glyphicon glyphicon-user"></span> Suscribirse</a>
+            <a href="javascript:subscribeTo('{$stalked_user_data->getNick()}')" class="btn btn-primary btn-warning" style="float: right; margin-right: 20px;" {$disponible}><span class="glyphicon glyphicon-user"></span> {$disponible_two}</a>
           </div>
         </div>
         <div class="col-md-1 lateral-stalked_profile">

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-09 22:38:40
+/* Smarty version 3.1.29, created on 2016-07-11 22:17:47
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/cabezal.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_578160d0cd1b70_14643480',
+  'unifunc' => 'content_5783feeb0fa5d9_86722604',
   'file_dependency' => 
   array (
     '4bb31907c4df895b7531c3ae1beafbaa891f764e' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/cabezal.tpl',
-      1 => 1468096715,
+      1 => 1468268265,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_578160d0cd1b70_14643480 ($_smarty_tpl) {
+function content_5783feeb0fa5d9_86722604 ($_smarty_tpl) {
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">

@@ -1,5 +1,6 @@
 <?php
 require_once "clases/session.php";
+require_once "clases/siguiendo.php";
 class Usuario extends ClaseBase {
     public $id = '';
     public $nickname = '';
@@ -201,15 +202,15 @@ class Usuario extends ClaseBase {
         return $ret;
     }
 
-    public function suscribirse($idyou, $idstalked){
-        $stmt = $this->getDB()->prepare("INSERT INTO siguiendo (idStalked,idUsuario) VALUES ('$idstalked', '$idyou')");
+    public function suscribirse($idyou, $nickstalked){
+        $stmt = $this->getDB()->prepare("INSERT INTO siguiendo (nickStalked,idUsuario) VALUES ('$nickstalked','$idyou')");
         $resultado = $stmt->execute();
         return $resultado;
     }
 
-    public function suscrito($userid){
-        $stmt = $this->getDB()->prepare("SELECT * FROM siguiendo WHERE idUsuario = ?");
-        $stmt->bind_param("i",$userid);
+    public function suscrito($userid,$nickstalked){
+        $stmt = $this->getDB()->prepare("SELECT * FROM siguiendo WHERE idUsuario = ? AND nickStalked = ?");
+        $stmt->bind_param("is",$userid,$nickstalked);
         $stmt->execute();
         $resultado = $stmt->get_result();
         $disponible = mysqli_num_rows($resultado);
@@ -218,6 +219,30 @@ class Usuario extends ClaseBase {
         } else {
             return 0;
         }
+    }
+
+    public function suscripcion_alguna($userid){
+        $stmt = $this->getDB()->prepare("SELECT * FROM siguiendo WHERE idUsuario = ?");
+        $stmt->bind_param("is",$userid);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $disponible = mysqli_num_rows($resultado);
+        if ($disponible==0){
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function suscripciones($userid){
+        $stmt = $this->getDB()->prepare("SELECT * FROM siguiendo WHERE idUsuario = ?");
+        $stmt->bind_param("is",$userid);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        if ($fila = $resultado->fetch_object()){
+            $res = new Siguiendo($fila);
+        }
+        return $res;
     }
 
 }

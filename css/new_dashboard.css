@@ -1,0 +1,68 @@
+.artist-encontreishon{
+  background-color: rgba(0, 61, 86, 1);
+  overflow-x: auto;
+  height: 250px;
+  display: inline-block;
+  float: left;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.reproductorino{
+    height: 80px;
+}
+
+.music-found{
+  height: 350px;
+  background-color: rgba(200, 200, 200, 1);
+  overflow: auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.dash-of-the-board{
+  height: 350px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+
+#artista{
+    text-decoration: none;
+    color: white;
+}
+
+#artista:hover{
+    text-decoration: none;
+    color: blue;
+}
+
+.eq{
+  text-align: center;
+}
+
+.bar{
+  background-color: green;
+  width:7px;
+  height:15px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+#videoplay{
+  display: block;
+  margin: 3% auto 0 auto;
+}
+
+#image-dashboard{
+  display: block;
+  margin: 8% auto 0 auto;
+}

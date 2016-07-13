@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-15 23:08:40
+/* Smarty version 3.1.29, created on 2016-05-26 17:59:20
   from "C:\wamp\www\obligatorio_php\vistas\index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57390178dddd06_45400617',
+  'unifunc' => 'content_5747397844dcc5_79279419',
   'file_dependency' => 
   array (
     'e502068bfc2eb01c24ea2cc81ad41a6a4b257cb1' => 
     array (
       0 => 'C:\\wamp\\www\\obligatorio_php\\vistas\\index.tpl',
-      1 => 1463353719,
+      1 => 1464285559,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57390178dddd06_45400617 ($_smarty_tpl) {
+function content_5747397844dcc5_79279419 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -66,22 +66,21 @@ function content_57390178dddd06_45400617 ($_smarty_tpl) {
           <div class="row">
             <div class="col-md-3">
             </div>
-            <div class="col-md-6" style="padding-top: 150px;">
-            <h1 class="text-center" style="color: white;">
+            <div class="col-md-6" style="padding-top: 90px;">
+            <!-- <h1 class="text-center" style="color: white;">
               Jukebox
-            </h1>
-              <form role="form">
+            </h1> -->
+              <div align="center"><img src="../obligatorio_php/public/media/logo-jukebox-j.png"></div>
+              <form role="form" method="post" action="index.php">
                 <div class="form-group">
-                  <input class="form-control" id="search-music" type="text" placeholder="Ej. David Guetta">
+                  <input class="form-control" name="buscar" type="text" placeholder="Ej. David Guetta">
                 </div>
               
               <div class="row">
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-6">
-                  <button type="button" class="btn-play btn btn-default btn-block">
-                    Let's Play!
-                  </button>
+                  <input type="submit" value="Let's Play!" class="btn-play btn btn-default btn-block">
                 </div>
               </form>
               <div class="col-md-3">

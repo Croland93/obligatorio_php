@@ -6,7 +6,7 @@ class Auth extends ControladorIndex
     	Session::init();
         if (!isset($_SESSION['usuario_id'])) {
             Session::destroy();
-            self::redirect("usuario","login");
+            header("Refresh:0; url=http://localhost:8888/obligatorio_php/home");
             exit();
         }
     }

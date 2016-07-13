@@ -1,0 +1,216 @@
+.perfil-1{
+  background-color: rgba(0, 61, 86, 1);
+  height: 730px;
+}
+
+.perfil-2{
+  background-color: rgba(200, 200, 200, 1);
+  height: 730px;
+}
+
+.logo-jukebox-stalked{
+  background-color: rgba(0, 61, 86, 1); 
+  height: 100px; 
+}
+
+.stalked-perfil-1{
+  background-color: rgba(0, 61, 86, 1);
+  height: 220px;
+}
+
+.stalked-perfil-2{
+  background-color: rgba(200, 200, 200, 1);
+  height: 510px;
+}
+
+.lateral-perfil{
+    background-color: #696969;
+    height: 730px;
+}
+
+.lateral-stalked_profile{
+    background-color: #696969;
+    height: 600px;
+}
+
+.edit-perfil-1{
+  background-color: rgba(0, 61, 86, 1);
+  height: 900px;
+}
+
+.edit-perfil-2{
+  background-color: rgba(200, 200, 200, 1);
+  height: 900px;
+}
+
+.edit-lateral-perfil{
+    background-color: #696969;
+    height: 900px;
+}
+
+.error-message{
+  top: -20px;
+  background-color: rgba(215, 33, 33, 0.4);
+  text-align: center;
+  border-radius: 7px;
+  border-color: rgba(235, 33, 33, 1);;
+  height: 60px;
+}
+
+.ok-message{
+  top: -20px;
+  background-color: rgba(33, 215, 33, 0.4);
+  text-align: center;
+  border-radius: 7px;
+  border-color: rgba(33, 235, 33, 1);;
+  height: 60px;
+}
+
+.avatar-user{
+  display:block;
+  margin:80px auto 0 auto;
+  border-radius: 90px;
+}
+
+.avatar-stalked-user{
+  display:block;
+  margin:80px auto 0 auto;
+  border-radius: 180px;
+}
+
+.jukebox-stalked_logo{
+  display: block;
+  margin: 8px auto 0 auto;
+}
+
+.show-perfil{
+  display:block;
+  margin:20px auto 0 auto;
+  border-radius: 10px;
+}
+
+.danger-zone{
+  margin-top: 20px;
+  background-color: white;
+}
+
+#menu-option{
+  color: #C0C0C0;
+  text-decoration: none;
+}
+
+#menu-option:hover{
+  color: white;
+}
+
+#h2-title{
+    text-align: center;
+    color: white;
+}
+
+#h1-stalked{
+  color: white;
+  font-size: 50px;
+}
+
+#h4-stalked{
+  color: rgba(0, 93, 120, 1);
+  font-size: 30px;
+}
+
+#h4-title, #h3-title{
+  margin-bottom: 20px;
+  color: rgba(0, 93, 120, 1);
+}
+
+#h4-danger{
+  color: red;
+}
+
+#p-profile{
+  color: rgba(150, 150, 150, 1);
+}
+
+#p-stalked{
+  color: black;
+  font-size: 20px;
+}
+
+.desc-gral{
+  margin-top: 60px;
+  margin-left: 30px;
+}
+
+.desc-gral-perfil{
+  background-color: white;
+}
+
+.extra-perfil{
+  background-color: white;
+}
+
+.following-perfil{
+  background-color: white;
+  max-height: 650px;
+  overflow: auto;
+}
+
+.follower-perfil{
+  background-color: white;
+  max-height: 650px;
+  overflow: auto;
+}
+
+#side-menu{
+    width: 345px;
+}
+
+#copyright{
+    color: white;
+}
+
+.btn-edit-perfil { 
+  color: #ffffff; 
+  background-color: #2867A6; 
+  border-color: #706D7D; 
+} 
+ 
+.btn-edit-perfil:hover, 
+.btn-edit-perfil:focus, 
+.btn-edit-perfil:active, 
+.btn-edit-perfil.active, 
+.open .dropdown-toggle.btn-edit-perfil { 
+  color: #ffffff; 
+  background-color: #596E91; 
+  border-color: #706D7D; 
+} 
+ 
+.btn-edit-perfil:active, 
+.btn-edit-perfil.active, 
+.open .dropdown-toggle.btn-edit-perfil { 
+  background-image: none; 
+} 
+ 
+.btn-edit-perfil.disabled, 
+.btn-edit-perfil[disabled], 
+fieldset[disabled] .btn-edit-perfil, 
+.btn-edit-perfil.disabled:hover, 
+.btn-edit-perfil[disabled]:hover, 
+fieldset[disabled] .btn-edit-perfil:hover, 
+.btn-edit-perfil.disabled:focus, 
+.btn-edit-perfil[disabled]:focus, 
+fieldset[disabled] .btn-edit-perfil:focus, 
+.btn-edit-perfil.disabled:active, 
+.btn-edit-perfil[disabled]:active, 
+fieldset[disabled] .btn-edit-perfil:active, 
+.btn-edit-perfil.disabled.active, 
+.btn-edit-perfil[disabled].active, 
+fieldset[disabled] .btn-edit-perfil.active { 
+  background-color: #2867A6; 
+  border-color: #706D7D; 
+} 
+ 
+.btn-edit-perfil .badge { 
+  color: #2867A6; 
+  background-color: #ffffff; 
+}

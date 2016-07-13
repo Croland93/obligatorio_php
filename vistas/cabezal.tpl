@@ -7,12 +7,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">{$proyecto}</a>
+          <!--<a class="navbar-brand" href="#">{$proyecto}</a>-->
+          <a href="index/home/"><img src="../obligatorio_php/public/media/logo-jukebox-miniatura-2.png"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Iniciar sesión</a></li>
-            <li><a href="usuario/nuevo/">Registrarse</a></li>
+          {if $usuario_logueado}
+              <li><a href="usuario/my_profile/">Hola, {$usuario_nick}!</a></li>
+              <li><a href="usuario/logout/">Cerrar sesión</a></li>
+            {else}
+              <li><a href="usuario/getLogin/">Iniciar sesión</a></li>
+              <li><a href="usuario/nuevo/">Registrarse</a></li>
+            {/if}
           </ul>
         </div>
       </div>

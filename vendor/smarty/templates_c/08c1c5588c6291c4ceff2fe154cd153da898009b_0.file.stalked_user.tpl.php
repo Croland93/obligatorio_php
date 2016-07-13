@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 22:57:33
+/* Smarty version 3.1.29, created on 2016-07-12 22:23:20
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/stalked_user.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5784083da6cac4_40561868',
+  'unifunc' => 'content_578551b88ca243_57435134',
   'file_dependency' => 
   array (
     '08c1c5588c6291c4ceff2fe154cd153da898009b' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/stalked_user.tpl',
-      1 => 1468270628,
+      1 => 1468354870,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5784083da6cac4_40561868 ($_smarty_tpl) {
+function content_578551b88ca243_57435134 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">

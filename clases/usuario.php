@@ -221,28 +221,44 @@ class Usuario extends ClaseBase {
         }
     }
 
-    public function suscripcion_alguna($userid){
-        $stmt = $this->getDB()->prepare("SELECT * FROM siguiendo WHERE idUsuario = ?");
-        $stmt->bind_param("is",$userid);
+    public function suscripcion_alguna($mynick){
+        $stmt = $this->getDB()->prepare("SELECT * FROM siguiendo WHERE nickStalked = ?");
+        $stmt->bind_param("s",$mynick);
         $stmt->execute();
         $resultado = $stmt->get_result();
-        $disponible = mysqli_num_rows($resultado);
-        if ($disponible==0){
-            return 1;
-        } else {
-            return 0;
+        while ($fila = $resultado->fetch_object()){
+            $res = new Siguiendo($fila);
+            $theid=$res->getIdusuario();
+            $stmttwo = $this->getDB()->prepare("SELECT * FROM usuarios WHERE id = ?");
+            $stmttwo->bind_param("i",$theid);
+            $stmttwo->execute();
+            $resultadotwo = $stmttwo->get_result();
+            while ($filatwo = $resultadotwo->fetch_object()){
+                $restwo = new Usuario($filatwo);
+                $arraytwo[]=$restwo;
+            }
         }
+        return $arraytwo;
     }
 
     public function suscripciones($userid){
         $stmt = $this->getDB()->prepare("SELECT * FROM siguiendo WHERE idUsuario = ?");
-        $stmt->bind_param("is",$userid);
+        $stmt->bind_param("i",$userid);
         $stmt->execute();
         $resultado = $stmt->get_result();
-        if ($fila = $resultado->fetch_object()){
+        while ($fila = $resultado->fetch_object()){
             $res = new Siguiendo($fila);
+            $thenick=$res->getNickstalked();
+            $stmttwo = $this->getDB()->prepare("SELECT * FROM usuarios WHERE nickname = ?");
+            $stmttwo->bind_param("s",$thenick);
+            $stmttwo->execute();
+            $resultadotwo = $stmttwo->get_result();
+            while ($filatwo = $resultadotwo->fetch_object()){
+                $restwo = new Usuario($filatwo);
+                $arraytwo[]=$restwo;
+            }
         }
-        return $res;
+        return $arraytwo;
     }
 
 }

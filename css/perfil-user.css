@@ -149,6 +149,18 @@
   background-color: white;
 }
 
+.following-perfil{
+  background-color: white;
+  max-height: 650px;
+  overflow: auto;
+}
+
+.follower-perfil{
+  background-color: white;
+  max-height: 650px;
+  overflow: auto;
+}
+
 #side-menu{
     width: 345px;
 }

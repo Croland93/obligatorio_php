@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-12 00:18:38
+/* Smarty version 3.1.29, created on 2016-07-12 23:48:29
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-cambiar_foto.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57841b3e345324_03265246',
+  'unifunc' => 'content_578565add506c8_92458807',
   'file_dependency' => 
   array (
     'a74238849fa221c02af060b8d6838bb71d590008' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-cambiar_foto.tpl',
-      1 => 1468269210,
+      1 => 1468355282,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57841b3e345324_03265246 ($_smarty_tpl) {
+function content_578565add506c8_92458807 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +76,7 @@ function content_57841b3e345324_03265246 ($_smarty_tpl) {
           <hr id="side-menu">
           <a id="menu-option">Playlists</a>
           <hr id="side-menu">
-          <a href="usuario/followers/" id="menu-option">Siguiendo/Seguidores</a>
+          <a href="usuario/my_profile/followers" id="menu-option">Siguiendo/Seguidores</a>
           <hr id="side-menu">
           <a href="usuario/logout/" id="menu-option">Cerrar sesión</a>
         </div>

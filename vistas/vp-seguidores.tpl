@@ -37,19 +37,37 @@
           <hr id="side-menu">
           <a id="menu-option">Playlists</a>
           <hr id="side-menu">
-          <a href="usuario/followers/" style="color: white; text-decoration: none;">Siguiendo/Seguidores</a>
+          <a href="usuario/my_profile/followers" style="color: white; text-decoration: none;">Siguiendo/Seguidores</a>
           <hr id="side-menu">
           <a href="usuario/logout/" id="menu-option">Cerrar sesión</a>
         </div>
         <div class="col-md-7 perfil-2">
           <div class="col-md-11 desc-gral">
-            <div class="col-md-5 desc-gral-perfil">
+            <div class="col-md-5 follower-perfil">
               <h4 id="h4-title">Seguidores</h4>
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                {foreach from=$suscriptores item=tesiguen}
+                <img src="{$tesiguen->getImg()}" width="25" height="25" style="float: left; margin-right: 8px;">
+                <p>{$tesiguen->getNick()}</p>
+                {/foreach}
+                <br>
+              </div>
+              <div class="col-md-1"></div>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-1"></div>
-            <div class="col-md-5 extra-perfil">
+            <div class="col-md-5 following-perfil">
               <h4 id="h4-title">Siguiendo</h4>
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                {foreach from=$suscripciones item=siguiendo}
+                <img src="{$siguiendo->getImg()}" width="25" height="25" style="float: left; margin-right: 8px;">
+                <p>{$siguiendo->getNick()}</p>
+                {/foreach}
+                <br>
+              </div>
+              <div class="col-md-1"></div>
             </div>
           </div>
         </div>

@@ -25,7 +25,7 @@ class Siguiendo extends ClaseBase {
     public function getIdusuario() {
         return $this->idUsuario;
     }
-
+    
 }
 
 ?>

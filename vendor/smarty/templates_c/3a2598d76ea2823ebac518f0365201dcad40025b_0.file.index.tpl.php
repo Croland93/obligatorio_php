@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 02:04:38
+/* Smarty version 3.1.29, created on 2016-07-12 16:48:31
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d9c96a9b1c0_19971568',
+  'unifunc' => 'content_5785033f712749_43119624',
   'file_dependency' => 
   array (
     '3a2598d76ea2823ebac518f0365201dcad40025b' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/index.tpl',
-      1 => 1467849877,
+      1 => 1468276769,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_577d9c96a9b1c0_19971568 ($_smarty_tpl) {
+function content_5785033f712749_43119624 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -96,12 +96,6 @@ function content_577d9c96a9b1c0_19971568 ($_smarty_tpl) {
         <p>Copyrighterino</p>
       </div>
     </footer>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><?php echo '</script'; ?>
->
 
   </body>
 </html>

@@ -126,14 +126,20 @@ class ControladorUsuario extends ControladorIndex {
 					$disp="disabled";
 					$disp_two="Suscrito";
 				} else {
-					$disp="enabled";
-					$disp_two="Suscribirse";
-					if ($params[1]=="subscribe"){
-						$sub=$usr->suscribirse($userid,$nick);
-						if($sub==true){
-							$newparams = array($nick);
-							$this->redirect("usuario","profile",$newparams);
-							exit;
+					$equal=$data->getId();
+					if($equal==$userid){
+						$disp="disabled";
+						$disp_two="Suscribirse";
+					} else {
+						$disp="enabled";
+						$disp_two="Suscribirse";
+						if ($params[1]=="subscribe"){
+							$sub=$usr->suscribirse($userid,$nick);
+							if($sub==true){
+								$newparams = array($nick);
+								$this->redirect("usuario","profile",$newparams);
+								exit;
+							}
 						}
 					}
 				}
@@ -158,6 +164,7 @@ class ControladorUsuario extends ControladorIndex {
 	function my_profile($params=array()){
 		Auth::estaLogueado();
 		$id = Session::get('usuario_id');
+		$nickname = Session::get('usuario_nick');
 		$usr=new Usuario();
 		$ser=$usr->datos_usuario($id);
 		$msgerror='';
@@ -175,6 +182,19 @@ class ControladorUsuario extends ControladorIndex {
 					exit;
 				}
 			}
+
+			if($params[0]=="followers"){
+				$arraysig=$usr->suscripciones($id);
+				$arraysigtwo=$usr->suscripcion_alguna($nickname);
+
+				$tpl = Template::getInstance();
+				$tpl->asignar('proyecto',"Jukebox");
+				$tpl->asignar('nick',$ser);
+				$tpl->asignar('suscripciones',$arraysig);
+				$tpl->asignar('suscriptores',$arraysigtwo);
+				$tpl->mostrar('vp-seguidores');
+				exit;
+			}
 		}
 
 		$tpl = Template::getInstance();
@@ -187,17 +207,22 @@ class ControladorUsuario extends ControladorIndex {
 		$tpl->mostrar('ver_perfil');
 	}
 
+	/*
 	function followers(){
 		Auth::estaLogueado();
 		$id = Session::get('usuario_id');
 		$usr=new Usuario();
 		$ser=$usr->datos_usuario($id);
+		$arraysig=$usr->suscripciones($id);
+
 
 		$tpl = Template::getInstance();
 		$tpl->asignar('proyecto',"Jukebox");
 		$tpl->asignar('nick',$ser);
+		$tpl->asignar('suscripciones',$arraysig);
 		$tpl->mostrar('vp-seguidores');
 	}
+	*/
 
 	function avatar_change(){
 		Auth::estaLogueado();

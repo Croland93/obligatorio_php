@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 22:35:24
+/* Smarty version 3.1.29, created on 2016-07-12 22:58:36
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-seguidores.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5784030ca7eff1_37113603',
+  'unifunc' => 'content_578559fc594468_41307527',
   'file_dependency' => 
   array (
     '368acbc5308b71c64f3fd001f25d0ac632bb6eb1' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/vp-seguidores.tpl',
-      1 => 1468269322,
+      1 => 1468357079,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5784030ca7eff1_37113603 ($_smarty_tpl) {
+function content_578559fc594468_41307527 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,19 +73,75 @@ function content_5784030ca7eff1_37113603 ($_smarty_tpl) {
           <hr id="side-menu">
           <a id="menu-option">Playlists</a>
           <hr id="side-menu">
-          <a href="usuario/followers/" style="color: white; text-decoration: none;">Siguiendo/Seguidores</a>
+          <a href="usuario/my_profile/followers" style="color: white; text-decoration: none;">Siguiendo/Seguidores</a>
           <hr id="side-menu">
           <a href="usuario/logout/" id="menu-option">Cerrar sesión</a>
         </div>
         <div class="col-md-7 perfil-2">
           <div class="col-md-11 desc-gral">
-            <div class="col-md-5 desc-gral-perfil">
+            <div class="col-md-5 follower-perfil">
               <h4 id="h4-title">Seguidores</h4>
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                <?php
+$_from = $_smarty_tpl->tpl_vars['suscriptores']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_tesiguen_0_saved_item = isset($_smarty_tpl->tpl_vars['tesiguen']) ? $_smarty_tpl->tpl_vars['tesiguen'] : false;
+$_smarty_tpl->tpl_vars['tesiguen'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['tesiguen']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['tesiguen']->value) {
+$_smarty_tpl->tpl_vars['tesiguen']->_loop = true;
+$__foreach_tesiguen_0_saved_local_item = $_smarty_tpl->tpl_vars['tesiguen'];
+?>
+                <img src="<?php echo $_smarty_tpl->tpl_vars['tesiguen']->value->getImg();?>
+" width="25" height="25" style="float: left; margin-right: 8px;">
+                <p><?php echo $_smarty_tpl->tpl_vars['tesiguen']->value->getNick();?>
+</p>
+                <?php
+$_smarty_tpl->tpl_vars['tesiguen'] = $__foreach_tesiguen_0_saved_local_item;
+}
+if ($__foreach_tesiguen_0_saved_item) {
+$_smarty_tpl->tpl_vars['tesiguen'] = $__foreach_tesiguen_0_saved_item;
+}
+?>
+                <br>
+              </div>
+              <div class="col-md-1"></div>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-1"></div>
-            <div class="col-md-5 extra-perfil">
+            <div class="col-md-5 following-perfil">
               <h4 id="h4-title">Siguiendo</h4>
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                <?php
+$_from = $_smarty_tpl->tpl_vars['suscripciones']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_siguiendo_1_saved_item = isset($_smarty_tpl->tpl_vars['siguiendo']) ? $_smarty_tpl->tpl_vars['siguiendo'] : false;
+$_smarty_tpl->tpl_vars['siguiendo'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['siguiendo']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['siguiendo']->value) {
+$_smarty_tpl->tpl_vars['siguiendo']->_loop = true;
+$__foreach_siguiendo_1_saved_local_item = $_smarty_tpl->tpl_vars['siguiendo'];
+?>
+                <img src="<?php echo $_smarty_tpl->tpl_vars['siguiendo']->value->getImg();?>
+" width="25" height="25" style="float: left; margin-right: 8px;">
+                <p><?php echo $_smarty_tpl->tpl_vars['siguiendo']->value->getNick();?>
+</p>
+                <?php
+$_smarty_tpl->tpl_vars['siguiendo'] = $__foreach_siguiendo_1_saved_local_item;
+}
+if ($__foreach_siguiendo_1_saved_item) {
+$_smarty_tpl->tpl_vars['siguiendo'] = $__foreach_siguiendo_1_saved_item;
+}
+?>
+                <br>
+              </div>
+              <div class="col-md-1"></div>
             </div>
           </div>
         </div>

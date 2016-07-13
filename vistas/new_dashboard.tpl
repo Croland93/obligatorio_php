@@ -59,25 +59,25 @@
 <body>
   {include file="cabezal.tpl"}
   <div class="container-fluid">
-  <div id="result">
-    
-  </div>
     <div class="row">
-      <div class="col-md-12 artist-encontreishon">
+      <div id="result">
+        
+      </div>
+      <div class="col-md-12 artist-encontreishon" id="ocultar-1">
         <h3 style="color: white;">Artistas</h3>
         <div id='demo'>
           {foreach from=$listart item=artistas}
           {if $artistas['imagen']==null}
-          <div style="text-align: center;"><a name="artista" class="artista"><img class="art img-thumbnail" src="public/media/non-artist-image.jpg" width="100" height="100"></a><br><span style="color: white;">{$artistas['nombre']|truncate:15}</span></div>
+          <div style="text-align: center;"><a name="artista" class="artista" id="{$artistas['id']}" value="{$artistas['imagen']}*{$artistas['nombre']}"><img class="art img-thumbnail" src="public/media/non-artist-image.jpg" width="100" height="100"><br><span style="color: white;">{$artistas['nombre']|truncate:15}</span></a></div>
           {else}
-          <div style="text-align: center;"><a name="artista" class="artista"><img class="art img-thumbnail" src="{$artistas['imagen']}" alt="..." width="100" height="100"></a><br><span style="color: white;">{$artistas['nombre']|truncate:15}</span></div>
+          <div style="text-align: center;"><a name="artista" class="artista" id="{$artistas['id']}" value="{$artistas['imagen']}*{$artistas['nombre']}"><img class="art img-thumbnail" src="{$artistas['imagen']}" alt="..." width="100" height="100"><br><span style="color: white;">{$artistas['nombre']|truncate:15}</span></a></div>
           {/if}
           {/foreach}
         </div>
       </div>
-      <div class="col-md-4 music-found">
+      <div class="col-md-6 music-found" id="ocultar-2">
       <h3>Temas</h3>
-        <table align="center">
+        <table>
           <tr>
             <td id="div-btn1">
               <br>
@@ -90,7 +90,7 @@
           </tr>
         </table>
       </div>
-      <div class="col-md-8 dash-of-the-board">
+      <div class="col-md-6 dash-of-the-board"  id="ocultar-3">
         <img class="visible" id="image-dashboard" src="../obligatorio_php/public/media/logo-jukebox-2.png" style="display: block;">
         <div class="col-md-12 novisible" id="videoHiden" style="display: none;">
           <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
@@ -133,7 +133,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/reproductor.js"></script>
     <script type="text/javascript">
 
@@ -161,38 +160,46 @@
 
 $(document).ready(function() {
  
-
-
- 
   $('.artista').click(function() {
-  // Envia AJAX
-  // var id = $(event.attr.id);
-  var id = $(this).attr('id');
-  var datos = $(this).attr('value');
-  var res = datos.split("*");
-  var nombre = res[1];
-  var imagen = res[0];
-  if (imagen == ""){
-    var imagen = "http://djlogic.es/wp-content/uploads/musica-internet.jpg";
-  }
-  // var nombre = "{$artistas['nombre']}";
-  // var id = "{$artistas['id']}";
-  // var imagen = "{$artistas['imagen']}";
-    
-  $.ajax({
-    type: 'GET',
-    url: 'api/artista/'+nombre+'/'+id+'/'+imagen,
-    data: $(this).serialize(),
-            // Muesta lo q trae d php
-            success: function(data) {
+    // Envia AJAX
+    // var id = $(event.attr.id);
+    var id = $(this).attr('id');
+    var datos = $(this).attr('value');
+    var res = datos.split("*");
+    var nombre = res[1];
+    var imagen = res[0];
+    if (imagen == ""){
+      var imagen = "http://djlogic.es/wp-content/uploads/musica-internet.jpg";
+    }
+    // var nombre = "{$artistas['nombre']}";
+    // var id = "{$artistas['id']}";
+    // var imagen = "{$artistas['imagen']}";
+      
+    $.ajax({
+      type: 'GET',
+      url: 'api/artista/'+nombre+'/'+id+'/'+imagen,
+      data: $(this).serialize(),
+              // Muesta lo q trae d php
+              success: function(data) {
+                document.getElementById('ocultar-1').hidden=true;
+                document.getElementById('ocultar-2').hidden=true;
+                document.getElementById('ocultar-3').hidden=true;
+                document.getElementById('result').hidden=false;
+                $('#result').html(data);
 
-              $('#result').html(data);
-              // $('#main').slideUp('fast');
-            }
-          })        
-  return false;
-}); 
+                // $('#main').slideUp('fast');
+              }
+            })        
+    return false;
+  }); 
 })
+
+function volver(){
+        document.getElementById('ocultar-1').hidden=false;
+        document.getElementById('ocultar-2').hidden=false;
+        document.getElementById('ocultar-3').hidden=false;
+        document.getElementById('result').hidden=true;
+    }
 </script>
 <script src="https://www.youtube.com/iframe_api"></script>
 

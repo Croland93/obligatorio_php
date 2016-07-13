@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-12 00:31:55
+/* Smarty version 3.1.29, created on 2016-07-13 21:33:49
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57841e5bcc0bc1_59254676',
+  'unifunc' => 'content_5786979dd3a406_41942042',
   'file_dependency' => 
   array (
     '69cfaf58a0797d572a3aa60ad1ed340b870f7b37' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl',
-      1 => 1468276308,
+      1 => 1468438423,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57841e5bcc0bc1_59254676 ($_smarty_tpl) {
+function content_5786979dd3a406_41942042 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_truncate')) require_once '/Applications/MAMP/htdocs/obligatorio_php/vendor/smarty/smarty/libs/plugins/modifier.truncate.php';
 ?>
 <!DOCTYPE html>
@@ -102,11 +102,11 @@ if (!is_callable('smarty_modifier_truncate')) require_once '/Applications/MAMP/h
 ?>
 
   <div class="container-fluid">
-  <div id="result">
-    
-  </div>
     <div class="row">
-      <div class="col-md-12 artist-encontreishon">
+      <div id="result">
+        
+      </div>
+      <div class="col-md-12 artist-encontreishon" id="ocultar-1">
         <h3 style="color: white;">Artistas</h3>
         <div id='demo'>
           <?php
@@ -122,12 +122,18 @@ $_smarty_tpl->tpl_vars['artistas']->_loop = true;
 $__foreach_artistas_0_saved_local_item = $_smarty_tpl->tpl_vars['artistas'];
 ?>
           <?php if ($_smarty_tpl->tpl_vars['artistas']->value['imagen'] == null) {?>
-          <div style="text-align: center;"><a name="artista" class="artista"><img class="art img-thumbnail" src="public/media/non-artist-image.jpg" width="100" height="100"></a><br><span style="color: white;"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['artistas']->value['nombre'],15);?>
-</span></div>
+          <div style="text-align: center;"><a name="artista" class="artista" id="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['id'];?>
+" value="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
+*<?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
+"><img class="art img-thumbnail" src="public/media/non-artist-image.jpg" width="100" height="100"><br><span style="color: white;"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['artistas']->value['nombre'],15);?>
+</span></a></div>
           <?php } else { ?>
-          <div style="text-align: center;"><a name="artista" class="artista"><img class="art img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
-" alt="..." width="100" height="100"></a><br><span style="color: white;"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['artistas']->value['nombre'],15);?>
-</span></div>
+          <div style="text-align: center;"><a name="artista" class="artista" id="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['id'];?>
+" value="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
+*<?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
+"><img class="art img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
+" alt="..." width="100" height="100"><br><span style="color: white;"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['artistas']->value['nombre'],15);?>
+</span></a></div>
           <?php }?>
           <?php
 $_smarty_tpl->tpl_vars['artistas'] = $__foreach_artistas_0_saved_local_item;
@@ -138,9 +144,9 @@ $_smarty_tpl->tpl_vars['artistas'] = $__foreach_artistas_0_saved_item;
 ?>
         </div>
       </div>
-      <div class="col-md-4 music-found">
+      <div class="col-md-6 music-found" id="ocultar-2">
       <h3>Temas</h3>
-        <table align="center">
+        <table>
           <tr>
             <td id="div-btn1">
               <br>
@@ -174,7 +180,7 @@ $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_item;
           </tr>
         </table>
       </div>
-      <div class="col-md-8 dash-of-the-board">
+      <div class="col-md-6 dash-of-the-board"  id="ocultar-3">
         <img class="visible" id="image-dashboard" src="../obligatorio_php/public/media/logo-jukebox-2.png" style="display: block;">
         <div class="col-md-12 novisible" id="videoHiden" style="display: none;">
           <iframe id="videoplay" width="420" height="315" FRAMEBORDER ="0" src=""></iframe>
@@ -218,9 +224,6 @@ $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_item;
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
  type="text/javascript" src="js/reproductor.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
@@ -253,41 +256,49 @@ $_smarty_tpl->tpl_vars['videos'] = $__foreach_videos_1_saved_item;
 
 $(document).ready(function() {
  
-
-
- 
   $('.artista').click(function() {
-  // Envia AJAX
-  // var id = $(event.attr.id);
-  var id = $(this).attr('id');
-  var datos = $(this).attr('value');
-  var res = datos.split("*");
-  var nombre = res[1];
-  var imagen = res[0];
-  if (imagen == ""){
-    var imagen = "http://djlogic.es/wp-content/uploads/musica-internet.jpg";
-  }
-  // var nombre = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
+    // Envia AJAX
+    // var id = $(event.attr.id);
+    var id = $(this).attr('id');
+    var datos = $(this).attr('value');
+    var res = datos.split("*");
+    var nombre = res[1];
+    var imagen = res[0];
+    if (imagen == ""){
+      var imagen = "http://djlogic.es/wp-content/uploads/musica-internet.jpg";
+    }
+    // var nombre = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['nombre'];?>
 ";
-  // var id = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['id'];?>
+    // var id = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['id'];?>
 ";
-  // var imagen = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
+    // var imagen = "<?php echo $_smarty_tpl->tpl_vars['artistas']->value['imagen'];?>
 ";
-    
-  $.ajax({
-    type: 'GET',
-    url: 'api/artista/'+nombre+'/'+id+'/'+imagen,
-    data: $(this).serialize(),
-            // Muesta lo q trae d php
-            success: function(data) {
+      
+    $.ajax({
+      type: 'GET',
+      url: 'api/artista/'+nombre+'/'+id+'/'+imagen,
+      data: $(this).serialize(),
+              // Muesta lo q trae d php
+              success: function(data) {
+                document.getElementById('ocultar-1').hidden=true;
+                document.getElementById('ocultar-2').hidden=true;
+                document.getElementById('ocultar-3').hidden=true;
+                document.getElementById('result').hidden=false;
+                $('#result').html(data);
 
-              $('#result').html(data);
-              // $('#main').slideUp('fast');
-            }
-          })        
-  return false;
-}); 
+                // $('#main').slideUp('fast');
+              }
+            })        
+    return false;
+  }); 
 })
+
+function volver(){
+        document.getElementById('ocultar-1').hidden=false;
+        document.getElementById('ocultar-2').hidden=false;
+        document.getElementById('ocultar-3').hidden=false;
+        document.getElementById('result').hidden=true;
+    }
 <?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>

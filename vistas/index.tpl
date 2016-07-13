@@ -59,7 +59,7 @@
     <footer class="footer-distributed">
       <div class="footer-left">  
         <br>
-        <p>Copyrighterino</p>
+        <p style="color: white;">Copyrighterino</p>
       </div>
     </footer>
 

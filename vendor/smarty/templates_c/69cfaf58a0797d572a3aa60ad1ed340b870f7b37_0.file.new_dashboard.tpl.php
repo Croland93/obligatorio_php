@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-13 21:33:49
+/* Smarty version 3.1.29, created on 2016-07-13 23:34:18
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5786979dd3a406_41942042',
+  'unifunc' => 'content_5786b3da176d12_86519667',
   'file_dependency' => 
   array (
     '69cfaf58a0797d572a3aa60ad1ed340b870f7b37' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/new_dashboard.tpl',
-      1 => 1468438423,
+      1 => 1468445648,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5786979dd3a406_41942042 ($_smarty_tpl) {
+function content_5786b3da176d12_86519667 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_truncate')) require_once '/Applications/MAMP/htdocs/obligatorio_php/vendor/smarty/smarty/libs/plugins/modifier.truncate.php';
 ?>
 <!DOCTYPE html>

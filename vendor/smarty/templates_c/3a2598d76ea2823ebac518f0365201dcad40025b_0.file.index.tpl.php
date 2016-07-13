@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-12 16:48:31
+/* Smarty version 3.1.29, created on 2016-07-13 22:16:04
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5785033f712749_43119624',
+  'unifunc' => 'content_5786a184f00a20_41677864',
   'file_dependency' => 
   array (
     '3a2598d76ea2823ebac518f0365201dcad40025b' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/index.tpl',
-      1 => 1468276769,
+      1 => 1468440963,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_5785033f712749_43119624 ($_smarty_tpl) {
+function content_5786a184f00a20_41677864 ($_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +93,7 @@ function content_5785033f712749_43119624 ($_smarty_tpl) {
     <footer class="footer-distributed">
       <div class="footer-left">  
         <br>
-        <p>Copyrighterino</p>
+        <p style="color: white;">Copyrighterino</p>
       </div>
     </footer>
 

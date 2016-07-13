@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-12 22:27:01
+/* Smarty version 3.1.29, created on 2016-07-13 22:15:40
   from "/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57855295430e50_61157347',
+  'unifunc' => 'content_5786a16c1ee223_57233794',
   'file_dependency' => 
   array (
     '886520fc8d86bbd40a99c68b6a695ea1516a06e5' => 
     array (
       0 => '/Applications/MAMP/htdocs/obligatorio_php/vistas/ver_perfil.tpl',
-      1 => 1468355218,
+      1 => 1468440928,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:cabezal.tpl' => 1,
   ),
 ),false)) {
-function content_57855295430e50_61157347 ($_smarty_tpl) {
+function content_5786a16c1ee223_57233794 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -173,7 +173,7 @@ function content_57855295430e50_61157347 ($_smarty_tpl) {
     <footer class="footer-distributed">
       <div class="footer-left"> 
         <br>
-        <a id="copyright">Copyrighterino</a>
+        <p id="copyright">Copyrighterino</p>
       </div>
     </footer>
     <!-- Bootstrap core JavaScript

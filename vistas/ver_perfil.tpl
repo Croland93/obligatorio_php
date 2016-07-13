@@ -125,7 +125,7 @@
     <footer class="footer-distributed">
       <div class="footer-left"> 
         <br>
-        <a id="copyright">Copyrighterino</a>
+        <p id="copyright">Copyrighterino</p>
       </div>
     </footer>
     <!-- Bootstrap core JavaScript
